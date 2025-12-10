@@ -1,0 +1,62 @@
+{
+  "name": "chords",
+  "version": "1.0.0",
+  "category": "music-theory",
+  "description": "Chord voicings and inversions",
+  
+  "bindings": {
+    "rootNote": "--pm-music-midi-{index}",
+    "frequency": "--pm-music-freq-{index}",
+    "highlightColor": "--pm-{color}-vivid-{index}",
+    "rootColor": "--pm-{color}-base-{index}",
+    "extensionColor": "--pm-{color}-tint-{index}"
+  },
+  
+  "behaviors": {
+    "transpose": "semitones",
+    "invert": "rotate",
+    "voice": "spread",
+    "strum": "arpeggiate"
+  },
+  
+  "patterns": {
+    "major": [0, 4, 7],
+    "minor": [0, 3, 7],
+    "diminished": [0, 3, 6],
+    "augmented": [0, 4, 8],
+    "sus2": [0, 2, 7],
+    "sus4": [0, 5, 7],
+    "major7": [0, 4, 7, 11],
+    "minor7": [0, 3, 7, 10],
+    "dominant7": [0, 4, 7, 10],
+    "diminished7": [0, 3, 6, 9],
+    "halfDiminished7": [0, 3, 6, 10],
+    "minorMajor7": [0, 3, 7, 11],
+    "augmented7": [0, 4, 8, 10],
+    "major9": [0, 4, 7, 11, 14],
+    "minor9": [0, 3, 7, 10, 14],
+    "dominant9": [0, 4, 7, 10, 14],
+    "add9": [0, 4, 7, 14],
+    "major11": [0, 4, 7, 11, 14, 17],
+    "minor11": [0, 3, 7, 10, 14, 17],
+    "dominant11": [0, 4, 7, 10, 14, 17],
+    "major13": [0, 4, 7, 11, 14, 17, 21],
+    "minor13": [0, 3, 7, 10, 14, 17, 21],
+    "dominant13": [0, 4, 7, 10, 14, 17, 21],
+    "power": [0, 7],
+    "6": [0, 4, 7, 9],
+    "minor6": [0, 3, 7, 9]
+  },
+  
+  "constraints": {
+    "midiRange": "000-127",
+    "voiceCount": "002-008"
+  },
+  
+  "accessibility": {
+    "role": "group",
+    "aria": ["aria-label"]
+  },
+  
+  "relationships": ["scales", "keys", "piano-roll", "progression"]
+}

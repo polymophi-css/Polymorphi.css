@@ -1,0 +1,38 @@
+{
+  "name": "drawer",
+  "version": "1.0.0",
+  "category": "ui-patterns",
+  "description": "Slide-out drawer panel",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "background": "--pm-{color}-base-{index}",
+    "overlayColor": "--pm-{color}-alpha-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "position": [
+      "left",
+      "right",
+      "top",
+      "bottom"
+    ],
+    "close": [
+      "escape",
+      "overlay"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "dialog",
+    "aria": [
+      "aria-modal"
+    ]
+  },
+  "relationships": [
+    "sidebar",
+    "modal"
+  ]
+}

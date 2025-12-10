@@ -1,0 +1,33 @@
+{
+  "name": "logo",
+  "version": "1.0.0",
+  "category": "branding",
+  "description": "Logo placement and sizing",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "opacity": "--pm-opacity-{index}"
+  },
+  "behaviors": {
+    "variant": [
+      "full",
+      "icon",
+      "wordmark"
+    ],
+    "invert": "dark-mode"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "img",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "navbar",
+    "press-kit"
+  ]
+}

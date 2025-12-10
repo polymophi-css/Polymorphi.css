@@ -1,0 +1,32 @@
+{
+  "name": "insert",
+  "version": "1.0.0",
+  "category": "routing",
+  "description": "Effect insert slot",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "emptyColor": "--pm-{color}-mute-{index}"
+  },
+  "behaviors": {
+    "bypass": "toggle",
+    "drag": "reorder",
+    "position": [
+      "pre",
+      "post"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "listitem"
+  },
+  "relationships": [
+    "channel",
+    "bus",
+    "processor"
+  ]
+}

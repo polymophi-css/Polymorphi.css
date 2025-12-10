@@ -1,0 +1,558 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI ANIMATION TIER 06: FORTISSIMO
+   ═══════════════════════════════════════════════════════════════════════════
+   Complexity: 6 (Experimental / Off-the-rails)
+   Tempo: 176+ BPM / Unmeasured
+   Character: Maximum intensity, powerful, explosive, wild
+   Use: Effects, celebrations, glitch art, chaos, experimental UI, showstopper
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* DURATION SCALE - All ranges */
+  --pm-fortissimo-dur-000: 8ms;       /* Single frame territory               */
+  --pm-fortissimo-dur-016: 16ms;
+  --pm-fortissimo-dur-032: 33ms;
+  --pm-fortissimo-dur-048: 50ms;
+  --pm-fortissimo-dur-064: 75ms;
+  --pm-fortissimo-dur-080: 100ms;
+  --pm-fortissimo-dur-096: 150ms;
+  --pm-fortissimo-dur-112: 200ms;
+  --pm-fortissimo-dur-128: 300ms;      /* Center point                        */
+  --pm-fortissimo-dur-144: 500ms;
+  --pm-fortissimo-dur-160: 750ms;
+  --pm-fortissimo-dur-176: 1000ms;
+  --pm-fortissimo-dur-192: 1500ms;
+  --pm-fortissimo-dur-208: 2000ms;
+  --pm-fortissimo-dur-224: 3000ms;
+  --pm-fortissimo-dur-240: 5000ms;
+  --pm-fortissimo-dur-255: 10000ms;    /* Extended chaos                      */
+
+  /* EASING - STANDARD */
+  --pm-fortissimo-ease-linear: linear;
+  --pm-fortissimo-ease-default: ease;
+  --pm-fortissimo-ease-in: ease-in;
+  --pm-fortissimo-ease-out: ease-out;
+  --pm-fortissimo-ease-in-out: ease-in-out;
+
+  /* EASING - EXTREME POWER */
+  --pm-fortissimo-ease-expo-in: cubic-bezier(0.95, 0.05, 0.8, 0.04);
+  --pm-fortissimo-ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pm-fortissimo-ease-expo-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* EASING - ELASTIC EXTREME */
+  --pm-fortissimo-ease-elastic-out: cubic-bezier(0.5, 3, 0.2, 1);
+  --pm-fortissimo-ease-elastic-out-wild: cubic-bezier(0.4, 4, 0.1, 1);
+  --pm-fortissimo-ease-elastic-crazy: cubic-bezier(0.3, 5, 0.1, 1);
+
+  /* EASING - BOUNCE EXTREME */
+  --pm-fortissimo-ease-bounce-out: cubic-bezier(0.2, 2.5, 0.5, 1);
+  --pm-fortissimo-ease-bounce-wild: cubic-bezier(0.1, 3.5, 0.4, 1);
+
+  /* EASING - SPRING EXTREME */
+  --pm-fortissimo-ease-spring-crazy: cubic-bezier(0.2, 4, 0.2, 1);
+  --pm-fortissimo-ease-spring-insane: cubic-bezier(0.1, 5, 0.1, 1);
+  --pm-fortissimo-ease-spring-chaos: cubic-bezier(0.05, 6, 0.05, 1);
+
+  /* EASING - BACK EXTREME */
+  --pm-fortissimo-ease-back-extreme: cubic-bezier(0.1, -1, 0.3, 2);
+  --pm-fortissimo-ease-back-wild: cubic-bezier(0.0, -1.5, 0.2, 2.5);
+
+  /* EASING - SNAP */
+  --pm-fortissimo-ease-snap-instant: cubic-bezier(0, 1, 0, 1);
+  --pm-fortissimo-ease-snap-hard: cubic-bezier(0, 2, 0, 1);
+
+  /* EASING - STEPS (GLITCH) */
+  --pm-fortissimo-ease-step-2: steps(2, end);
+  --pm-fortissimo-ease-step-3: steps(3, end);
+  --pm-fortissimo-ease-step-4: steps(4, end);
+  --pm-fortissimo-ease-step-6: steps(6, end);
+  --pm-fortissimo-ease-step-8: steps(8, end);
+  --pm-fortissimo-ease-step-12: steps(12, end);
+  --pm-fortissimo-ease-step-16: steps(16, end);
+  --pm-fortissimo-ease-step-24: steps(24, end);
+  --pm-fortissimo-ease-step-32: steps(32, end);
+  --pm-fortissimo-ease-step-64: steps(64, end);
+
+  /* EASING - JUMP */
+  --pm-fortissimo-ease-jump-start: steps(1, start);
+  --pm-fortissimo-ease-jump-end: steps(1, end);
+  --pm-fortissimo-ease-jump-both: steps(2, jump-both);
+
+  /* DELAY SCALE */
+  --pm-fortissimo-delay-000: 0ms;
+  --pm-fortissimo-delay-032: 8ms;
+  --pm-fortissimo-delay-064: 16ms;
+  --pm-fortissimo-delay-096: 32ms;
+  --pm-fortissimo-delay-128: 50ms;
+  --pm-fortissimo-delay-160: 100ms;
+  --pm-fortissimo-delay-192: 200ms;
+  --pm-fortissimo-delay-224: 500ms;
+  --pm-fortissimo-delay-255: 1000ms;
+
+  /* STAGGER - Variable */
+  --pm-fortissimo-stagger-001: 4ms;
+  --pm-fortissimo-stagger-002: 8ms;
+  --pm-fortissimo-stagger-003: 16ms;
+  --pm-fortissimo-stagger-004: 25ms;
+  --pm-fortissimo-stagger-005: 40ms;
+  --pm-fortissimo-stagger-006: 60ms;
+  --pm-fortissimo-stagger-007: 100ms;
+  --pm-fortissimo-stagger-008: 150ms;
+
+  /* ITERATION - Extended */
+  --pm-fortissimo-iter-001: 1;
+  --pm-fortissimo-iter-002: 2;
+  --pm-fortissimo-iter-003: 3;
+  --pm-fortissimo-iter-005: 5;
+  --pm-fortissimo-iter-010: 10;
+  --pm-fortissimo-iter-020: 20;
+  --pm-fortissimo-iter-050: 50;
+  --pm-fortissimo-iter-100: 100;
+  --pm-fortissimo-iter-inf: infinite;
+
+  /* DIRECTION / FILL / STATE */
+  --pm-fortissimo-dir-normal: normal;
+  --pm-fortissimo-dir-reverse: reverse;
+  --pm-fortissimo-dir-alternate: alternate;
+  --pm-fortissimo-dir-alternate-rev: alternate-reverse;
+  --pm-fortissimo-fill-none: none;
+  --pm-fortissimo-fill-forwards: forwards;
+  --pm-fortissimo-fill-backwards: backwards;
+  --pm-fortissimo-fill-both: both;
+  --pm-fortissimo-state-running: running;
+  --pm-fortissimo-state-paused: paused;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FORTISSIMO KEYFRAMES - MAXIMUM CHAOS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   EXPLOSIVE ENTRANCES
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-explode-in {
+  0% { transform: scale(0); opacity: 0; filter: blur(50px); }
+  50% { transform: scale(1.5); opacity: 1; filter: blur(10px); }
+  70% { transform: scale(0.9); filter: blur(0); }
+  85% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; filter: blur(0); }
+}
+
+@keyframes pm-fortissimo-explode-out {
+  0% { transform: scale(1); opacity: 1; filter: blur(0); }
+  50% { transform: scale(1.3); opacity: 0.8; filter: blur(5px); }
+  100% { transform: scale(0); opacity: 0; filter: blur(30px); }
+}
+
+@keyframes pm-fortissimo-slam-in {
+  0% { transform: scale(3) translateY(-100vh); opacity: 0; }
+  60% { transform: scale(0.9) translateY(20px); opacity: 1; }
+  80% { transform: scale(1.1) translateY(-10px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes pm-fortissimo-burst-in {
+  0% { transform: scale(0); filter: brightness(3); }
+  40% { transform: scale(1.4); filter: brightness(2); }
+  60% { transform: scale(0.85); filter: brightness(1); }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes pm-fortissimo-warp-in {
+  0% { transform: scale(0) rotate(-720deg); opacity: 0; }
+  50% { transform: scale(1.3) rotate(-90deg); opacity: 1; }
+  75% { transform: scale(0.9) rotate(45deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes pm-fortissimo-teleport-in {
+  0% { transform: scale(0); opacity: 0; filter: hue-rotate(720deg) blur(20px); }
+  30% { transform: scale(1.5); opacity: 0.8; filter: hue-rotate(360deg) blur(10px); }
+  60% { transform: scale(0.8); filter: hue-rotate(90deg) blur(0); }
+  80% { transform: scale(1.15); filter: hue-rotate(0deg); }
+  100% { transform: scale(1); opacity: 1; filter: hue-rotate(0deg) blur(0); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GLITCH EFFECTS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-glitch {
+  0%, 100% { transform: translate(0); filter: none; }
+  10% { transform: translate(-2px, 1px); filter: hue-rotate(90deg); }
+  20% { transform: translate(2px, -1px); filter: hue-rotate(-90deg); }
+  30% { transform: translate(-1px, 2px); clip-path: inset(20% 0 40% 0); }
+  40% { transform: translate(1px, -2px); clip-path: inset(60% 0 10% 0); }
+  50% { transform: translate(-2px, 0); filter: saturate(2); clip-path: none; }
+  60% { transform: translate(2px, 1px); filter: saturate(0.5); }
+  70% { transform: translate(0, -1px); filter: invert(1); }
+  80% { transform: translate(-1px, 0); filter: invert(0); }
+  90% { transform: translate(1px, 2px); filter: brightness(1.5); }
+}
+
+@keyframes pm-fortissimo-glitch-hard {
+  0%, 100% { transform: translate(0) skewX(0); }
+  5% { transform: translate(-5px, 2px) skewX(-5deg); filter: hue-rotate(180deg); }
+  10% { transform: translate(5px, -2px) skewX(5deg); clip-path: inset(10% 0 80% 0); }
+  15% { transform: translate(-3px, 3px) skewX(-2deg); clip-path: inset(80% 0 5% 0); }
+  20% { transform: translate(0) skewX(0); clip-path: none; }
+  25% { transform: translate(3px, -3px) skewX(3deg); filter: invert(1) hue-rotate(90deg); }
+  30% { transform: translate(-2px, 0) skewX(-3deg); filter: none; }
+  40% { opacity: 0.8; }
+  45% { opacity: 1; transform: translate(4px, 2px); }
+  50% { transform: translate(-4px, -2px); }
+}
+
+@keyframes pm-fortissimo-glitch-text {
+  0%, 100% { text-shadow: 0 0 0 transparent; }
+  10% { text-shadow: -2px 0 #ff0000, 2px 0 #00ffff; }
+  20% { text-shadow: 2px 0 #ff0000, -2px 0 #00ffff; }
+  30% { text-shadow: -1px 2px #ff0000, 1px -2px #00ffff; }
+  40% { text-shadow: 1px -1px #ff00ff, -1px 1px #00ff00; }
+  50% { text-shadow: 0 0 0 transparent; }
+  60% { text-shadow: 3px 0 #ff0000, -3px 0 #00ffff; }
+  70% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ff00; }
+  80% { text-shadow: 2px 1px #ff0000, -2px -1px #00ffff; }
+}
+
+@keyframes pm-fortissimo-glitch-color {
+  0%, 100% { filter: none; }
+  10% { filter: hue-rotate(90deg) saturate(2); }
+  20% { filter: hue-rotate(-90deg) brightness(1.5); }
+  30% { filter: invert(1); }
+  40% { filter: invert(0) contrast(2); }
+  50% { filter: saturate(0) brightness(2); }
+  60% { filter: saturate(3) hue-rotate(180deg); }
+  70% { filter: hue-rotate(270deg); }
+  80% { filter: contrast(1.5) saturate(1.5); }
+}
+
+@keyframes pm-fortissimo-vhs {
+  0%, 100% { filter: none; transform: translate(0); }
+  2% { filter: blur(1px); transform: translate(2px, 0); }
+  4% { filter: none; transform: translate(-2px, 1px); }
+  8% { transform: translate(0, -1px); }
+  10% { transform: translate(3px, 0); filter: brightness(1.2); }
+  20% { opacity: 0.9; }
+  50% { filter: saturate(0.8); }
+  75% { opacity: 1; filter: contrast(1.1); }
+}
+
+@keyframes pm-fortissimo-static {
+  0%, 100% { background-position: 0 0; }
+  10% { background-position: 5% 10%; }
+  20% { background-position: -5% 5%; }
+  30% { background-position: 10% -5%; }
+  40% { background-position: -10% 15%; }
+  50% { background-position: 15% 0%; }
+  60% { background-position: 0% -10%; }
+  70% { background-position: -15% 10%; }
+  80% { background-position: 10% 5%; }
+  90% { background-position: 5% -15%; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SHAKE / VIBRATE / EARTHQUAKE
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-shake-violent {
+  0%, 100% { transform: translate(0); }
+  10% { transform: translate(-8px, 4px) rotate(-2deg); }
+  20% { transform: translate(8px, -4px) rotate(2deg); }
+  30% { transform: translate(-6px, -6px) rotate(-1deg); }
+  40% { transform: translate(6px, 6px) rotate(1deg); }
+  50% { transform: translate(-4px, 2px) rotate(0deg); }
+  60% { transform: translate(4px, -2px) rotate(-1deg); }
+  70% { transform: translate(-2px, 4px) rotate(1deg); }
+  80% { transform: translate(2px, -4px) rotate(0deg); }
+  90% { transform: translate(-1px, 1px) rotate(-0.5deg); }
+}
+
+@keyframes pm-fortissimo-earthquake {
+  0%, 100% { transform: translate(0) rotate(0); }
+  2% { transform: translate(-10px, 5px) rotate(-1deg); }
+  4% { transform: translate(10px, -5px) rotate(1deg); }
+  6% { transform: translate(-8px, -8px) rotate(-0.5deg); }
+  8% { transform: translate(8px, 8px) rotate(0.5deg); }
+  10% { transform: translate(-12px, 3px) rotate(-1.5deg); }
+  12% { transform: translate(12px, -3px) rotate(1.5deg); }
+  14% { transform: translate(-6px, 6px) rotate(0); }
+  16% { transform: translate(6px, -6px) rotate(0); }
+  18% { transform: translate(0, 4px) rotate(0.5deg); }
+  20% { transform: translate(0, -4px) rotate(-0.5deg); }
+}
+
+@keyframes pm-fortissimo-vibrate {
+  0% { transform: translate(0); }
+  25% { transform: translate(1px, 1px); }
+  50% { transform: translate(-1px, -1px); }
+  75% { transform: translate(1px, -1px); }
+  100% { transform: translate(-1px, 1px); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PULSE / FLASH / STROBE
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-strobe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pm-fortissimo-strobe-color {
+  0% { background: #ff0000; }
+  14% { background: #ff7f00; }
+  28% { background: #ffff00; }
+  42% { background: #00ff00; }
+  56% { background: #0000ff; }
+  70% { background: #4b0082; }
+  84% { background: #9400d3; }
+  100% { background: #ff0000; }
+}
+
+@keyframes pm-fortissimo-flash-white {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(3); }
+}
+
+@keyframes pm-fortissimo-flash-blind {
+  0% { filter: brightness(5) contrast(0); }
+  100% { filter: brightness(1) contrast(1); }
+}
+
+@keyframes pm-fortissimo-neon-flicker {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  5% { opacity: 0.8; filter: brightness(0.8); }
+  10% { opacity: 1; filter: brightness(1.2); }
+  15% { opacity: 0.6; filter: brightness(0.6); }
+  20% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.9; filter: brightness(0.9); }
+  55% { opacity: 1; filter: brightness(1.1); }
+  70% { opacity: 0.7; filter: brightness(0.7); }
+  75% { opacity: 1; filter: brightness(1.3); }
+  80% { opacity: 0.8; filter: brightness(0.9); }
+}
+
+@keyframes pm-fortissimo-pulse-extreme {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  25% { transform: scale(1.3); filter: brightness(1.5); }
+  50% { transform: scale(0.9); filter: brightness(0.8); }
+  75% { transform: scale(1.2); filter: brightness(1.3); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   WARP / DISTORT / MORPH
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-warp {
+  0%, 100% { transform: perspective(500px) rotateX(0deg) rotateY(0deg); }
+  25% { transform: perspective(500px) rotateX(10deg) rotateY(-10deg); }
+  50% { transform: perspective(500px) rotateX(-10deg) rotateY(10deg); }
+  75% { transform: perspective(500px) rotateX(5deg) rotateY(-5deg); }
+}
+
+@keyframes pm-fortissimo-wobble-extreme {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  15% { transform: rotate(-15deg) scale(1.1); }
+  30% { transform: rotate(12deg) scale(0.9); }
+  45% { transform: rotate(-9deg) scale(1.05); }
+  60% { transform: rotate(6deg) scale(0.95); }
+  75% { transform: rotate(-3deg) scale(1.02); }
+}
+
+@keyframes pm-fortissimo-rubber-band {
+  0% { transform: scale(1, 1); }
+  30% { transform: scale(1.25, 0.75); }
+  40% { transform: scale(0.75, 1.25); }
+  50% { transform: scale(1.15, 0.85); }
+  65% { transform: scale(0.95, 1.05); }
+  75% { transform: scale(1.05, 0.95); }
+  100% { transform: scale(1, 1); }
+}
+
+@keyframes pm-fortissimo-jello {
+  0%, 100% { transform: skewX(0deg) skewY(0deg); }
+  11% { transform: skewX(-12.5deg) skewY(-12.5deg); }
+  22% { transform: skewX(6.25deg) skewY(6.25deg); }
+  33% { transform: skewX(-3.125deg) skewY(-3.125deg); }
+  44% { transform: skewX(1.5625deg) skewY(1.5625deg); }
+  55% { transform: skewX(-0.78125deg) skewY(-0.78125deg); }
+  66% { transform: skewX(0.390625deg) skewY(0.390625deg); }
+  77% { transform: skewX(-0.1953125deg) skewY(-0.1953125deg); }
+}
+
+@keyframes pm-fortissimo-morph-blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  20% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  40% { border-radius: 50% 50% 30% 70% / 40% 70% 30% 60%; }
+  60% { border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; }
+  80% { border-radius: 70% 30% 50% 50% / 30% 50% 50% 70%; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SPIN / SPIRAL / VORTEX
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-spin-crazy {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(270deg) scale(1.2); }
+  50% { transform: rotate(540deg) scale(0.8); }
+  75% { transform: rotate(810deg) scale(1.1); }
+  100% { transform: rotate(1080deg) scale(1); }
+}
+
+@keyframes pm-fortissimo-spiral-in {
+  0% { transform: rotate(0deg) scale(0) translateX(100px); opacity: 0; }
+  100% { transform: rotate(720deg) scale(1) translateX(0); opacity: 1; }
+}
+
+@keyframes pm-fortissimo-spiral-out {
+  0% { transform: rotate(0deg) scale(1) translateX(0); opacity: 1; }
+  100% { transform: rotate(-720deg) scale(0) translateX(-100px); opacity: 0; }
+}
+
+@keyframes pm-fortissimo-vortex {
+  0% { transform: rotate(0deg) scale(1); filter: blur(0); }
+  50% { transform: rotate(360deg) scale(0.5); filter: blur(5px); }
+  100% { transform: rotate(720deg) scale(1); filter: blur(0); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BOUNCE EXTREME
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-bounce-crazy {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  10% { transform: translateY(-80px) scale(0.9, 1.1); }
+  20% { transform: translateY(0) scale(1.1, 0.9); }
+  30% { transform: translateY(-50px) scale(0.95, 1.05); }
+  40% { transform: translateY(0) scale(1.05, 0.95); }
+  50% { transform: translateY(-30px) scale(0.98, 1.02); }
+  60% { transform: translateY(0) scale(1.02, 0.98); }
+  70% { transform: translateY(-15px) scale(1, 1); }
+  80% { transform: translateY(0); }
+  90% { transform: translateY(-5px); }
+}
+
+@keyframes pm-fortissimo-bounce-elastic {
+  0% { transform: scale(0); }
+  16% { transform: scale(1.32); }
+  28% { transform: scale(0.87); }
+  44% { transform: scale(1.15); }
+  59% { transform: scale(0.95); }
+  73% { transform: scale(1.05); }
+  88% { transform: scale(0.99); }
+  100% { transform: scale(1); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CELEBRATION / CONFETTI / PARTICLES
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-confetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(500px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes pm-fortissimo-firework {
+  0% { transform: scale(0); opacity: 1; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes pm-fortissimo-sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes pm-fortissimo-explode-particles {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--x, 100px), var(--y, -100px)) scale(0); opacity: 0; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   AUDIO CHAOS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-fortissimo-bass-drop {
+  0% { transform: scale(1); filter: brightness(1); }
+  10% { transform: scale(1.5); filter: brightness(2); }
+  30% { transform: scale(0.8); filter: brightness(0.8); }
+  50% { transform: scale(1.2); filter: brightness(1.2); }
+  70% { transform: scale(0.95); filter: brightness(1); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes pm-fortissimo-beat-slam {
+  0%, 100% { transform: scale(1) translateY(0); }
+  5% { transform: scale(1.2) translateY(-10px); }
+  15% { transform: scale(0.9) translateY(5px); }
+  30% { transform: scale(1.05) translateY(-2px); }
+  50% { transform: scale(1) translateY(0); }
+}
+
+@keyframes pm-fortissimo-sub-wobble {
+  0%, 100% { transform: skewX(0deg); }
+  25% { transform: skewX(-5deg); }
+  75% { transform: skewX(5deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FORTISSIMO PRESETS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Explosive */
+  --pm-fortissimo-preset-explode-in: pm-fortissimo-explode-in var(--pm-fortissimo-dur-144) var(--pm-fortissimo-ease-elastic-out) var(--pm-fortissimo-fill-both);
+  --pm-fortissimo-preset-slam-in: pm-fortissimo-slam-in var(--pm-fortissimo-dur-128) var(--pm-fortissimo-ease-bounce-wild) var(--pm-fortissimo-fill-both);
+  --pm-fortissimo-preset-burst-in: pm-fortissimo-burst-in var(--pm-fortissimo-dur-112) var(--pm-fortissimo-ease-spring-crazy) var(--pm-fortissimo-fill-both);
+  --pm-fortissimo-preset-warp-in: pm-fortissimo-warp-in var(--pm-fortissimo-dur-160) var(--pm-fortissimo-ease-elastic-out-wild) var(--pm-fortissimo-fill-both);
+  --pm-fortissimo-preset-teleport: pm-fortissimo-teleport-in var(--pm-fortissimo-dur-176) var(--pm-fortissimo-ease-elastic-crazy) var(--pm-fortissimo-fill-both);
+
+  /* Glitch */
+  --pm-fortissimo-preset-glitch: pm-fortissimo-glitch var(--pm-fortissimo-dur-128) var(--pm-fortissimo-ease-step-8) infinite;
+  --pm-fortissimo-preset-glitch-hard: pm-fortissimo-glitch-hard var(--pm-fortissimo-dur-096) var(--pm-fortissimo-ease-step-4) infinite;
+  --pm-fortissimo-preset-glitch-text: pm-fortissimo-glitch-text var(--pm-fortissimo-dur-112) var(--pm-fortissimo-ease-step-6) infinite;
+  --pm-fortissimo-preset-vhs: pm-fortissimo-vhs var(--pm-fortissimo-dur-144) var(--pm-fortissimo-ease-step-12) infinite;
+
+  /* Shake */
+  --pm-fortissimo-preset-shake-violent: pm-fortissimo-shake-violent var(--pm-fortissimo-dur-096) var(--pm-fortissimo-ease-linear) 1;
+  --pm-fortissimo-preset-earthquake: pm-fortissimo-earthquake var(--pm-fortissimo-dur-128) var(--pm-fortissimo-ease-linear) 1;
+  --pm-fortissimo-preset-vibrate: pm-fortissimo-vibrate var(--pm-fortissimo-dur-032) var(--pm-fortissimo-ease-linear) infinite;
+
+  /* Flash */
+  --pm-fortissimo-preset-strobe: pm-fortissimo-strobe var(--pm-fortissimo-dur-048) var(--pm-fortissimo-ease-step-2) infinite;
+  --pm-fortissimo-preset-strobe-color: pm-fortissimo-strobe-color var(--pm-fortissimo-dur-144) var(--pm-fortissimo-ease-step-8) infinite;
+  --pm-fortissimo-preset-flash-white: pm-fortissimo-flash-white var(--pm-fortissimo-dur-064) var(--pm-fortissimo-ease-expo-out) 1;
+  --pm-fortissimo-preset-neon-flicker: pm-fortissimo-neon-flicker var(--pm-fortissimo-dur-176) var(--pm-fortissimo-ease-step-16) infinite;
+  --pm-fortissimo-preset-pulse-extreme: pm-fortissimo-pulse-extreme var(--pm-fortissimo-dur-128) var(--pm-fortissimo-ease-sine-in-out) infinite;
+
+  /* Warp */
+  --pm-fortissimo-preset-warp: pm-fortissimo-warp var(--pm-fortissimo-dur-192) var(--pm-fortissimo-ease-sine-in-out) infinite;
+  --pm-fortissimo-preset-wobble: pm-fortissimo-wobble-extreme var(--pm-fortissimo-dur-144) var(--pm-fortissimo-ease-default) 1;
+  --pm-fortissimo-preset-rubber: pm-fortissimo-rubber-band var(--pm-fortissimo-dur-160) var(--pm-fortissimo-ease-default) 1;
+  --pm-fortissimo-preset-jello: pm-fortissimo-jello var(--pm-fortissimo-dur-176) var(--pm-fortissimo-ease-default) 1;
+  --pm-fortissimo-preset-blob: pm-fortissimo-morph-blob var(--pm-fortissimo-dur-224) var(--pm-fortissimo-ease-sine-in-out) infinite;
+
+  /* Spin */
+  --pm-fortissimo-preset-spin-crazy: pm-fortissimo-spin-crazy var(--pm-fortissimo-dur-176) var(--pm-fortissimo-ease-default) infinite;
+  --pm-fortissimo-preset-spiral-in: pm-fortissimo-spiral-in var(--pm-fortissimo-dur-192) var(--pm-fortissimo-ease-expo-out) var(--pm-fortissimo-fill-both);
+  --pm-fortissimo-preset-vortex: pm-fortissimo-vortex var(--pm-fortissimo-dur-208) var(--pm-fortissimo-ease-sine-in-out) infinite;
+
+  /* Bounce */
+  --pm-fortissimo-preset-bounce-crazy: pm-fortissimo-bounce-crazy var(--pm-fortissimo-dur-192) var(--pm-fortissimo-ease-default) 1;
+  --pm-fortissimo-preset-bounce-elastic: pm-fortissimo-bounce-elastic var(--pm-fortissimo-dur-160) var(--pm-fortissimo-ease-default) var(--pm-fortissimo-fill-both);
+
+  /* Celebration */
+  --pm-fortissimo-preset-confetti: pm-fortissimo-confetti var(--pm-fortissimo-dur-208) var(--pm-fortissimo-ease-linear) 1;
+  --pm-fortissimo-preset-firework: pm-fortissimo-firework var(--pm-fortissimo-dur-144) var(--pm-fortissimo-ease-expo-out) 1;
+  --pm-fortissimo-preset-sparkle: pm-fortissimo-sparkle var(--pm-fortissimo-dur-128) var(--pm-fortissimo-ease-sine-in-out) infinite;
+
+  /* Audio */
+  --pm-fortissimo-preset-bass-drop: pm-fortissimo-bass-drop var(--pm-fortissimo-dur-128) var(--pm-fortissimo-ease-expo-out) 1;
+  --pm-fortissimo-preset-beat-slam: pm-fortissimo-beat-slam var(--pm-fortissimo-dur-096) var(--pm-fortissimo-ease-expo-out) 1;
+  --pm-fortissimo-preset-sub-wobble: pm-fortissimo-sub-wobble var(--pm-fortissimo-dur-064) var(--pm-fortissimo-ease-sine-in-out) infinite;
+}

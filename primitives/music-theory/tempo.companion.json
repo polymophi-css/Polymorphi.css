@@ -1,0 +1,80 @@
+{
+  "name": "tempo",
+  "version": "1.0.0",
+  "category": "music-theory",
+  "description": "BPM and tempo markings",
+  "bindings": {
+    "bpm": "--pm-aud-bpm-{index}",
+    "timing": "--pm-aud-timing-{index}",
+    "color": "--pm-{color}-base-{index}"
+  },
+  "markings": {
+    "larghissimo": {
+      "min": 1,
+      "max": 24
+    },
+    "grave": {
+      "min": 25,
+      "max": 45
+    },
+    "largo": {
+      "min": 40,
+      "max": 60
+    },
+    "lento": {
+      "min": 45,
+      "max": 60
+    },
+    "larghetto": {
+      "min": 60,
+      "max": 66
+    },
+    "adagio": {
+      "min": 66,
+      "max": 76
+    },
+    "andante": {
+      "min": 76,
+      "max": 108
+    },
+    "moderato": {
+      "min": 108,
+      "max": 120
+    },
+    "allegretto": {
+      "min": 112,
+      "max": 120
+    },
+    "allegro": {
+      "min": 120,
+      "max": 156
+    },
+    "vivace": {
+      "min": 156,
+      "max": 176
+    },
+    "presto": {
+      "min": 168,
+      "max": 200
+    },
+    "prestissimo": {
+      "min": 200,
+      "max": 300
+    }
+  },
+  "behaviors": {
+    "tap": "detect",
+    "sync": "external"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "slider"
+  },
+  "relationships": [
+    "transport",
+    "time-signatures",
+    "sync"
+  ]
+}

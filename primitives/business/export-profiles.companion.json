@@ -1,0 +1,41 @@
+{
+  "name": "export-profiles",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Export preset management",
+  "bindings": {
+    "listItemHeight": "--pm-size-h-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "selectedBackground": "--pm-{color}-base-{index}",
+    "iconColor": "--pm-{color}-mute-{index}",
+    "labelSize": "--pm-type-size-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}"
+  },
+  "presets": [
+    "streaming",
+    "club",
+    "instrumental",
+    "stems",
+    "sync",
+    "press"
+  ],
+  "behaviors": {
+    "select": "apply",
+    "edit": "modal",
+    "create": "duplicate"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "listbox",
+    "aria": [
+      "aria-selected"
+    ]
+  },
+  "relationships": [
+    "select",
+    "modal",
+    "button"
+  ]
+}

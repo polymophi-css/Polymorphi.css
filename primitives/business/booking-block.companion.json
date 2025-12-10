@@ -1,0 +1,40 @@
+{
+  "name": "booking-block",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Contact and booking information card",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "avatarSize": "--pm-size-w-{index}",
+    "labelSize": "--pm-type-size-{index}",
+    "valueSize": "--pm-type-size-{index}",
+    "iconColor": "--pm-{color}-mute-{index}",
+    "linkColor": "--pm-{color}-vivid-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "fields": [
+    "booking",
+    "management",
+    "press",
+    "legal"
+  ],
+  "behaviors": {
+    "copy": "clipboard",
+    "link": "external"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "region",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "card",
+    "avatar",
+    "button"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "oscillator",
+  "version": "1.0.0",
+  "category": "synthesis",
+  "description": "Sound source oscillator",
+  "bindings": {
+    "pitch": "--pm-music-midi-{index}",
+    "fine": "--pm-aud-pan-{index}",
+    "waveColor": "--pm-{color}-vivid-{index}",
+    "level": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "waveform": [
+      "sine",
+      "saw",
+      "square",
+      "triangle",
+      "noise",
+      "wavetable"
+    ],
+    "sync": "toggle",
+    "fm": "modulatable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "envelope",
+    "filter",
+    "lfo"
+  ]
+}

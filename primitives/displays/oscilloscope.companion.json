@@ -1,0 +1,37 @@
+{
+  "name": "oscilloscope",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "Time-domain signal visualization",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "traceColor": "--pm-{color}-vivid-{index}",
+    "gridColor": "--pm-{color}-mute-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "triggerColor": "--pm-ylw-vivid-{index}"
+  },
+  "behaviors": {
+    "trigger": [
+      "auto",
+      "normal",
+      "single"
+    ],
+    "timebase": "adjustable",
+    "zoom": "scalable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "img",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "synthesis",
+    "waveform",
+    "debug"
+  ]
+}

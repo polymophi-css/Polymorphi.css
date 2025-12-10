@@ -1,0 +1,37 @@
+{
+  "name": "select",
+  "version": "1.0.0",
+  "category": "forms",
+  "description": "Select dropdown",
+  "bindings": {
+    "height": "--pm-size-h-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "fontSize": "--pm-type-size-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "borderWidth": "--pm-border-w-{index}",
+    "borderColor": "--pm-{color}-mute-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "iconColor": "--pm-{color}-mute-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "search": "filterable",
+    "multi": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "combobox",
+    "aria": [
+      "aria-expanded",
+      "aria-activedescendant"
+    ]
+  },
+  "relationships": [
+    "dropdown",
+    "label",
+    "form"
+  ]
+}

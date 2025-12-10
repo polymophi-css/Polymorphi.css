@@ -1,0 +1,33 @@
+{
+  "name": "table",
+  "version": "1.0.0",
+  "category": "data-display",
+  "description": "Data table",
+  "bindings": {
+    "background": "--pm-{color}-shade-{index}",
+    "headerBackground": "--pm-{color}-base-{index}",
+    "rowHover": "--pm-{color}-shade-{index}",
+    "borderColor": "--pm-{color}-mute-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "fontSize": "--pm-type-size-{index}"
+  },
+  "behaviors": {
+    "sort": "column",
+    "select": "row",
+    "paginate": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "table",
+    "aria": [
+      "aria-sort"
+    ]
+  },
+  "relationships": [
+    "pagination",
+    "checkbox"
+  ]
+}

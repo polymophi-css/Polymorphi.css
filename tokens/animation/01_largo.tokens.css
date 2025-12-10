@@ -1,0 +1,523 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI ANIMATION TIER 01: LARGO
+   ═══════════════════════════════════════════════════════════════════════════
+   Complexity: 1 (Simplest)
+   Tempo: 40-60 BPM equivalent
+   Character: Very slow, broad, stately
+   Use: Page transitions, dramatic reveals, hero animations, loading states
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.01 DURATION SCALE (256 values)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-dur-000: 500ms;      /* Base minimum                            */
+  --pm-largo-dur-016: 600ms;      /* ████░░░░░░░░░░░░                         */
+  --pm-largo-dur-032: 700ms;      /* ████████░░░░░░░░                         */
+  --pm-largo-dur-048: 800ms;      /* ████████████░░░░                         */
+  --pm-largo-dur-064: 900ms;      /* ████████████████                         */
+  --pm-largo-dur-080: 1000ms;     /* 1 second                                */
+  --pm-largo-dur-096: 1200ms;     /* Extended                                */
+  --pm-largo-dur-112: 1400ms;     /* Long                                    */
+  --pm-largo-dur-128: 1600ms;     /* Center point                            */
+  --pm-largo-dur-144: 1800ms;     /* Very long                               */
+  --pm-largo-dur-160: 2000ms;     /* 2 seconds                               */
+  --pm-largo-dur-176: 2400ms;     /* Dramatic                                */
+  --pm-largo-dur-192: 2800ms;     /* Cinematic                               */
+  --pm-largo-dur-208: 3200ms;     /* Epic                                    */
+  --pm-largo-dur-224: 4000ms;     /* Grand                                   */
+  --pm-largo-dur-240: 5000ms;     /* Monumental                              */
+  --pm-largo-dur-255: 6000ms;     /* Maximum                                 */
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.02 EASING - STANDARD
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-linear: linear;
+  --pm-largo-ease-default: ease;
+  --pm-largo-ease-in: ease-in;
+  --pm-largo-ease-out: ease-out;
+  --pm-largo-ease-in-out: ease-in-out;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.03 EASING - SINE (Gentle, organic)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-sine-in: cubic-bezier(0.12, 0, 0.39, 0);
+  --pm-largo-ease-sine-out: cubic-bezier(0.61, 1, 0.88, 1);
+  --pm-largo-ease-sine-in-out: cubic-bezier(0.37, 0, 0.63, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.04 EASING - QUAD (Subtle acceleration)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-quad-in: cubic-bezier(0.11, 0, 0.5, 0);
+  --pm-largo-ease-quad-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --pm-largo-ease-quad-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.05 EASING - CUBIC (Standard)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-cubic-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --pm-largo-ease-cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --pm-largo-ease-cubic-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.06 EASING - QUART (Pronounced)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-quart-in: cubic-bezier(0.5, 0, 0.75, 0);
+  --pm-largo-ease-quart-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --pm-largo-ease-quart-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.07 EASING - QUINT (Dramatic)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-quint-in: cubic-bezier(0.64, 0, 0.78, 0);
+  --pm-largo-ease-quint-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --pm-largo-ease-quint-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.08 EASING - EXPO (Extreme)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-expo-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --pm-largo-ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pm-largo-ease-expo-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.09 EASING - CIRC (Circular)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-circ-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --pm-largo-ease-circ-out: cubic-bezier(0, 0.55, 0.45, 1);
+  --pm-largo-ease-circ-in-out: cubic-bezier(0.85, 0, 0.15, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.10 EASING - BACK (Overshoot)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-ease-back-in: cubic-bezier(0.36, 0, 0.66, -0.56);
+  --pm-largo-ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --pm-largo-ease-back-in-out: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.11 DELAY SCALE
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-delay-000: 0ms;
+  --pm-largo-delay-032: 100ms;
+  --pm-largo-delay-064: 200ms;
+  --pm-largo-delay-096: 400ms;
+  --pm-largo-delay-128: 600ms;
+  --pm-largo-delay-160: 800ms;
+  --pm-largo-delay-192: 1000ms;
+  --pm-largo-delay-224: 1500ms;
+  --pm-largo-delay-255: 2000ms;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.12 STAGGER INCREMENTS (for sequenced animations)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-stagger-001: 50ms;
+  --pm-largo-stagger-002: 100ms;
+  --pm-largo-stagger-003: 150ms;
+  --pm-largo-stagger-004: 200ms;
+  --pm-largo-stagger-005: 300ms;
+  --pm-largo-stagger-006: 400ms;
+  --pm-largo-stagger-007: 500ms;
+  --pm-largo-stagger-008: 750ms;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.13 ITERATION COUNTS
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-iter-001: 1;
+  --pm-largo-iter-002: 2;
+  --pm-largo-iter-003: 3;
+  --pm-largo-iter-004: 4;
+  --pm-largo-iter-005: 5;
+  --pm-largo-iter-inf: infinite;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.14 DIRECTION
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-dir-normal: normal;
+  --pm-largo-dir-reverse: reverse;
+  --pm-largo-dir-alternate: alternate;
+  --pm-largo-dir-alternate-rev: alternate-reverse;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.15 FILL MODE
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-fill-none: none;
+  --pm-largo-fill-forwards: forwards;
+  --pm-largo-fill-backwards: backwards;
+  --pm-largo-fill-both: both;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     01.16 PLAY STATE
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-largo-state-running: running;
+  --pm-largo-state-paused: paused;
+
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LARGO KEYFRAMES - Tier 1 Animations (Slow, Stately)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FADE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pm-largo-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes pm-largo-fade-in-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pm-largo-fade-in-down {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pm-largo-fade-in-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pm-largo-fade-in-right {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pm-largo-fade-in-scale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pm-largo-fade-out-scale {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.9); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SLIDE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-slide-in-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes pm-largo-slide-in-down {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes pm-largo-slide-in-left {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pm-largo-slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pm-largo-slide-out-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+@keyframes pm-largo-slide-out-down {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+
+@keyframes pm-largo-slide-out-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes pm-largo-slide-out-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SCALE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-scale-in {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes pm-largo-scale-out {
+  from { transform: scale(1); }
+  to { transform: scale(0); }
+}
+
+@keyframes pm-largo-scale-in-center {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pm-largo-scale-up {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
+
+@keyframes pm-largo-scale-down {
+  from { transform: scale(1.5); }
+  to { transform: scale(1); }
+}
+
+@keyframes pm-largo-grow-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes pm-largo-grow-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes pm-largo-shrink-x {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+@keyframes pm-largo-shrink-y {
+  from { transform: scaleY(1); }
+  to { transform: scaleY(0); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ROTATE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-rotate-in {
+  from { transform: rotate(-180deg); opacity: 0; }
+  to { transform: rotate(0deg); opacity: 1; }
+}
+
+@keyframes pm-largo-rotate-out {
+  from { transform: rotate(0deg); opacity: 1; }
+  to { transform: rotate(180deg); opacity: 0; }
+}
+
+@keyframes pm-largo-rotate-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pm-largo-rotate-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes pm-largo-rotate-x {
+  from { transform: rotateX(-90deg); }
+  to { transform: rotateX(0deg); }
+}
+
+@keyframes pm-largo-rotate-y {
+  from { transform: rotateY(-90deg); }
+  to { transform: rotateY(0deg); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   REVEAL ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-reveal-up {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes pm-largo-reveal-down {
+  from { clip-path: inset(0 0 100% 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes pm-largo-reveal-left {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes pm-largo-reveal-right {
+  from { clip-path: inset(0 0 0 100%); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes pm-largo-reveal-center-h {
+  from { clip-path: inset(0 50% 0 50%); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes pm-largo-reveal-center-v {
+  from { clip-path: inset(50% 0 50% 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes pm-largo-reveal-circle {
+  from { clip-path: circle(0% at 50% 50%); }
+  to { clip-path: circle(100% at 50% 50%); }
+}
+
+@keyframes pm-largo-reveal-ellipse {
+  from { clip-path: ellipse(0% 0% at 50% 50%); }
+  to { clip-path: ellipse(100% 100% at 50% 50%); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BLUR ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-blur-in {
+  from { filter: blur(20px); opacity: 0; }
+  to { filter: blur(0); opacity: 1; }
+}
+
+@keyframes pm-largo-blur-out {
+  from { filter: blur(0); opacity: 1; }
+  to { filter: blur(20px); opacity: 0; }
+}
+
+@keyframes pm-largo-blur-in-up {
+  from { filter: blur(10px); opacity: 0; transform: translateY(30px); }
+  to { filter: blur(0); opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pm-largo-blur-in-down {
+  from { filter: blur(10px); opacity: 0; transform: translateY(-30px); }
+  to { filter: blur(0); opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MORPH ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-morph-circle {
+  from { border-radius: 0; }
+  to { border-radius: 50%; }
+}
+
+@keyframes pm-largo-morph-square {
+  from { border-radius: 50%; }
+  to { border-radius: 0; }
+}
+
+@keyframes pm-largo-morph-blob {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GLOW ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+  50% { box-shadow: 0 0 40px rgba(255,255,255,0.5); }
+}
+
+@keyframes pm-largo-glow-breathe {
+  0%, 100% { box-shadow: 0 0 10px rgba(255,255,255,0.1); opacity: 0.8; }
+  50% { box-shadow: 0 0 30px rgba(255,255,255,0.4); opacity: 1; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FLOAT ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pm-largo-float-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+@keyframes pm-largo-float-rotate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes pm-largo-drift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10px, -10px); }
+  50% { transform: translate(0, -20px); }
+  75% { transform: translate(-10px, -10px); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BREATHE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pm-largo-breathe-deep {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes pm-largo-heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   WAVE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pm-largo-wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+@keyframes pm-largo-sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LARGO PRESETS - Ready-to-use animation shorthand
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Fade Presets */
+  --pm-largo-preset-fade-in: pm-largo-fade-in var(--pm-largo-dur-128) var(--pm-largo-ease-sine-out) var(--pm-largo-fill-both);
+  --pm-largo-preset-fade-out: pm-largo-fade-out var(--pm-largo-dur-128) var(--pm-largo-ease-sine-in) var(--pm-largo-fill-both);
+  --pm-largo-preset-fade-in-up: pm-largo-fade-in-up var(--pm-largo-dur-160) var(--pm-largo-ease-cubic-out) var(--pm-largo-fill-both);
+  --pm-largo-preset-fade-in-down: pm-largo-fade-in-down var(--pm-largo-dur-160) var(--pm-largo-ease-cubic-out) var(--pm-largo-fill-both);
+
+  /* Slide Presets */
+  --pm-largo-preset-slide-in-up: pm-largo-slide-in-up var(--pm-largo-dur-176) var(--pm-largo-ease-quart-out) var(--pm-largo-fill-both);
+  --pm-largo-preset-slide-in-left: pm-largo-slide-in-left var(--pm-largo-dur-176) var(--pm-largo-ease-quart-out) var(--pm-largo-fill-both);
+
+  /* Scale Presets */
+  --pm-largo-preset-scale-in: pm-largo-scale-in-center var(--pm-largo-dur-160) var(--pm-largo-ease-back-out) var(--pm-largo-fill-both);
+
+  /* Reveal Presets */
+  --pm-largo-preset-reveal-up: pm-largo-reveal-up var(--pm-largo-dur-192) var(--pm-largo-ease-expo-out) var(--pm-largo-fill-both);
+  --pm-largo-preset-reveal-circle: pm-largo-reveal-circle var(--pm-largo-dur-208) var(--pm-largo-ease-expo-out) var(--pm-largo-fill-both);
+
+  /* Continuous Presets */
+  --pm-largo-preset-float: pm-largo-float var(--pm-largo-dur-224) var(--pm-largo-ease-sine-in-out) infinite;
+  --pm-largo-preset-breathe: pm-largo-breathe var(--pm-largo-dur-208) var(--pm-largo-ease-sine-in-out) infinite;
+  --pm-largo-preset-glow: pm-largo-glow-breathe var(--pm-largo-dur-224) var(--pm-largo-ease-sine-in-out) infinite;
+}

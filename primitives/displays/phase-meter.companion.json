@@ -1,0 +1,36 @@
+{
+  "name": "phase-meter",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "Phase correlation display",
+  "bindings": {
+    "correlation": "--pm-aud-pan-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "positiveColor": "--pm-grn-vivid-{index}",
+    "negativeColor": "--pm-red-vivid-{index}",
+    "needleColor": "--pm-{color}-base-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "response": "averaged",
+    "scale": [
+      "numeric",
+      "visual"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "meter",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "master",
+    "stereo",
+    "imaging"
+  ]
+}

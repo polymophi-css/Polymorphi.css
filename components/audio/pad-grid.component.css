@@ -1,0 +1,269 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI COMPONENT: PAD GRID / SAMPLER
+   ═══════════════════════════════════════════════════════════════════════════
+   Primitives: sampler-grid, pad, dynamics, button
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.pm-pad-grid {
+  display: flex;
+  flex-direction: column;
+  background: var(--pm-gry-shade-016);
+  border-radius: var(--pm-border-radius-008);
+  padding: var(--pm-space-padding-008);
+  gap: var(--pm-space-gap-008);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GRID HEADER
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-pad-grid__header {
+  display: flex;
+  align-items: center;
+  gap: var(--pm-space-gap-008);
+}
+
+.pm-pad-grid__title {
+  font-size: var(--pm-type-size-012);
+  font-weight: var(--pm-type-weight-128);
+  color: var(--pm-wht-base-200);
+}
+
+.pm-pad-grid__bank {
+  display: flex;
+  gap: var(--pm-space-gap-002);
+}
+
+.pm-pad-grid__bank-btn {
+  width: var(--pm-size-w-020);
+  height: var(--pm-size-h-020);
+  border: var(--pm-border-w-001) solid var(--pm-gry-mute-064);
+  border-radius: var(--pm-border-radius-004);
+  background: var(--pm-gry-shade-024);
+  color: var(--pm-gry-base-160);
+  font-size: var(--pm-type-size-009);
+  cursor: pointer;
+}
+
+.pm-pad-grid__bank-btn.active {
+  border-color: var(--pm-blu-vivid-128);
+  background: var(--pm-blu-shade-048);
+  color: var(--pm-blu-vivid-192);
+}
+
+.pm-pad-grid__mode {
+  display: flex;
+  gap: var(--pm-space-gap-002);
+  margin-left: auto;
+}
+
+.pm-pad-grid__mode-btn {
+  height: var(--pm-size-h-020);
+  padding: 0 var(--pm-space-padding-006);
+  border: var(--pm-border-w-001) solid var(--pm-gry-mute-048);
+  border-radius: var(--pm-border-radius-004);
+  background: var(--pm-gry-shade-024);
+  color: var(--pm-gry-base-160);
+  font-size: var(--pm-type-size-008);
+  cursor: pointer;
+}
+
+.pm-pad-grid__mode-btn.active {
+  border-color: var(--pm-pur-vivid-128);
+  background: var(--pm-pur-shade-048);
+  color: var(--pm-pur-vivid-192);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PADS CONTAINER
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-pad-grid__pads {
+  display: grid;
+  gap: var(--pm-space-gap-004);
+}
+
+.pm-pad-grid__pads--4x4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pm-pad-grid__pads--8x8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.pm-pad-grid__pads--4x8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   INDIVIDUAL PAD
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-pad-grid__pad {
+  aspect-ratio: 1;
+  min-width: var(--pm-size-w-048);
+  background: var(--pm-gry-shade-032);
+  border: var(--pm-border-w-002) solid var(--pm-gry-mute-064);
+  border-radius: var(--pm-border-radius-008);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--pm-motion-dur-008), box-shadow var(--pm-motion-dur-008);
+}
+
+.pm-pad-grid__pad:hover {
+  border-color: var(--pm-gry-mute-096);
+}
+
+.pm-pad-grid__pad:active,
+.pm-pad-grid__pad--active {
+  transform: scale(var(--pm-tf-scale-245));
+  border-color: var(--pm-wht-base-200);
+}
+
+.pm-pad-grid__pad--playing {
+  box-shadow: 
+    0 0 var(--pm-fx-shadow-blur-008) var(--pad-color, var(--pm-blu-vivid-128)),
+    inset 0 0 var(--pm-fx-shadow-blur-016) var(--pad-color, var(--pm-blu-alpha-064));
+}
+
+.pm-pad-grid__pad--loaded {
+  background: var(--pad-color, var(--pm-blu-shade-048));
+  border-color: var(--pad-color, var(--pm-blu-base-096));
+}
+
+.pm-pad-grid__pad--empty {
+  border-style: dashed;
+  background: var(--pm-gry-shade-016);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PAD CONTENT
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-pad-grid__pad-label {
+  position: absolute;
+  top: var(--pm-space-inset-004);
+  left: var(--pm-space-inset-004);
+  font-size: var(--pm-type-size-008);
+  color: var(--pm-wht-alpha-192);
+}
+
+.pm-pad-grid__pad-name {
+  position: absolute;
+  bottom: var(--pm-space-inset-004);
+  left: var(--pm-space-inset-004);
+  right: var(--pm-space-inset-004);
+  font-size: var(--pm-type-size-008);
+  color: var(--pm-wht-base-200);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pm-pad-grid__pad-velocity {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--pm-size-h-003);
+  background: var(--pm-gry-shade-016);
+}
+
+.pm-pad-grid__pad-velocity-fill {
+  height: 100%;
+  background: var(--pad-color, var(--pm-blu-vivid-128));
+  transition: width var(--pm-motion-dur-004);
+}
+
+.pm-pad-grid__pad-waveform {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 40%;
+  opacity: var(--pm-opacity-096);
+}
+
+.pm-pad-grid__pad-waveform svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--pm-wht-alpha-128);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PAD SETTINGS OVERLAY
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-pad-grid__pad-settings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--pm-blk-alpha-224);
+  display: flex;
+  flex-direction: column;
+  padding: var(--pm-space-padding-004);
+  gap: var(--pm-space-gap-002);
+  opacity: 0;
+  transition: opacity var(--pm-motion-dur-016);
+}
+
+.pm-pad-grid__pad:hover .pm-pad-grid__pad-settings {
+  opacity: 1;
+}
+
+.pm-pad-grid__pad-param {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--pm-type-size-007);
+  color: var(--pm-gry-base-192);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FOOTER CONTROLS
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-pad-grid__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--pm-space-gap-008);
+}
+
+.pm-pad-grid__quantize {
+  display: flex;
+  align-items: center;
+  gap: var(--pm-space-gap-004);
+}
+
+.pm-pad-grid__quantize-label {
+  font-size: var(--pm-type-size-009);
+  color: var(--pm-gry-base-160);
+}
+
+.pm-pad-grid__quantize-select {
+  height: var(--pm-size-h-020);
+  padding: 0 var(--pm-space-padding-004);
+  background: var(--pm-gry-shade-024);
+  border: var(--pm-border-w-001) solid var(--pm-gry-mute-048);
+  border-radius: var(--pm-border-radius-004);
+  color: var(--pm-wht-base-192);
+  font-size: var(--pm-type-size-009);
+}
+
+.pm-pad-grid__swing {
+  display: flex;
+  align-items: center;
+  gap: var(--pm-space-gap-002);
+}
+
+.pm-pad-grid__swing-knob {
+  width: var(--pm-size-w-020);
+  height: var(--pm-size-h-020);
+  background: var(--pm-gry-shade-048);
+  border: var(--pm-border-w-002) solid var(--pm-gry-mute-096);
+  border-radius: var(--pm-border-radius-255);
+  cursor: pointer;
+}

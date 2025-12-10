@@ -1,0 +1,31 @@
+{
+  "name": "menu",
+  "version": "1.0.0",
+  "category": "navigation",
+  "description": "Navigation menu",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "gap": "--pm-space-gap-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "hoverBackground": "--pm-{color}-base-{index}",
+    "activeBackground": "--pm-{color}-vivid-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "iconColor": "--pm-{color}-mute-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "behaviors": {
+    "nested": "expandable",
+    "icons": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "menu"
+  },
+  "relationships": [
+    "sidebar",
+    "navbar",
+    "dropdown"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "stepper",
+  "version": "1.0.0",
+  "category": "navigation",
+  "description": "Step indicator",
+  "bindings": {
+    "stepSize": "--pm-size-w-{index}",
+    "lineWidth": "--pm-border-w-{index}",
+    "completedColor": "--pm-{color}-vivid-{index}",
+    "activeColor": "--pm-{color}-base-{index}",
+    "pendingColor": "--pm-{color}-mute-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "gap": "--pm-space-gap-{index}"
+  },
+  "behaviors": {
+    "orientation": [
+      "horizontal",
+      "vertical"
+    ],
+    "clickable": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "navigation",
+    "aria": [
+      "aria-current"
+    ]
+  },
+  "relationships": [
+    "form",
+    "modal"
+  ]
+}

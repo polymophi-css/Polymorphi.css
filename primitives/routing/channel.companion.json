@@ -1,0 +1,35 @@
+{
+  "name": "channel",
+  "version": "1.0.0",
+  "category": "routing",
+  "description": "Audio channel strip",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "borderColor": "--pm-{color}-mute-{index}",
+    "selectedColor": "--pm-{color}-vivid-{index}"
+  },
+  "behaviors": {
+    "select": "highlight",
+    "arm": "toggle",
+    "solo": "exclusive",
+    "mute": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group",
+    "aria": [
+      "aria-selected"
+    ]
+  },
+  "relationships": [
+    "fader",
+    "pan",
+    "meter",
+    "send",
+    "insert"
+  ]
+}

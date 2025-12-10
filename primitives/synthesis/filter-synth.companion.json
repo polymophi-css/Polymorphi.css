@@ -1,0 +1,38 @@
+{
+  "name": "filter-synth",
+  "version": "1.0.0",
+  "category": "synthesis",
+  "description": "Synthesizer filter module",
+  "bindings": {
+    "cutoff": "--pm-aud-freq-{index}",
+    "resonance": "--pm-aud-q-{index}",
+    "envAmount": "--pm-aud-fader-{index}",
+    "keyTrack": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "lowPass",
+      "highPass",
+      "bandPass",
+      "notch"
+    ],
+    "slope": [
+      "12dB",
+      "24dB"
+    ],
+    "drive": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "oscillator",
+    "envelope",
+    "lfo"
+  ]
+}

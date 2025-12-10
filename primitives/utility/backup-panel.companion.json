@@ -1,0 +1,37 @@
+{
+  "name": "backup-panel",
+  "version": "1.0.0",
+  "category": "utility",
+  "description": "Project backup and restore interface",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "buttonSpacing": "--pm-space-gap-{index}",
+    "timestampSize": "--pm-type-size-{index}",
+    "iconSize": "--pm-size-w-{index}",
+    "successColor": "--pm-grn-vivid-{index}",
+    "warningColor": "--pm-ylw-vivid-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "export": [
+      "json",
+      "bundle"
+    ],
+    "restore": "upload",
+    "autoSave": "interval"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "region",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "button",
+    "alert",
+    "progress"
+  ]
+}

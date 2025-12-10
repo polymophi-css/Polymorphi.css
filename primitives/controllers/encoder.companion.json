@@ -1,0 +1,41 @@
+{
+  "name": "encoder",
+  "version": "1.0.0",
+  "category": "controllers",
+  "description": "Endless rotary encoder with LED ring",
+  "bindings": {
+    "value": "--pm-aud-knob-{index}",
+    "size": "--pm-size-w-{index}",
+    "ledColor": "--pm-{color}-vivid-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "ringColor": "--pm-{color}-base-{index}"
+  },
+  "behaviors": {
+    "mode": [
+      "absolute",
+      "relative"
+    ],
+    "acceleration": "velocity",
+    "push": "toggle",
+    "ledMode": [
+      "single",
+      "pan",
+      "fill",
+      "spread"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "slider",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "parameter",
+    "browser",
+    "navigation"
+  ]
+}

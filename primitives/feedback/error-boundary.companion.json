@@ -1,0 +1,27 @@
+{
+  "name": "error-boundary",
+  "version": "1.0.0",
+  "category": "feedback",
+  "description": "Error fallback display",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "background": "--pm-red-shade-{index}",
+    "textColor": "--pm-red-base-{index}",
+    "iconColor": "--pm-red-vivid-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "behaviors": {
+    "retry": "optional",
+    "report": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "alert"
+  },
+  "relationships": [
+    "alert",
+    "button"
+  ]
+}

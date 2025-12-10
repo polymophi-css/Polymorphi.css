@@ -1,0 +1,31 @@
+{
+  "name": "patch-point",
+  "version": "1.0.0",
+  "category": "routing",
+  "description": "I/O connection point",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "inputColor": "--pm-{color}-base-{index}",
+    "outputColor": "--pm-{color}-vivid-{index}",
+    "connectedColor": "--pm-grn-vivid-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "input",
+      "output"
+    ],
+    "connect": "drag",
+    "disconnect": "click"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "button"
+  },
+  "relationships": [
+    "channel",
+    "bus",
+    "hardware"
+  ]
+}

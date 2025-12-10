@@ -1,0 +1,50 @@
+{
+  "name": "scales",
+  "version": "1.0.0",
+  "category": "music-theory",
+  "description": "Musical scale patterns and intervals",
+  
+  "bindings": {
+    "rootNote": "--pm-music-midi-{index}",
+    "frequency": "--pm-music-freq-{index}",
+    "highlightColor": "--pm-{color}-vivid-{index}",
+    "inactiveColor": "--pm-{color}-mute-{index}"
+  },
+  
+  "behaviors": {
+    "transpose": "semitones",
+    "mode": "rotate",
+    "display": ["piano", "guitar", "notation"]
+  },
+  
+  "patterns": {
+    "major": [0, 2, 4, 5, 7, 9, 11],
+    "minor": [0, 2, 3, 5, 7, 8, 10],
+    "harmonicMinor": [0, 2, 3, 5, 7, 8, 11],
+    "melodicMinor": [0, 2, 3, 5, 7, 9, 11],
+    "dorian": [0, 2, 3, 5, 7, 9, 10],
+    "phrygian": [0, 1, 3, 5, 7, 8, 10],
+    "lydian": [0, 2, 4, 6, 7, 9, 11],
+    "mixolydian": [0, 2, 4, 5, 7, 9, 10],
+    "locrian": [0, 1, 3, 5, 6, 8, 10],
+    "pentatonicMajor": [0, 2, 4, 7, 9],
+    "pentatonicMinor": [0, 3, 5, 7, 10],
+    "blues": [0, 3, 5, 6, 7, 10],
+    "chromatic": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "wholeTone": [0, 2, 4, 6, 8, 10],
+    "diminished": [0, 2, 3, 5, 6, 8, 9, 11],
+    "augmented": [0, 3, 4, 7, 8, 11]
+  },
+  
+  "constraints": {
+    "midiRange": "000-127",
+    "octaveRange": "000-010"
+  },
+  
+  "accessibility": {
+    "role": "listbox",
+    "aria": ["aria-label", "aria-selected"]
+  },
+  
+  "relationships": ["notes", "chords", "keys", "piano-roll"]
+}

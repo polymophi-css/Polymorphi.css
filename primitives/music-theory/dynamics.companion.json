@@ -1,0 +1,60 @@
+{
+  "name": "dynamics",
+  "version": "1.0.0",
+  "category": "music-theory",
+  "description": "Dynamic markings and velocity mapping",
+  "bindings": {
+    "velocity": "--pm-aud-fader-{index}",
+    "db": "--pm-aud-db-{index}",
+    "color": "--pm-{color}-base-{index}"
+  },
+  "markings": {
+    "ppp": {
+      "velocity": 16,
+      "name": "pianississimo"
+    },
+    "pp": {
+      "velocity": 33,
+      "name": "pianissimo"
+    },
+    "p": {
+      "velocity": 49,
+      "name": "piano"
+    },
+    "mp": {
+      "velocity": 64,
+      "name": "mezzo-piano"
+    },
+    "mf": {
+      "velocity": 80,
+      "name": "mezzo-forte"
+    },
+    "f": {
+      "velocity": 96,
+      "name": "forte"
+    },
+    "ff": {
+      "velocity": 112,
+      "name": "fortissimo"
+    },
+    "fff": {
+      "velocity": 127,
+      "name": "fortississimo"
+    }
+  },
+  "behaviors": {
+    "crescendo": "ramp",
+    "decrescendo": "ramp"
+  },
+  "constraints": {
+    "indexRange": "000-127"
+  },
+  "accessibility": {
+    "role": "status"
+  },
+  "relationships": [
+    "velocity",
+    "automation",
+    "expression"
+  ]
+}

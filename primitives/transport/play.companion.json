@@ -1,0 +1,29 @@
+{
+  "name": "play",
+  "version": "1.0.0",
+  "category": "transport",
+  "description": "Play button",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "color": "--pm-{color}-base-{index}",
+    "activeColor": "--pm-grn-vivid-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "toggle": "play/pause"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "button",
+    "aria": [
+      "aria-pressed"
+    ]
+  },
+  "relationships": [
+    "stop",
+    "record",
+    "transport"
+  ]
+}

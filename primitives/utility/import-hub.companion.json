@@ -1,0 +1,45 @@
+{
+  "name": "import-hub",
+  "version": "1.0.0",
+  "category": "utility",
+  "description": "Asset import and processing queue",
+  "bindings": {
+    "dropzoneHeight": "--pm-size-h-{index}",
+    "dropzoneBorder": "--pm-border-w-{index}",
+    "dropzoneColor": "--pm-{color}-mute-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "listItemHeight": "--pm-size-h-{index}",
+    "progressColor": "--pm-{color}-vivid-{index}",
+    "errorColor": "--pm-red-vivid-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "behaviors": {
+    "drop": "dragover",
+    "queue": "sequential",
+    "analyze": [
+      "bpm",
+      "key",
+      "loudness"
+    ],
+    "status": [
+      "pending",
+      "processing",
+      "done",
+      "error"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "region",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "file-upload",
+    "progress",
+    "list"
+  ]
+}

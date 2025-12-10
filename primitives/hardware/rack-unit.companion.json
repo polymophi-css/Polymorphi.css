@@ -1,0 +1,35 @@
+{
+  "name": "rack-unit",
+  "version": "1.0.0",
+  "category": "hardware",
+  "description": "Standard rack unit dimensions",
+  "bindings": {
+    "height": "--pm-size-h-{index}",
+    "width": "--pm-size-w-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "panelColor": "--pm-{color}-base-{index}",
+    "screwColor": "--pm-gry-mute-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "sizes": {
+    "1U": "44.45mm",
+    "2U": "88.9mm",
+    "3U": "133.35mm",
+    "4U": "177.8mm"
+  },
+  "behaviors": {
+    "mount": "stackable",
+    "rails": "standard"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "region"
+  },
+  "relationships": [
+    "processor",
+    "plugin-window"
+  ]
+}

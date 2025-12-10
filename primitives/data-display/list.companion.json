@@ -1,0 +1,29 @@
+{
+  "name": "list",
+  "version": "1.0.0",
+  "category": "data-display",
+  "description": "List component",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "gap": "--pm-space-gap-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "hoverBackground": "--pm-{color}-base-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "dividerColor": "--pm-{color}-mute-{index}"
+  },
+  "behaviors": {
+    "select": "optional",
+    "reorder": "draggable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "list"
+  },
+  "relationships": [
+    "avatar",
+    "badge",
+    "checkbox"
+  ]
+}

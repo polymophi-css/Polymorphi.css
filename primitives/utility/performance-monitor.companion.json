@@ -1,0 +1,39 @@
+{
+  "name": "performance-monitor",
+  "version": "1.0.0",
+  "category": "utility",
+  "description": "CPU/RAM/polyphony performance display",
+  "bindings": {
+    "barWidth": "--pm-size-w-{index}",
+    "barHeight": "--pm-size-h-{index}",
+    "normalColor": "--pm-grn-vivid-{index}",
+    "warningColor": "--pm-ylw-vivid-{index}",
+    "criticalColor": "--pm-red-vivid-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "labelSize": "--pm-type-size-{index}"
+  },
+  "metrics": [
+    "cpu",
+    "ram",
+    "polyphony",
+    "latency",
+    "dropouts"
+  ],
+  "behaviors": {
+    "update": "realtime",
+    "warn": "threshold"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "meter",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "progress",
+    "alert"
+  ]
+}

@@ -1,0 +1,299 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI FOUNDATION - RESET
+   ═══════════════════════════════════════════════════════════════════════════
+   Layer 0: Foundation
+   Modern CSS reset - clean slate for consistent cross-browser rendering
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BOX SIZING
+   ───────────────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MARGIN / PADDING RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HTML & BODY
+   ───────────────────────────────────────────────────────────────────────── */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  tab-size: 4;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TYPOGRAPHY RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LIST RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+ul, ol {
+  list-style: none;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LINK RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MEDIA RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+  vertical-align: middle;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FORM RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  padding: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TABLE RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MISC RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+hr {
+  border: none;
+  border-top: 1px solid;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp, pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   INTERACTIVE RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+details > summary:first-of-type {
+  list-style: none;
+}
+
+details > summary::marker,
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FOCUS RESET
+   ───────────────────────────────────────────────────────────────────────── */
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   REDUCED MOTION
+   ───────────────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SELECTION
+   ───────────────────────────────────────────────────────────────────────── */
+
+::selection {
+  background: var(--pm-selection-bg, highlight);
+  color: var(--pm-selection-fg, highlighttext);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SCROLLBAR BASE
+   ───────────────────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: var(--pm-scrollbar-w, 8px);
+  height: var(--pm-scrollbar-h, 8px);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pm-scrollbar-track, transparent);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pm-scrollbar-thumb, rgba(128, 128, 128, 0.5));
+  border-radius: var(--pm-scrollbar-radius, 4px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pm-scrollbar-thumb-hover, rgba(128, 128, 128, 0.7));
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--pm-scrollbar-thumb, rgba(128, 128, 128, 0.5)) var(--pm-scrollbar-track, transparent);
+}

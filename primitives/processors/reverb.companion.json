@@ -1,0 +1,38 @@
+{
+  "name": "reverb",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Reverb processor",
+  "bindings": {
+    "size": "--pm-aud-decay-{index}",
+    "decay": "--pm-aud-release-{index}",
+    "damping": "--pm-aud-freq-{index}",
+    "predelay": "--pm-aud-attack-{index}",
+    "mix": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "room",
+      "hall",
+      "plate",
+      "spring",
+      "chamber"
+    ],
+    "freeze": "toggle",
+    "bypass": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "send",
+    "bus",
+    "insert"
+  ]
+}

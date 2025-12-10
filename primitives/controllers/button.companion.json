@@ -1,0 +1,40 @@
+{
+  "name": "button",
+  "version": "1.0.0",
+  "category": "controllers",
+  "description": "Momentary, toggle, or radio button control",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "background": "--pm-{color}-base-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "mode": [
+      "momentary",
+      "toggle",
+      "radio"
+    ],
+    "ledPosition": [
+      "top",
+      "center",
+      "none"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "button",
+    "aria": [
+      "aria-pressed"
+    ]
+  },
+  "relationships": [
+    "transport",
+    "channel",
+    "toolbar"
+  ]
+}

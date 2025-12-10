@@ -1,0 +1,38 @@
+{
+  "name": "eq",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Parametric equalizer",
+  
+  "bindings": {
+    "frequency": "--pm-aud-freq-{index}",
+    "gain": "--pm-aud-db-{index}",
+    "q": "--pm-aud-q-{index}",
+    "bandColor": "--pm-{color}-vivid-{index}",
+    "curveColor": "--pm-{color}-base-{index}",
+    "gridColor": "--pm-{color}-mute-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "nodeSize": "--pm-size-w-{index}"
+  },
+  
+  "behaviors": {
+    "bandTypes": ["lowShelf", "highShelf", "peak", "lowPass", "highPass", "bandPass", "notch"],
+    "analyzer": ["pre", "post", "both"],
+    "drag": "node",
+    "bypass": "toggle"
+  },
+  
+  "constraints": {
+    "indexRange": "000-255",
+    "bandCount": "001-016"
+  },
+  
+  "accessibility": {
+    "role": "application",
+    "aria": ["aria-label"]
+  },
+  
+  "relationships": ["channel", "bus", "insert", "spectrum"]
+}

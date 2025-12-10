@@ -1,0 +1,40 @@
+{
+  "name": "tab",
+  "version": "1.0.0",
+  "category": "ui-patterns",
+  "description": "Tab navigation component",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "fontSize": "--pm-type-size-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "activeBackground": "--pm-{color}-base-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "activeTextColor": "--pm-{color}-vivid-{index}",
+    "indicatorColor": "--pm-{color}-vivid-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "activation": [
+      "click",
+      "keyboard"
+    ],
+    "indicator": [
+      "underline",
+      "background"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "tablist",
+    "aria": [
+      "aria-selected"
+    ]
+  },
+  "relationships": [
+    "panel",
+    "navigation"
+  ]
+}

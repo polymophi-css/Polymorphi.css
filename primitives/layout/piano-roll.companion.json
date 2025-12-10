@@ -1,0 +1,32 @@
+{
+  "name": "piano-roll",
+  "version": "1.0.0",
+  "category": "layout",
+  "description": "MIDI piano roll editor",
+  "bindings": {
+    "noteHeight": "--pm-size-h-{index}",
+    "keyWidth": "--pm-size-w-{index}",
+    "whiteKeyColor": "--pm-wht-base-{index}",
+    "blackKeyColor": "--pm-blk-base-{index}",
+    "noteColor": "--pm-{color}-vivid-{index}",
+    "gridColor": "--pm-{color}-mute-{index}",
+    "velocityColor": "--pm-{color}-base-{index}"
+  },
+  "behaviors": {
+    "draw": "notes",
+    "velocity": "editable",
+    "snap": "grid"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "application"
+  },
+  "relationships": [
+    "notes",
+    "scales",
+    "velocity",
+    "arrangement"
+  ]
+}

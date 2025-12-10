@@ -1,0 +1,31 @@
+{
+  "name": "modulation-matrix",
+  "version": "1.0.0",
+  "category": "synthesis",
+  "description": "Modulation routing matrix",
+  "bindings": {
+    "amount": "--pm-aud-fader-{index}",
+    "cellColor": "--pm-{color}-base-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "sources": "selectable",
+    "destinations": "selectable",
+    "bipolar": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "grid"
+  },
+  "relationships": [
+    "lfo",
+    "envelope",
+    "oscillator",
+    "filter"
+  ]
+}

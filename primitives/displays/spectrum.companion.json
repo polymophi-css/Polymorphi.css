@@ -1,0 +1,36 @@
+{
+  "name": "spectrum",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "FFT frequency spectrum analyzer",
+  
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "barColor": "--pm-aud-spectrum-{index}",
+    "peakColor": "--pm-{color}-vivid-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "gridColor": "--pm-{color}-mute-{index}",
+    "decay": "--pm-motion-dur-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  
+  "behaviors": {
+    "fftSize": "configurable",
+    "peakHold": "decay",
+    "smoothing": "configurable",
+    "scale": ["linear", "logarithmic"]
+  },
+  
+  "constraints": {
+    "indexRange": "000-255",
+    "frequencyRange": "--pm-aud-freq-{index}"
+  },
+  
+  "accessibility": {
+    "role": "img",
+    "aria": ["aria-label", "aria-live"]
+  },
+  
+  "relationships": ["channel", "master", "eq"]
+}

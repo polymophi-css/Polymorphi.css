@@ -1,0 +1,35 @@
+{
+  "name": "goniometer",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "Stereo field visualization",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "traceColor": "--pm-{color}-vivid-{index}",
+    "gridColor": "--pm-{color}-mute-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "decay": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "mode": [
+      "lissajous",
+      "polar"
+    ],
+    "persistence": "configurable",
+    "zoom": "scalable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "img",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "stereo",
+    "master",
+    "imaging"
+  ]
+}

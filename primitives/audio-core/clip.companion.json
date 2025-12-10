@@ -1,0 +1,45 @@
+{
+  "name": "clip",
+  "version": "1.0.0",
+  "category": "audio-core",
+  "description": "Audio region/clip for timeline editing",
+  "bindings": {
+    "waveformColor": "--pm-{color}-vivid-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "selectedColor": "--pm-{color}-base-{index}",
+    "trimHandleColor": "--pm-{color}-vivid-{index}",
+    "fadeColor": "--pm-{color}-alpha-{index}",
+    "height": "--pm-size-h-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "gainEnvelope": "--pm-aud-fader-{index}"
+  },
+  "behaviors": {
+    "trim": [
+      "start",
+      "end"
+    ],
+    "fade": [
+      "in",
+      "out",
+      "crossfade"
+    ],
+    "split": "playhead",
+    "gain": "envelope",
+    "drag": "reposition"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "listitem",
+    "aria": [
+      "aria-selected",
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "arrangement",
+    "waveform",
+    "channel"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "delay",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Delay processor",
+  "bindings": {
+    "time": "--pm-aud-timing-{index}",
+    "feedback": "--pm-aud-fader-{index}",
+    "mix": "--pm-aud-fader-{index}",
+    "filter": "--pm-aud-freq-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "digital",
+      "tape",
+      "pingPong",
+      "multi"
+    ],
+    "sync": "tempo",
+    "bypass": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "send",
+    "bus",
+    "insert",
+    "tempo"
+  ]
+}

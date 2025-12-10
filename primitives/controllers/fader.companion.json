@@ -1,0 +1,39 @@
+{
+  "name": "fader",
+  "version": "1.0.0",
+  "category": "controllers",
+  "description": "Linear control for level and parameter adjustment",
+  
+  "bindings": {
+    "position": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "trackColor": "--pm-{color}-shade-{index}",
+    "thumbColor": "--pm-{color}-base-{index}",
+    "fillColor": "--pm-{color}-vivid-{index}",
+    "shadow": "--pm-fx-shadow-y-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  
+  "behaviors": {
+    "drag": ["vertical", "horizontal"],
+    "doubleClick": "unity",
+    "scrollWheel": "increment",
+    "shiftModifier": "fine",
+    "altModifier": "reset"
+  },
+  
+  "constraints": {
+    "indexRange": "000-255",
+    "midiCompatible": "000-127",
+    "unityPosition": "191"
+  },
+  
+  "accessibility": {
+    "role": "slider",
+    "aria": ["aria-valuenow", "aria-valuemin", "aria-valuemax", "aria-orientation"]
+  },
+  
+  "relationships": ["channel", "bus", "master", "automation"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "sidechain",
+  "version": "1.0.0",
+  "category": "routing",
+  "description": "Sidechain input selector",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}"
+  },
+  "behaviors": {
+    "source": "selectable",
+    "listen": "toggle",
+    "filter": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "combobox"
+  },
+  "relationships": [
+    "compressor",
+    "gate",
+    "channel"
+  ]
+}

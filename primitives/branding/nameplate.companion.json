@@ -1,0 +1,32 @@
+{
+  "name": "nameplate",
+  "version": "1.0.0",
+  "category": "branding",
+  "description": "Hardware nameplate / faceplate label",
+  "bindings": {
+    "fontSize": "--pm-type-size-{index}",
+    "fontWeight": "--pm-type-weight-{index}",
+    "color": "--pm-{color}-base-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "padding": "--pm-space-padding-{index}"
+  },
+  "behaviors": {
+    "style": [
+      "engraved",
+      "printed",
+      "backlit"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "heading"
+  },
+  "relationships": [
+    "rack-unit",
+    "plugin-window",
+    "console-section"
+  ]
+}

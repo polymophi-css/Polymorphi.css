@@ -1,0 +1,33 @@
+{
+  "name": "progress",
+  "version": "1.0.0",
+  "category": "data-display",
+  "description": "Progress indicator",
+  "bindings": {
+    "height": "--pm-size-h-{index}",
+    "trackColor": "--pm-{color}-shade-{index}",
+    "fillColor": "--pm-{color}-vivid-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "bar",
+      "circle"
+    ],
+    "indeterminate": "animated"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "progressbar",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "file-upload",
+    "toast"
+  ]
+}

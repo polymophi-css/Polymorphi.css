@@ -1,0 +1,13 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI ANIMATION TOKENS - MASTER IMPORT
+   ═══════════════════════════════════════════════════════════════════════════
+   6-Tier Animation System: Largo → Fortissimo
+   353 Keyframes | 3,217 Tokens | 160 Presets
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import "01_largo.tokens.css";      /* Tier 1: Slowest, stately              */
+@import "02_adagio.tokens.css";     /* Tier 2: Slow, expressive              */
+@import "03_andante.tokens.css";    /* Tier 3: Moderate, natural             */
+@import "04_allegro.tokens.css";    /* Tier 4: Fast, lively                  */
+@import "05_vivace.tokens.css";     /* Tier 5: Very fast, energetic          */
+@import "06_fortissimo.tokens.css"; /* Tier 6: Maximum chaos                 */

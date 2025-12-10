@@ -1,0 +1,34 @@
+{
+  "name": "sidebar",
+  "version": "1.0.0",
+  "category": "navigation",
+  "description": "Side navigation panel",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "collapsedWidth": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "hoverBackground": "--pm-{color}-base-{index}",
+    "activeBackground": "--pm-{color}-vivid-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "collapse": "toggle",
+    "position": [
+      "left",
+      "right"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "navigation"
+  },
+  "relationships": [
+    "menu",
+    "logo",
+    "drawer"
+  ]
+}

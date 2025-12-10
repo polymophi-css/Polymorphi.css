@@ -1,0 +1,37 @@
+{
+  "name": "distortion",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Distortion / saturation processor",
+  "bindings": {
+    "drive": "--pm-aud-db-{index}",
+    "tone": "--pm-aud-freq-{index}",
+    "mix": "--pm-aud-fader-{index}",
+    "output": "--pm-aud-db-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "overdrive",
+      "fuzz",
+      "bitcrush",
+      "tape",
+      "tube",
+      "transistor"
+    ],
+    "bypass": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "insert",
+    "guitar",
+    "creative"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "press-kit",
+  "version": "1.0.0",
+  "category": "branding",
+  "description": "Press kit asset specifications",
+  "bindings": {
+    "logoMinSize": "--pm-size-w-{index}",
+    "clearSpace": "--pm-space-margin-{index}",
+    "primaryColor": "--pm-{color}-base-{index}",
+    "secondaryColor": "--pm-{color}-shade-{index}"
+  },
+  "assets": [
+    "logo-full",
+    "logo-icon",
+    "logo-wordmark",
+    "colors",
+    "fonts"
+  ],
+  "formats": [
+    "svg",
+    "png",
+    "eps",
+    "pdf"
+  ],
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "document"
+  },
+  "relationships": [
+    "logo",
+    "badge"
+  ]
+}

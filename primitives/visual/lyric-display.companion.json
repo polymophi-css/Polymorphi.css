@@ -1,0 +1,42 @@
+{
+  "name": "lyric-display",
+  "version": "1.0.0",
+  "category": "visual",
+  "description": "Synced lyrics and caption display",
+  "bindings": {
+    "fontSize": "--pm-type-size-{index}",
+    "fontWeight": "--pm-type-weight-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "inactiveColor": "--pm-{color}-mute-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "highlightColor": "--pm-{color}-alpha-{index}",
+    "lineHeight": "--pm-text-leading-{index}",
+    "padding": "--pm-space-padding-{index}"
+  },
+  "behaviors": {
+    "mode": [
+      "karaoke",
+      "scroll",
+      "static"
+    ],
+    "sync": "timestamp",
+    "export": [
+      "srt",
+      "vtt"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "region",
+    "aria": [
+      "aria-live"
+    ]
+  },
+  "relationships": [
+    "transport",
+    "video-player",
+    "arrangement"
+  ]
+}

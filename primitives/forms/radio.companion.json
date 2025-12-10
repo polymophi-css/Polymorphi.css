@@ -1,0 +1,31 @@
+{
+  "name": "radio",
+  "version": "1.0.0",
+  "category": "forms",
+  "description": "Radio button input",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "selectedBackground": "--pm-{color}-vivid-{index}",
+    "dotColor": "--pm-wht-base-{index}",
+    "borderWidth": "--pm-border-w-{index}",
+    "borderColor": "--pm-{color}-mute-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "group": "exclusive"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "radio",
+    "aria": [
+      "aria-checked"
+    ]
+  },
+  "relationships": [
+    "label",
+    "form"
+  ]
+}

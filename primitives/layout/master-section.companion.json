@@ -1,0 +1,31 @@
+{
+  "name": "master-section",
+  "version": "1.0.0",
+  "category": "layout",
+  "description": "Master output section layout",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "meterHeight": "--pm-size-h-{index}",
+    "labelColor": "--pm-{color}-base-{index}"
+  },
+  "behaviors": {
+    "position": [
+      "right",
+      "left"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "region"
+  },
+  "relationships": [
+    "fader",
+    "meter",
+    "limiter",
+    "lufs-meter"
+  ]
+}

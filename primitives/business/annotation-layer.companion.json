@@ -1,0 +1,35 @@
+{
+  "name": "annotation-layer",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Comments and notes on timeline/clips",
+  "bindings": {
+    "markerSize": "--pm-size-w-{index}",
+    "markerColor": "--pm-ylw-vivid-{index}",
+    "popupBackground": "--pm-{color}-base-{index}",
+    "popupPadding": "--pm-space-padding-{index}",
+    "textSize": "--pm-type-size-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}"
+  },
+  "behaviors": {
+    "add": "click",
+    "edit": "inline",
+    "resolve": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "note",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "arrangement",
+    "clip",
+    "tooltip"
+  ]
+}

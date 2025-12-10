@@ -1,0 +1,41 @@
+{
+  "name": "step-sequencer",
+  "version": "1.0.0",
+  "category": "audio-core",
+  "description": "Step-based pattern sequencer",
+  "bindings": {
+    "stepSize": "--pm-size-w-{index}",
+    "stepGap": "--pm-space-gap-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "inactiveColor": "--pm-{color}-shade-{index}",
+    "playheadColor": "--pm-ylw-vivid-{index}",
+    "accentColor": "--pm-{color}-base-{index}",
+    "rowHeight": "--pm-size-h-{index}",
+    "velocityBar": "--pm-aud-fader-{index}"
+  },
+  "behaviors": {
+    "steps": [
+      "16",
+      "32",
+      "64"
+    ],
+    "velocity": "per-step",
+    "swing": "global",
+    "pattern": "copy/paste"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "grid",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "tempo",
+    "transport",
+    "sampler-grid",
+    "midi"
+  ]
+}

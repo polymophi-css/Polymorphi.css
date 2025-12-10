@@ -1,0 +1,45 @@
+{
+  "name": "visualizer",
+  "version": "1.0.0",
+  "category": "visual",
+  "description": "Real-time audio visualization",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "primaryColor": "--pm-{color}-vivid-{index}",
+    "secondaryColor": "--pm-{color}-base-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "glowIntensity": "--pm-fx-shadow-blur-{index}",
+    "sensitivity": "--pm-aud-fader-{index}",
+    "smoothing": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "bars",
+      "circle",
+      "scope",
+      "particles",
+      "waveform"
+    ],
+    "reactivity": [
+      "amplitude",
+      "frequency",
+      "beat"
+    ],
+    "mirror": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "img",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "spectrum",
+    "waveform",
+    "brand-palette"
+  ]
+}

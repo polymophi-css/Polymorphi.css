@@ -1,0 +1,37 @@
+{
+  "name": "lfo",
+  "version": "1.0.0",
+  "category": "synthesis",
+  "description": "Low frequency oscillator",
+  "bindings": {
+    "rate": "--pm-aud-freq-{index}",
+    "depth": "--pm-aud-fader-{index}",
+    "phase": "--pm-anim-phase-{index}",
+    "waveColor": "--pm-{color}-vivid-{index}",
+    "width": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "waveform": [
+      "sine",
+      "saw",
+      "square",
+      "triangle",
+      "random",
+      "sampleHold"
+    ],
+    "sync": "tempo",
+    "retrigger": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "oscillator",
+    "filter",
+    "modulation-matrix"
+  ]
+}

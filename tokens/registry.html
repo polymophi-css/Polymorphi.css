@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polymorphi.css Token Registry</title>
+  <style>
+    /* IMPORT CORE TOKENS */
+    :root {
+      /* We'll inline the key tokens we need for display */
+      --pm-bg: #0a0a0a;
+      --pm-fg: #f0f0f0;
+      --pm-accent: hsl(210, 100%, 50%);
+      --pm-border: #333;
+      --pm-code-bg: #1a1a1a;
+      --pm-hover: #222;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--pm-bg);
+      color: var(--pm-fg);
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: #888;
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      background: var(--pm-code-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--pm-border);
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--pm-accent);
+    }
+
+    .stat-label {
+      color: #888;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .category {
+      margin-bottom: 3rem;
+      border: 1px solid var(--pm-border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .category-header {
+      background: var(--pm-code-bg);
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .category-header:hover {
+      background: var(--pm-hover);
+    }
+
+    .category-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .category-count {
+      background: var(--pm-accent);
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .category-content {
+      padding: 1.5rem;
+      display: none;
+    }
+
+    .category.open .category-content {
+      display: block;
+    }
+
+    .dimension {
+      margin-bottom: 1.5rem;
+    }
+
+    .dimension-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #aaa;
+    }
+
+    .token-range {
+      font-family: ui-monospace, monospace;
+      font-size: 0.875rem;
+      background: var(--pm-code-bg);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      border: 1px solid var(--pm-border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .token-start, .token-end {
+      color: #888;
+    }
+
+    .token-pattern {
+      color: var(--pm-accent);
+      font-weight: 600;
+    }
+
+    .color-preview {
+      display: flex;
+      gap: 2px;
+      height: 24px;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .color-swatch {
+      flex: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      padding: 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--pm-border);
+    }
+
+    th {
+      color: #888;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    code {
+      font-family: ui-monospace, monospace;
+      background: var(--pm-code-bg);
+      padding: 0.125rem 0.375rem;
+      border-radius: 3px;
+      font-size: 0.8125rem;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: 1px solid var(--pm-border);
+      color: #888;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+
+    .copy-btn:hover {
+      background: var(--pm-hover);
+      color: #fff;
+    }
+
+    .naming {
+      background: var(--pm-code-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+      border: 1px solid var(--pm-border);
+    }
+
+    .naming-pattern {
+      font-family: ui-monospace, monospace;
+      font-size: 1.5rem;
+      color: var(--pm-accent);
+      margin-bottom: 1rem;
+    }
+
+    .naming-parts {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .naming-part {
+      background: #222;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+
+    .naming-part strong {
+      color: var(--pm-accent);
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.75rem; }
+      .stats { gap: 1rem; }
+      .stat { padding: 1rem; flex: 1 1 45%; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Polymorphi.css Token Registry</h1>
+<p class="subtitle">70,527 CSS Custom Properties • 256-Step Scales • Pure CSS</p>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-value">70,527</div>
+    <div class="stat-label">Total Tokens</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">40</div>
+    <div class="stat-label">Files</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">19</div>
+    <div class="stat-label">Categories</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">414KB</div>
+    <div class="stat-label">Compressed</div>
+  </div>
+</div>
+
+<div class="naming">
+  <div class="naming-pattern">--pm-{category}-{property}-{000-255}</div>
+  <div class="naming-parts">
+    <div class="naming-part"><strong>--pm-</strong> prefix</div>
+    <div class="naming-part"><strong>{category}</strong> 3-letter code</div>
+    <div class="naming-part"><strong>{property}</strong> dimension</div>
+    <div class="naming-part"><strong>{000-255}</strong> 256-step index</div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="category open">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🎨 Colors</span>
+    <span class="category-count">33,280 tokens</span>
+  </div>
+  <div class="category-content">
+    <p style="margin-bottom:1rem;color:#888;">13 colors × 10 dimensions × 256 steps</p>
+    
+    <table>
+      <tr><th>Color</th><th>Prefix</th><th>Hue</th><th>Pattern</th></tr>
+      <tr><td>Blue</td><td><code>blu</code></td><td>210°</td><td><code>--pm-blu-{dim}-{000-255}</code></td></tr>
+      <tr><td>Green</td><td><code>grn</code></td><td>120°</td><td><code>--pm-grn-{dim}-{000-255}</code></td></tr>
+      <tr><td>Red</td><td><code>red</code></td><td>0°</td><td><code>--pm-red-{dim}-{000-255}</code></td></tr>
+      <tr><td>Orange</td><td><code>org</code></td><td>30°</td><td><code>--pm-org-{dim}-{000-255}</code></td></tr>
+      <tr><td>Yellow</td><td><code>ylw</code></td><td>60°</td><td><code>--pm-ylw-{dim}-{000-255}</code></td></tr>
+      <tr><td>Pink</td><td><code>pnk</code></td><td>330°</td><td><code>--pm-pnk-{dim}-{000-255}</code></td></tr>
+      <tr><td>Violet</td><td><code>vlt</code></td><td>270°</td><td><code>--pm-vlt-{dim}-{000-255}</code></td></tr>
+      <tr><td>Purple</td><td><code>pur</code></td><td>280°</td><td><code>--pm-pur-{dim}-{000-255}</code></td></tr>
+      <tr><td>Magenta</td><td><code>mag</code></td><td>300°</td><td><code>--pm-mag-{dim}-{000-255}</code></td></tr>
+      <tr><td>Brown</td><td><code>brn</code></td><td>30°/60%</td><td><code>--pm-brn-{dim}-{000-255}</code></td></tr>
+      <tr><td>Gray</td><td><code>gry</code></td><td>0°/0%</td><td><code>--pm-gry-{dim}-{000-255}</code></td></tr>
+      <tr><td>Black</td><td><code>blk</code></td><td>0°/0%</td><td><code>--pm-blk-{dim}-{000-255}</code></td></tr>
+      <tr><td>White</td><td><code>wht</code></td><td>0°/0%</td><td><code>--pm-wht-{dim}-{000-255}</code></td></tr>
+    </table>
+
+    <h4 style="margin:1.5rem 0 1rem;color:#fff;">Dimensions</h4>
+    <table>
+      <tr><th>Dimension</th><th>Code</th><th>Range</th><th>Example</th></tr>
+      <tr><td>Base (Lightness)</td><td><code>base</code></td><td>0-100%</td><td><code>--pm-blu-base-128</code></td></tr>
+      <tr><td>Saturation</td><td><code>sat</code></td><td>0-100%</td><td><code>--pm-blu-sat-255</code></td></tr>
+      <tr><td>Warm Shift</td><td><code>warm</code></td><td>+15° hue</td><td><code>--pm-blu-warm-128</code></td></tr>
+      <tr><td>Cool Shift</td><td><code>cool</code></td><td>-15° hue</td><td><code>--pm-blu-cool-128</code></td></tr>
+      <tr><td>Muted</td><td><code>mute</code></td><td>30% sat</td><td><code>--pm-blu-mute-128</code></td></tr>
+      <tr><td>Vivid</td><td><code>vivid</code></td><td>100% sat</td><td><code>--pm-blu-vivid-128</code></td></tr>
+      <tr><td>Tint</td><td><code>tint</code></td><td>→ white</td><td><code>--pm-blu-tint-200</code></td></tr>
+      <tr><td>Shade</td><td><code>shade</code></td><td>→ black</td><td><code>--pm-blu-shade-050</code></td></tr>
+      <tr><td>Tone</td><td><code>tone</code></td><td>→ gray</td><td><code>--pm-blu-tone-128</code></td></tr>
+      <tr><td>Alpha</td><td><code>alpha</code></td><td>0-1 opacity</td><td><code>--pm-blu-alpha-128</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🔤 Typography</span>
+    <span class="category-count">2,591 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Weight</td><td><code>weight</code></td><td>100-900</td><td><code>--pm-type-weight-{000-255}</code></td></tr>
+      <tr><td>Size</td><td><code>size</code></td><td>0.5-16rem</td><td><code>--pm-type-size-{000-255}</code></td></tr>
+      <tr><td>Tracking</td><td><code>tracking</code></td><td>-0.1-0.5em</td><td><code>--pm-type-tracking-{000-255}</code></td></tr>
+      <tr><td>Leading</td><td><code>leading</code></td><td>0.8-3</td><td><code>--pm-type-leading-{000-255}</code></td></tr>
+      <tr><td>Width</td><td><code>width</code></td><td>50-200%</td><td><code>--pm-type-width-{000-255}</code></td></tr>
+      <tr><td>Slant</td><td><code>slant</code></td><td>0-20deg</td><td><code>--pm-type-slant-{000-255}</code></td></tr>
+      <tr><td>Optical</td><td><code>optical</code></td><td>8-144pt</td><td><code>--pm-type-optical-{000-255}</code></td></tr>
+      <tr><td>X-Height</td><td><code>xheight</code></td><td>0.4-0.6</td><td><code>--pm-type-xheight-{000-255}</code></td></tr>
+      <tr><td>Cap-Height</td><td><code>capheight</code></td><td>0.65-0.85</td><td><code>--pm-type-capheight-{000-255}</code></td></tr>
+      <tr><td>Word Space</td><td><code>wordspace</code></td><td>-0.25-1em</td><td><code>--pm-type-wordspace-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SPACING -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">📏 Spacing</span>
+    <span class="category-count">1,792 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Margin</td><td><code>margin</code></td><td>0-64rem</td><td><code>--pm-space-margin-{000-255}</code></td></tr>
+      <tr><td>Padding</td><td><code>padding</code></td><td>0-64rem</td><td><code>--pm-space-padding-{000-255}</code></td></tr>
+      <tr><td>Gap</td><td><code>gap</code></td><td>0-64rem</td><td><code>--pm-space-gap-{000-255}</code></td></tr>
+      <tr><td>Gutter</td><td><code>gutter</code></td><td>0-64rem</td><td><code>--pm-space-gutter-{000-255}</code></td></tr>
+      <tr><td>Inset</td><td><code>inset</code></td><td>0-64rem</td><td><code>--pm-space-inset-{000-255}</code></td></tr>
+      <tr><td>Scroll Margin</td><td><code>scroll-m</code></td><td>0-64rem</td><td><code>--pm-space-scroll-m-{000-255}</code></td></tr>
+      <tr><td>Scroll Padding</td><td><code>scroll-p</code></td><td>0-64rem</td><td><code>--pm-space-scroll-p-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SIZING -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">📐 Sizing</span>
+    <span class="category-count">3,328 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Width</td><td><code>w</code></td><td>0-128rem</td><td><code>--pm-size-w-{000-255}</code></td></tr>
+      <tr><td>Height</td><td><code>h</code></td><td>0-128rem</td><td><code>--pm-size-h-{000-255}</code></td></tr>
+      <tr><td>Min Width</td><td><code>min-w</code></td><td>0-128rem</td><td><code>--pm-size-min-w-{000-255}</code></td></tr>
+      <tr><td>Max Width</td><td><code>max-w</code></td><td>0-128rem</td><td><code>--pm-size-max-w-{000-255}</code></td></tr>
+      <tr><td>Min Height</td><td><code>min-h</code></td><td>0-128rem</td><td><code>--pm-size-min-h-{000-255}</code></td></tr>
+      <tr><td>Max Height</td><td><code>max-h</code></td><td>0-128rem</td><td><code>--pm-size-max-h-{000-255}</code></td></tr>
+      <tr><td>Flex Basis</td><td><code>basis</code></td><td>0-128rem</td><td><code>--pm-size-basis-{000-255}</code></td></tr>
+      <tr><td>Flex Grow</td><td><code>grow</code></td><td>0-25.5</td><td><code>--pm-size-grow-{000-255}</code></td></tr>
+      <tr><td>Flex Shrink</td><td><code>shrink</code></td><td>0-25.5</td><td><code>--pm-size-shrink-{000-255}</code></td></tr>
+      <tr><td>Order</td><td><code>order</code></td><td>-128 to 127</td><td><code>--pm-size-order-{000-255}</code></td></tr>
+      <tr><td>Aspect Ratio</td><td><code>ratio</code></td><td>0.1-4</td><td><code>--pm-size-ratio-{000-255}</code></td></tr>
+      <tr><td>Container</td><td><code>container</code></td><td>0-4096px</td><td><code>--pm-size-container-{000-255}</code></td></tr>
+      <tr><td>Measure</td><td><code>measure</code></td><td>0-255ch</td><td><code>--pm-size-measure-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- BORDERS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🔲 Borders</span>
+    <span class="category-count">1,556 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Width</td><td><code>w</code></td><td>0-64px</td><td><code>--pm-border-w-{000-255}</code></td></tr>
+      <tr><td>Radius</td><td><code>radius</code></td><td>0-32rem</td><td><code>--pm-border-radius-{000-255}</code></td></tr>
+      <tr><td>Outline Width</td><td><code>outline-w</code></td><td>0-64px</td><td><code>--pm-border-outline-w-{000-255}</code></td></tr>
+      <tr><td>Outline Offset</td><td><code>outline-offset</code></td><td>0-64px</td><td><code>--pm-border-outline-offset-{000-255}</code></td></tr>
+      <tr><td>Ring</td><td><code>ring</code></td><td>0-64px</td><td><code>--pm-border-ring-{000-255}</code></td></tr>
+      <tr><td>Ring Offset</td><td><code>ring-offset</code></td><td>0-64px</td><td><code>--pm-border-ring-offset-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- EFFECTS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">✨ Effects</span>
+    <span class="category-count">3,600 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Shadow X</td><td><code>shadow-x</code></td><td>-32 to 96px</td><td><code>--pm-fx-shadow-x-{000-255}</code></td></tr>
+      <tr><td>Shadow Y</td><td><code>shadow-y</code></td><td>0-128px</td><td><code>--pm-fx-shadow-y-{000-255}</code></td></tr>
+      <tr><td>Shadow Blur</td><td><code>shadow-blur</code></td><td>0-256px</td><td><code>--pm-fx-shadow-blur-{000-255}</code></td></tr>
+      <tr><td>Shadow Spread</td><td><code>shadow-spread</code></td><td>-16 to 48px</td><td><code>--pm-fx-shadow-spread-{000-255}</code></td></tr>
+      <tr><td>Blur</td><td><code>blur</code></td><td>0-256px</td><td><code>--pm-fx-blur-{000-255}</code></td></tr>
+      <tr><td>Backdrop</td><td><code>backdrop</code></td><td>0-256px</td><td><code>--pm-fx-backdrop-{000-255}</code></td></tr>
+      <tr><td>Brightness</td><td><code>brightness</code></td><td>0-2.55</td><td><code>--pm-fx-brightness-{000-255}</code></td></tr>
+      <tr><td>Contrast</td><td><code>contrast</code></td><td>0-2.55</td><td><code>--pm-fx-contrast-{000-255}</code></td></tr>
+      <tr><td>Saturate</td><td><code>saturate</code></td><td>0-5.1</td><td><code>--pm-fx-saturate-{000-255}</code></td></tr>
+      <tr><td>Grayscale</td><td><code>grayscale</code></td><td>0-100%</td><td><code>--pm-fx-grayscale-{000-255}</code></td></tr>
+      <tr><td>Sepia</td><td><code>sepia</code></td><td>0-100%</td><td><code>--pm-fx-sepia-{000-255}</code></td></tr>
+      <tr><td>Invert</td><td><code>invert</code></td><td>0-100%</td><td><code>--pm-fx-invert-{000-255}</code></td></tr>
+      <tr><td>Hue Rotate</td><td><code>hue</code></td><td>0-360deg</td><td><code>--pm-fx-hue-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- MOTION -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">⏱️ Motion</span>
+    <span class="category-count">1,075 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Duration</td><td><code>dur</code></td><td>0-5100ms</td><td><code>--pm-motion-dur-{000-255}</code></td></tr>
+      <tr><td>Delay</td><td><code>delay</code></td><td>0-5100ms</td><td><code>--pm-motion-delay-{000-255}</code></td></tr>
+      <tr><td>Iteration</td><td><code>iter</code></td><td>0-25.5</td><td><code>--pm-motion-iter-{000-255}</code></td></tr>
+      <tr><td>Easing</td><td><code>ease</code></td><td>256 curves</td><td><code>--pm-motion-ease-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ANIMATION -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🎬 Animation</span>
+    <span class="category-count">2,621 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Progress</td><td><code>progress</code></td><td>0-100%</td><td><code>--pm-anim-progress-{000-255}</code></td></tr>
+      <tr><td>Amplitude</td><td><code>amplitude</code></td><td>0-2</td><td><code>--pm-anim-amplitude-{000-255}</code></td></tr>
+      <tr><td>Frequency</td><td><code>frequency</code></td><td>0-10</td><td><code>--pm-anim-frequency-{000-255}</code></td></tr>
+      <tr><td>Phase</td><td><code>phase</code></td><td>0-360deg</td><td><code>--pm-anim-phase-{000-255}</code></td></tr>
+      <tr><td>Damping</td><td><code>damping</code></td><td>0-1</td><td><code>--pm-anim-damping-{000-255}</code></td></tr>
+      <tr><td>Stiffness</td><td><code>stiffness</code></td><td>0-500</td><td><code>--pm-anim-stiffness-{000-255}</code></td></tr>
+      <tr><td>Mass</td><td><code>mass</code></td><td>0.1-10</td><td><code>--pm-anim-mass-{000-255}</code></td></tr>
+      <tr><td>Velocity</td><td><code>velocity</code></td><td>0-1000</td><td><code>--pm-anim-velocity-{000-255}</code></td></tr>
+      <tr><td>Bounce</td><td><code>bounce</code></td><td>0-10</td><td><code>--pm-anim-bounce-{000-255}</code></td></tr>
+      <tr><td>Overshoot</td><td><code>overshoot</code></td><td>0-2</td><td><code>--pm-anim-overshoot-{000-255}</code></td></tr>
+    </table>
+    <p style="margin-top:1rem;color:#888;">+ 60 animation presets (fade, slide, bounce, shake, etc.)</p>
+  </div>
+</div>
+
+<!-- TRANSFORMS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🔄 Transforms</span>
+    <span class="category-count">3,337 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Scale</td><td><code>scale</code></td><td>0-5.1</td><td><code>--pm-tf-scale-{000-255}</code></td></tr>
+      <tr><td>Scale X</td><td><code>scale-x</code></td><td>0-5.1</td><td><code>--pm-tf-scale-x-{000-255}</code></td></tr>
+      <tr><td>Scale Y</td><td><code>scale-y</code></td><td>0-5.1</td><td><code>--pm-tf-scale-y-{000-255}</code></td></tr>
+      <tr><td>Rotate</td><td><code>rotate</code></td><td>0-360deg</td><td><code>--pm-tf-rotate-{000-255}</code></td></tr>
+      <tr><td>Rotate X</td><td><code>rotate-x</code></td><td>0-360deg</td><td><code>--pm-tf-rotate-x-{000-255}</code></td></tr>
+      <tr><td>Rotate Y</td><td><code>rotate-y</code></td><td>0-360deg</td><td><code>--pm-tf-rotate-y-{000-255}</code></td></tr>
+      <tr><td>Rotate Z</td><td><code>rotate-z</code></td><td>0-360deg</td><td><code>--pm-tf-rotate-z-{000-255}</code></td></tr>
+      <tr><td>Translate X</td><td><code>tx</code></td><td>-256 to 256px</td><td><code>--pm-tf-tx-{000-255}</code></td></tr>
+      <tr><td>Translate Y</td><td><code>ty</code></td><td>-256 to 256px</td><td><code>--pm-tf-ty-{000-255}</code></td></tr>
+      <tr><td>Translate Z</td><td><code>tz</code></td><td>-256 to 256px</td><td><code>--pm-tf-tz-{000-255}</code></td></tr>
+      <tr><td>Skew X</td><td><code>skew-x</code></td><td>-45 to 45deg</td><td><code>--pm-tf-skew-x-{000-255}</code></td></tr>
+      <tr><td>Skew Y</td><td><code>skew-y</code></td><td>-45 to 45deg</td><td><code>--pm-tf-skew-y-{000-255}</code></td></tr>
+      <tr><td>Perspective</td><td><code>perspective</code></td><td>0-2550px</td><td><code>--pm-tf-perspective-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- LAYERS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">📚 Layers</span>
+    <span class="category-count">1,026 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Z-Index</td><td><code>z</code></td><td>-128 to 127</td><td><code>--pm-layer-z-{000-255}</code></td></tr>
+      <tr><td>Elevation Y</td><td><code>elev-y</code></td><td>0-255px</td><td><code>--pm-layer-elev-y-{000-255}</code></td></tr>
+      <tr><td>Elevation Blur</td><td><code>elev-blur</code></td><td>0-510px</td><td><code>--pm-layer-elev-blur-{000-255}</code></td></tr>
+      <tr><td>Elevation Spread</td><td><code>elev-spread</code></td><td>-32 to 32px</td><td><code>--pm-layer-elev-spread-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- OPACITY -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">👁️ Opacity</span>
+    <span class="category-count">259 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Opacity</td><td><code>-</code></td><td>0-1</td><td><code>--pm-opacity-{000-255}</code></td></tr>
+    </table>
+    <p style="margin-top:1rem;color:#888;">+ visibility keywords (visible, hidden, collapse)</p>
+  </div>
+</div>
+
+<!-- GRADIENTS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🌈 Gradients</span>
+    <span class="category-count">791 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Angle</td><td><code>angle</code></td><td>0-360deg</td><td><code>--pm-grad-angle-{000-255}</code></td></tr>
+      <tr><td>Stop Position</td><td><code>stop</code></td><td>0-100%</td><td><code>--pm-grad-stop-{000-255}</code></td></tr>
+      <tr><td>Radial Size</td><td><code>radial</code></td><td>0-128%</td><td><code>--pm-grad-radial-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- TEXT -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">📝 Text</span>
+    <span class="category-count">2,613 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Tracking</td><td><code>tracking</code></td><td>-0.5 to 0.5em</td><td><code>--pm-text-tracking-{000-255}</code></td></tr>
+      <tr><td>Leading</td><td><code>leading</code></td><td>0.5-5.5</td><td><code>--pm-text-leading-{000-255}</code></td></tr>
+      <tr><td>Word Space</td><td><code>word</code></td><td>-0.5 to 1.5em</td><td><code>--pm-text-word-{000-255}</code></td></tr>
+      <tr><td>Indent</td><td><code>indent</code></td><td>0-64rem</td><td><code>--pm-text-indent-{000-255}</code></td></tr>
+      <tr><td>Underline Offset</td><td><code>underline-offset</code></td><td>0-32px</td><td><code>--pm-text-underline-offset-{000-255}</code></td></tr>
+      <tr><td>Decoration Thick</td><td><code>decoration-thick</code></td><td>0-32px</td><td><code>--pm-text-decoration-thick-{000-255}</code></td></tr>
+      <tr><td>Shadow X</td><td><code>shadow-x</code></td><td>-16 to 48px</td><td><code>--pm-text-shadow-x-{000-255}</code></td></tr>
+      <tr><td>Shadow Y</td><td><code>shadow-y</code></td><td>0-64px</td><td><code>--pm-text-shadow-y-{000-255}</code></td></tr>
+      <tr><td>Shadow Blur</td><td><code>shadow-blur</code></td><td>0-64px</td><td><code>--pm-text-shadow-blur-{000-255}</code></td></tr>
+      <tr><td>Tab Size</td><td><code>tab</code></td><td>0-32</td><td><code>--pm-text-tab-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- GRIDS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🔳 Grids</span>
+    <span class="category-count">2,844 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Columns</td><td><code>cols</code></td><td>1-256</td><td><code>--pm-grid-cols-{001-256}</code></td></tr>
+      <tr><td>Rows</td><td><code>rows</code></td><td>1-256</td><td><code>--pm-grid-rows-{001-256}</code></td></tr>
+      <tr><td>Column Span</td><td><code>col-span</code></td><td>1-256</td><td><code>--pm-grid-col-span-{001-256}</code></td></tr>
+      <tr><td>Row Span</td><td><code>row-span</code></td><td>1-256</td><td><code>--pm-grid-row-span-{001-256}</code></td></tr>
+      <tr><td>Gap</td><td><code>gap</code></td><td>0-64rem</td><td><code>--pm-grid-gap-{000-255}</code></td></tr>
+      <tr><td>Auto Fit</td><td><code>auto-fit</code></td><td>50-1074px</td><td><code>--pm-grid-auto-fit-{000-255}</code></td></tr>
+      <tr><td>Auto Fill</td><td><code>auto-fill</code></td><td>50-1074px</td><td><code>--pm-grid-auto-fill-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- BREAKPOINTS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">📱 Breakpoints</span>
+    <span class="category-count">1,292 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>Width</td><td><code>w</code></td><td>0-4096px</td><td><code>--pm-bp-w-{000-255}</code></td></tr>
+      <tr><td>Height</td><td><code>h</code></td><td>0-2048px</td><td><code>--pm-bp-h-{000-255}</code></td></tr>
+      <tr><td>Container Query</td><td><code>cq</code></td><td>0-4096px</td><td><code>--pm-cq-{000-255}</code></td></tr>
+      <tr><td>Fluid Text</td><td><code>fluid-text</code></td><td>clamp()</td><td><code>--pm-fluid-text-{000-255}</code></td></tr>
+      <tr><td>Fluid Space</td><td><code>fluid-space</code></td><td>clamp()</td><td><code>--pm-fluid-space-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- INTERACTION -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">👆 Interaction</span>
+    <span class="category-count">100 tokens</span>
+  </div>
+  <div class="category-content">
+    <p style="color:#888;margin-bottom:1rem;">Keyword-based tokens for interaction states</p>
+    <table>
+      <tr><th>Property</th><th>Examples</th></tr>
+      <tr><td>Cursor</td><td><code>--pm-int-cursor-pointer</code>, <code>--pm-int-cursor-grab</code></td></tr>
+      <tr><td>Pointer Events</td><td><code>--pm-int-pointer-auto</code>, <code>--pm-int-pointer-none</code></td></tr>
+      <tr><td>Touch Action</td><td><code>--pm-int-touch-pan-x</code>, <code>--pm-int-touch-manipulation</code></td></tr>
+      <tr><td>Scroll Snap</td><td><code>--pm-int-snap-type-x-mandatory</code></td></tr>
+      <tr><td>Resize</td><td><code>--pm-int-resize-both</code>, <code>--pm-int-resize-none</code></td></tr>
+      <tr><td>Will Change</td><td><code>--pm-int-will-transform</code>, <code>--pm-int-will-opacity</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🎛️ Audio</span>
+    <span class="category-count">4,104 tokens</span>
+  </div>
+  <div class="category-content">
+    <p style="color:#888;margin-bottom:1rem;">Music production & audio interface tokens</p>
+    <table>
+      <tr><th>Property</th><th>Code</th><th>Range</th><th>Pattern</th></tr>
+      <tr><td>VU Meter</td><td><code>vu</code></td><td>RGB gradient</td><td><code>--pm-aud-vu-{000-255}</code></td></tr>
+      <tr><td>Peak Meter</td><td><code>peak</code></td><td>HSL gradient</td><td><code>--pm-aud-peak-{000-255}</code></td></tr>
+      <tr><td>Decibels</td><td><code>db</code></td><td>-128 to +127dB</td><td><code>--pm-aud-db-{000-255}</code></td></tr>
+      <tr><td>LUFS</td><td><code>lufs</code></td><td>-60 to 0</td><td><code>--pm-aud-lufs-{000-255}</code></td></tr>
+      <tr><td>Pan</td><td><code>pan</code></td><td>-100 to +100</td><td><code>--pm-aud-pan-{000-255}</code></td></tr>
+      <tr><td>Fader</td><td><code>fader</code></td><td>0-127 MIDI</td><td><code>--pm-aud-fader-{000-255}</code></td></tr>
+      <tr><td>Knob Angle</td><td><code>knob</code></td><td>-135 to +135°</td><td><code>--pm-aud-knob-{000-255}</code></td></tr>
+      <tr><td>Attack</td><td><code>attack</code></td><td>0-5000ms</td><td><code>--pm-aud-attack-{000-255}</code></td></tr>
+      <tr><td>Decay</td><td><code>decay</code></td><td>0-5000ms</td><td><code>--pm-aud-decay-{000-255}</code></td></tr>
+      <tr><td>Sustain</td><td><code>sustain</code></td><td>0-100%</td><td><code>--pm-aud-sustain-{000-255}</code></td></tr>
+      <tr><td>Release</td><td><code>release</code></td><td>0-10000ms</td><td><code>--pm-aud-release-{000-255}</code></td></tr>
+      <tr><td>Frequency</td><td><code>freq</code></td><td>20-20000Hz</td><td><code>--pm-aud-freq-{000-255}</code></td></tr>
+      <tr><td>Q / Resonance</td><td><code>q</code></td><td>0.1-30</td><td><code>--pm-aud-q-{000-255}</code></td></tr>
+      <tr><td>BPM</td><td><code>bpm</code></td><td>20-300</td><td><code>--pm-aud-bpm-{000-255}</code></td></tr>
+      <tr><td>Timing</td><td><code>timing</code></td><td>ms divisions</td><td><code>--pm-aud-timing-{000-255}</code></td></tr>
+      <tr><td>Spectrum</td><td><code>spectrum</code></td><td>HSL by freq</td><td><code>--pm-aud-spectrum-{000-255}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- FONTS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🔠 Fonts</span>
+    <span class="category-count">862 tokens</span>
+  </div>
+  <div class="category-content">
+    <table>
+      <tr><th>File</th><th>Count</th><th>Pattern</th></tr>
+      <tr><td>Sans</td><td>101</td><td><code>--pm-font-sans-{000-100}</code></td></tr>
+      <tr><td>Serif</td><td>90</td><td><code>--pm-font-serif-{000-089}</code></td></tr>
+      <tr><td>Mono</td><td>60</td><td><code>--pm-font-mono-{000-059}</code></td></tr>
+      <tr><td>Script</td><td>90</td><td><code>--pm-font-script-{000-089}</code></td></tr>
+      <tr><td>Display</td><td>90</td><td><code>--pm-font-display-{000-089}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ICONS -->
+<div class="category">
+  <div class="category-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="category-title">🎯 Icons</span>
+    <span class="category-count">3,456 tokens</span>
+  </div>
+  <div class="category-content">
+    <p style="color:#888;margin-bottom:1rem;">Icon names × 4 styles (line, solid, duotone, thin)</p>
+    <table>
+      <tr><th>File</th><th>Icons</th><th>Pattern</th></tr>
+      <tr><td>UI</td><td>176</td><td><code>--pm-icon-ui-{style}-{000-175}</code></td></tr>
+      <tr><td>Audio</td><td>136</td><td><code>--pm-icon-aud-{style}-{000-135}</code></td></tr>
+      <tr><td>Nav</td><td>57</td><td><code>--pm-icon-nav-{style}-{000-056}</code></td></tr>
+      <tr><td>Social</td><td>63</td><td><code>--pm-icon-soc-{style}-{000-062}</code></td></tr>
+    </table>
+  </div>
+</div>
+
+<footer style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--pm-border);color:#666;text-align:center;">
+  <p>Polymorphi.css Token Registry • 70,527 tokens • v1.0.0</p>
+  <p style="margin-top:0.5rem;">MIT License</p>
+</footer>
+
+</body>
+</html>

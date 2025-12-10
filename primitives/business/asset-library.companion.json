@@ -1,0 +1,46 @@
+{
+  "name": "asset-library",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Central browser for project assets",
+  "bindings": {
+    "gridGap": "--pm-space-gap-{index}",
+    "thumbSize": "--pm-size-w-{index}",
+    "listRowHeight": "--pm-size-h-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "selectedColor": "--pm-{color}-base-{index}",
+    "tagColor": "--pm-{color}-vivid-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "behaviors": {
+    "view": [
+      "grid",
+      "list"
+    ],
+    "filter": [
+      "type",
+      "tag",
+      "date"
+    ],
+    "sort": [
+      "name",
+      "date",
+      "type"
+    ],
+    "search": "fuzzy"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "grid",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "card",
+    "badge",
+    "import-hub"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "showreel-builder",
+  "version": "1.0.0",
+  "category": "visual",
+  "description": "Sequence builder for showreels and demos",
+  "bindings": {
+    "slotWidth": "--pm-size-w-{index}",
+    "slotHeight": "--pm-size-h-{index}",
+    "slotGap": "--pm-space-gap-{index}",
+    "slotBackground": "--pm-{color}-shade-{index}",
+    "activeSlot": "--pm-{color}-vivid-{index}",
+    "dragHandle": "--pm-{color}-mute-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "behaviors": {
+    "slots": [
+      "intro",
+      "clip",
+      "outro"
+    ],
+    "reorder": "drag",
+    "preview": "sequential",
+    "export": "playlist-spec"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "list",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "video-player",
+    "visualizer",
+    "cover-art-board"
+  ]
+}

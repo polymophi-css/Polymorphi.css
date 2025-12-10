@@ -1,0 +1,30 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "category": "music-theory",
+  "description": "Musical note definitions and frequencies",
+  "bindings": {
+    "midi": "--pm-music-midi-{index}",
+    "frequency": "--pm-music-freq-{index}",
+    "color": "--pm-{color}-base-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}"
+  },
+  "behaviors": {
+    "transpose": "semitones",
+    "octave": "shift"
+  },
+  "constraints": {
+    "indexRange": "000-127"
+  },
+  "accessibility": {
+    "role": "option",
+    "aria": [
+      "aria-selected"
+    ]
+  },
+  "relationships": [
+    "scales",
+    "chords",
+    "piano-roll"
+  ]
+}

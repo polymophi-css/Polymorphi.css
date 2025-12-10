@@ -1,0 +1,30 @@
+{
+  "name": "record",
+  "version": "1.0.0",
+  "category": "transport",
+  "description": "Record button",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "color": "--pm-{color}-base-{index}",
+    "activeColor": "--pm-red-vivid-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "arm": "toggle",
+    "punch": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "button",
+    "aria": [
+      "aria-pressed"
+    ]
+  },
+  "relationships": [
+    "play",
+    "punch",
+    "channel"
+  ]
+}

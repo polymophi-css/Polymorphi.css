@@ -1,0 +1,27 @@
+{
+  "name": "console-section",
+  "version": "1.0.0",
+  "category": "hardware",
+  "description": "Mixing console section layout",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "borderColor": "--pm-{color}-mute-{index}",
+    "labelColor": "--pm-{color}-base-{index}"
+  },
+  "behaviors": {
+    "resize": "proportional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "region"
+  },
+  "relationships": [
+    "channel-strip",
+    "master-section",
+    "meter"
+  ]
+}

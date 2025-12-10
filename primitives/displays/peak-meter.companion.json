@@ -1,0 +1,42 @@
+{
+  "name": "peak-meter",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "Digital peak meter with hold",
+  "bindings": {
+    "level": "--pm-aud-peak-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "segmentColor": "--pm-aud-vu-{index}",
+    "peakColor": "--pm-{color}-vivid-{index}",
+    "clipColor": "--pm-red-vivid-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "decay": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "peakHold": [
+      "infinite",
+      "decay",
+      "none"
+    ],
+    "clipIndicator": "latch",
+    "scale": [
+      "linear",
+      "logarithmic"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "meter",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "channel",
+    "master",
+    "limiter"
+  ]
+}

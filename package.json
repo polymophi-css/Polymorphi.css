@@ -1,0 +1,31 @@
+{
+  "name": "polymorphi.css",
+  "version": "1.0.0",
+  "description": "Audio-first CSS framework with 41,000+ design tokens. Zero dependencies.",
+  "main": "foundation/all.foundation.css",
+  "style": "foundation/all.foundation.css",
+  "files": [
+    "foundation/",
+    "tokens/",
+    "primitives/",
+    "components/"
+  ],
+  "keywords": [
+    "css",
+    "framework",
+    "design-tokens",
+    "audio",
+    "daw",
+    "music",
+    "ui",
+    "components",
+    "polymorphi"
+  ],
+  "author": "Jason Wallace",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/polymophi-css/Polymorphi.css.git"
+  },
+  "homepage": "https://github.com/polymophi-css/Polymorphi.css"
+}

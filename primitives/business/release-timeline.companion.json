@@ -1,0 +1,44 @@
+{
+  "name": "release-timeline",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Release status and workflow tracker",
+  "bindings": {
+    "trackHeight": "--pm-size-h-{index}",
+    "nodeSize": "--pm-size-w-{index}",
+    "lineWidth": "--pm-border-w-{index}",
+    "completedColor": "--pm-grn-vivid-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "pendingColor": "--pm-{color}-mute-{index}",
+    "labelSize": "--pm-type-size-{index}"
+  },
+  "stages": [
+    "writing",
+    "demo",
+    "mix",
+    "master",
+    "artwork",
+    "release"
+  ],
+  "behaviors": {
+    "view": [
+      "timeline",
+      "kanban"
+    ],
+    "update": "drag"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "list",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "stepper",
+    "badge",
+    "card"
+  ]
+}

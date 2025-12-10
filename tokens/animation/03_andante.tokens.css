@@ -1,0 +1,220 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI ANIMATION TIER 03: ANDANTE
+   ═══════════════════════════════════════════════════════════════════════════
+   Complexity: 3 (Moderate)
+   Tempo: 80-108 BPM equivalent
+   Character: Walking pace, comfortable, natural
+   Use: Standard UI, menus, tooltips, dropdowns, tabs, navigation
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* DURATION SCALE */
+  --pm-andante-dur-000: 150ms;
+  --pm-andante-dur-016: 175ms;
+  --pm-andante-dur-032: 200ms;
+  --pm-andante-dur-048: 225ms;
+  --pm-andante-dur-064: 250ms;
+  --pm-andante-dur-080: 275ms;
+  --pm-andante-dur-096: 300ms;
+  --pm-andante-dur-112: 350ms;
+  --pm-andante-dur-128: 400ms;     /* Center point                           */
+  --pm-andante-dur-144: 450ms;
+  --pm-andante-dur-160: 500ms;
+  --pm-andante-dur-176: 600ms;
+  --pm-andante-dur-192: 700ms;
+  --pm-andante-dur-208: 800ms;
+  --pm-andante-dur-224: 900ms;
+  --pm-andante-dur-240: 1000ms;
+  --pm-andante-dur-255: 1200ms;
+
+  /* EASING - STANDARD */
+  --pm-andante-ease-linear: linear;
+  --pm-andante-ease-default: ease;
+  --pm-andante-ease-in: ease-in;
+  --pm-andante-ease-out: ease-out;
+  --pm-andante-ease-in-out: ease-in-out;
+
+  /* EASING - SINE */
+  --pm-andante-ease-sine-in: cubic-bezier(0.12, 0, 0.39, 0);
+  --pm-andante-ease-sine-out: cubic-bezier(0.61, 1, 0.88, 1);
+  --pm-andante-ease-sine-in-out: cubic-bezier(0.37, 0, 0.63, 1);
+
+  /* EASING - QUAD */
+  --pm-andante-ease-quad-in: cubic-bezier(0.11, 0, 0.5, 0);
+  --pm-andante-ease-quad-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --pm-andante-ease-quad-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+
+  /* EASING - CUBIC */
+  --pm-andante-ease-cubic-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --pm-andante-ease-cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --pm-andante-ease-cubic-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* EASING - QUART */
+  --pm-andante-ease-quart-in: cubic-bezier(0.5, 0, 0.75, 0);
+  --pm-andante-ease-quart-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --pm-andante-ease-quart-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* EASING - QUINT */
+  --pm-andante-ease-quint-in: cubic-bezier(0.64, 0, 0.78, 0);
+  --pm-andante-ease-quint-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --pm-andante-ease-quint-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+
+  /* EASING - EXPO */
+  --pm-andante-ease-expo-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --pm-andante-ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pm-andante-ease-expo-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* EASING - CIRC */
+  --pm-andante-ease-circ-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --pm-andante-ease-circ-out: cubic-bezier(0, 0.55, 0.45, 1);
+  --pm-andante-ease-circ-in-out: cubic-bezier(0.85, 0, 0.15, 1);
+
+  /* EASING - BACK */
+  --pm-andante-ease-back-in: cubic-bezier(0.36, 0, 0.66, -0.56);
+  --pm-andante-ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --pm-andante-ease-back-in-out: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  /* EASING - ELASTIC */
+  --pm-andante-ease-elastic-out: cubic-bezier(0.5, 1.75, 0.4, 1);
+  --pm-andante-ease-elastic-in-out: cubic-bezier(0.5, -0.75, 0.5, 1.75);
+
+  /* EASING - SPRING (Various tensions) */
+  --pm-andante-ease-spring-soft: cubic-bezier(0.5, 1.4, 0.5, 1);
+  --pm-andante-ease-spring-medium: cubic-bezier(0.5, 1.6, 0.4, 1);
+  --pm-andante-ease-spring-hard: cubic-bezier(0.5, 1.8, 0.3, 1);
+
+  /* DELAY SCALE */
+  --pm-andante-delay-000: 0ms;
+  --pm-andante-delay-032: 50ms;
+  --pm-andante-delay-064: 100ms;
+  --pm-andante-delay-096: 150ms;
+  --pm-andante-delay-128: 200ms;
+  --pm-andante-delay-160: 300ms;
+  --pm-andante-delay-192: 400ms;
+  --pm-andante-delay-224: 500ms;
+  --pm-andante-delay-255: 750ms;
+
+  /* STAGGER INCREMENTS */
+  --pm-andante-stagger-001: 25ms;
+  --pm-andante-stagger-002: 50ms;
+  --pm-andante-stagger-003: 75ms;
+  --pm-andante-stagger-004: 100ms;
+  --pm-andante-stagger-005: 125ms;
+  --pm-andante-stagger-006: 150ms;
+  --pm-andante-stagger-007: 200ms;
+  --pm-andante-stagger-008: 300ms;
+
+  /* ITERATION / DIRECTION / FILL / STATE */
+  --pm-andante-iter-001: 1;
+  --pm-andante-iter-002: 2;
+  --pm-andante-iter-003: 3;
+  --pm-andante-iter-005: 5;
+  --pm-andante-iter-inf: infinite;
+  --pm-andante-dir-normal: normal;
+  --pm-andante-dir-reverse: reverse;
+  --pm-andante-dir-alternate: alternate;
+  --pm-andante-dir-alternate-rev: alternate-reverse;
+  --pm-andante-fill-none: none;
+  --pm-andante-fill-forwards: forwards;
+  --pm-andante-fill-backwards: backwards;
+  --pm-andante-fill-both: both;
+  --pm-andante-state-running: running;
+  --pm-andante-state-paused: paused;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANDANTE KEYFRAMES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* FADE */
+@keyframes pm-andante-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pm-andante-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes pm-andante-fade-in-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pm-andante-fade-in-down { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pm-andante-fade-in-left { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pm-andante-fade-in-right { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pm-andante-fade-in-scale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+/* SLIDE */
+@keyframes pm-andante-slide-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes pm-andante-slide-down { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+@keyframes pm-andante-slide-left { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes pm-andante-slide-right { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+/* SCALE */
+@keyframes pm-andante-scale-in { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes pm-andante-scale-out { from { transform: scale(1); } to { transform: scale(0); } }
+@keyframes pm-andante-pop-in { from { transform: scale(0); } 70% { transform: scale(1.05); } to { transform: scale(1); } }
+@keyframes pm-andante-pop-out { from { transform: scale(1); } 30% { transform: scale(1.05); } to { transform: scale(0); } }
+@keyframes pm-andante-spring-in { from { transform: scale(0); } 60% { transform: scale(1.12); } 80% { transform: scale(0.97); } to { transform: scale(1); } }
+@keyframes pm-andante-grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes pm-andante-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* ROTATE */
+@keyframes pm-andante-rotate-in { from { transform: rotate(-90deg); opacity: 0; } to { transform: rotate(0deg); opacity: 1; } }
+@keyframes pm-andante-rotate-out { from { transform: rotate(0deg); opacity: 1; } to { transform: rotate(90deg); opacity: 0; } }
+@keyframes pm-andante-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pm-andante-spin-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+@keyframes pm-andante-flip-x { from { transform: perspective(400px) rotateX(-90deg); } to { transform: perspective(400px) rotateX(0deg); } }
+@keyframes pm-andante-flip-y { from { transform: perspective(400px) rotateY(-90deg); } to { transform: perspective(400px) rotateY(0deg); } }
+
+/* DROPDOWN / MENU */
+@keyframes pm-andante-dropdown-in { from { opacity: 0; transform: translateY(-8px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes pm-andante-dropdown-out { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-8px) scale(0.98); } }
+@keyframes pm-andante-popover-in { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes pm-andante-popover-out { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.95); } }
+
+/* TOOLTIP */
+@keyframes pm-andante-tooltip-up { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pm-andante-tooltip-down { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pm-andante-tooltip-left { from { opacity: 0; transform: translateX(4px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pm-andante-tooltip-right { from { opacity: 0; transform: translateX(-4px); } to { opacity: 1; transform: translateX(0); } }
+
+/* TAB / NAV */
+@keyframes pm-andante-tab-slide { from { transform: translateX(var(--tab-from, 0)); } to { transform: translateX(var(--tab-to, 0)); } }
+@keyframes pm-andante-underline-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes pm-andante-indicator-slide { from { left: var(--indicator-from, 0); } to { left: var(--indicator-to, 0); } }
+
+/* ACCORDION / COLLAPSE */
+@keyframes pm-andante-collapse-open { from { height: 0; opacity: 0; } to { height: var(--collapse-height, auto); opacity: 1; } }
+@keyframes pm-andante-collapse-close { from { height: var(--collapse-height, auto); opacity: 1; } to { height: 0; opacity: 0; } }
+
+/* SKELETON / LOADING */
+@keyframes pm-andante-shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+@keyframes pm-andante-skeleton-pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes pm-andante-loading-dots { 0%, 80%, 100% { opacity: 0; transform: scale(0.6); } 40% { opacity: 1; transform: scale(1); } }
+
+/* ATTENTION */
+@keyframes pm-andante-shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); } 20%, 40%, 60%, 80% { transform: translateX(4px); } }
+@keyframes pm-andante-wobble { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-5deg); } 75% { transform: rotate(5deg); } }
+@keyframes pm-andante-jiggle { 0%, 100% { transform: scale(1); } 25% { transform: scale(0.97); } 50% { transform: scale(1.03); } 75% { transform: scale(0.99); } }
+@keyframes pm-andante-bounce { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+@keyframes pm-andante-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes pm-andante-ping { 0% { transform: scale(1); opacity: 1; } 75%, 100% { transform: scale(2); opacity: 0; } }
+
+/* AUDIO UI */
+@keyframes pm-andante-meter-fill { from { transform: scaleY(0); } to { transform: scaleY(var(--meter-level, 0.5)); } }
+@keyframes pm-andante-knob-rotate { from { transform: rotate(var(--knob-from, -135deg)); } to { transform: rotate(var(--knob-to, 135deg)); } }
+@keyframes pm-andante-fader-slide { from { transform: translateY(var(--fader-from, 0)); } to { transform: translateY(var(--fader-to, 0)); } }
+@keyframes pm-andante-waveform-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANDANTE PRESETS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --pm-andante-preset-fade-in: pm-andante-fade-in var(--pm-andante-dur-064) var(--pm-andante-ease-sine-out) var(--pm-andante-fill-both);
+  --pm-andante-preset-fade-in-up: pm-andante-fade-in-up var(--pm-andante-dur-096) var(--pm-andante-ease-cubic-out) var(--pm-andante-fill-both);
+  --pm-andante-preset-pop-in: pm-andante-pop-in var(--pm-andante-dur-112) var(--pm-andante-ease-spring-medium) var(--pm-andante-fill-both);
+  --pm-andante-preset-spring-in: pm-andante-spring-in var(--pm-andante-dur-144) var(--pm-andante-ease-default) var(--pm-andante-fill-both);
+  --pm-andante-preset-dropdown: pm-andante-dropdown-in var(--pm-andante-dur-080) var(--pm-andante-ease-quart-out) var(--pm-andante-fill-both);
+  --pm-andante-preset-tooltip: pm-andante-tooltip-up var(--pm-andante-dur-048) var(--pm-andante-ease-sine-out) var(--pm-andante-fill-both);
+  --pm-andante-preset-collapse-open: pm-andante-collapse-open var(--pm-andante-dur-112) var(--pm-andante-ease-quint-out) var(--pm-andante-fill-both);
+  --pm-andante-preset-shimmer: pm-andante-shimmer var(--pm-andante-dur-208) var(--pm-andante-ease-linear) infinite;
+  --pm-andante-preset-spin: pm-andante-spin var(--pm-andante-dur-160) var(--pm-andante-ease-linear) infinite;
+  --pm-andante-preset-shake: pm-andante-shake var(--pm-andante-dur-096) var(--pm-andante-ease-default) 1;
+  --pm-andante-preset-bounce: pm-andante-bounce var(--pm-andante-dur-128) var(--pm-andante-ease-sine-out) infinite;
+  --pm-andante-preset-pulse: pm-andante-pulse var(--pm-andante-dur-160) var(--pm-andante-ease-sine-in-out) infinite;
+  --pm-andante-preset-ping: pm-andante-ping var(--pm-andante-dur-176) var(--pm-andante-ease-cubic-out) infinite;
+}

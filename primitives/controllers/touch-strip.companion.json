@@ -1,0 +1,35 @@
+{
+  "name": "touch-strip",
+  "version": "1.0.0",
+  "category": "controllers",
+  "description": "Capacitive touch ribbon",
+  "bindings": {
+    "position": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "ledColor": "--pm-{color}-vivid-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "mode": [
+      "absolute",
+      "relative"
+    ],
+    "led": "follow",
+    "multitouch": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "slider",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "pitch",
+    "modulation",
+    "expression"
+  ]
+}

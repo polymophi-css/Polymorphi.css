@@ -1,0 +1,38 @@
+{
+  "name": "modal",
+  "version": "1.0.0",
+  "category": "ui-patterns",
+  "description": "Overlay dialog container",
+  
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "maxWidth": "--pm-size-max-w-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "background": "--pm-{color}-base-{index}",
+    "overlayColor": "--pm-{color}-alpha-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}",
+    "zIndex": "--pm-layer-z-{index}",
+    "backdropBlur": "--pm-fx-backdrop-{index}",
+    "enterAnimation": "--pm-anim-preset-fade-in",
+    "exitAnimation": "--pm-anim-preset-fade-out",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  
+  "behaviors": {
+    "closeOn": ["escape", "overlay", "button"],
+    "focus": "trap",
+    "scroll": "lock"
+  },
+  
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  
+  "accessibility": {
+    "role": "dialog",
+    "aria": ["aria-modal", "aria-labelledby", "aria-describedby"]
+  },
+  
+  "relationships": ["button", "form", "alert"]
+}

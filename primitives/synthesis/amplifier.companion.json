@@ -1,0 +1,28 @@
+{
+  "name": "amplifier",
+  "version": "1.0.0",
+  "category": "synthesis",
+  "description": "VCA / amplifier module",
+  "bindings": {
+    "level": "--pm-aud-fader-{index}",
+    "pan": "--pm-aud-pan-{index}",
+    "velAmount": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "envelope": "connected",
+    "velocity": "scalable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "envelope",
+    "oscillator",
+    "output"
+  ]
+}

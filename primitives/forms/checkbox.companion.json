@@ -1,0 +1,32 @@
+{
+  "name": "checkbox",
+  "version": "1.0.0",
+  "category": "forms",
+  "description": "Checkbox input",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "checkedBackground": "--pm-{color}-vivid-{index}",
+    "checkColor": "--pm-wht-base-{index}",
+    "borderWidth": "--pm-border-w-{index}",
+    "borderColor": "--pm-{color}-mute-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "indeterminate": "supported"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "checkbox",
+    "aria": [
+      "aria-checked"
+    ]
+  },
+  "relationships": [
+    "label",
+    "form"
+  ]
+}

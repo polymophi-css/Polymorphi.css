@@ -1,0 +1,42 @@
+{
+  "name": "filter",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Filter processor",
+  "bindings": {
+    "frequency": "--pm-aud-freq-{index}",
+    "resonance": "--pm-aud-q-{index}",
+    "drive": "--pm-aud-db-{index}",
+    "mix": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "lowPass",
+      "highPass",
+      "bandPass",
+      "notch",
+      "comb",
+      "formant"
+    ],
+    "slope": [
+      "12dB",
+      "24dB",
+      "48dB"
+    ],
+    "bypass": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "synth",
+    "insert",
+    "automation"
+  ]
+}

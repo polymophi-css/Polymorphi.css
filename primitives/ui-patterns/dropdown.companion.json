@@ -1,0 +1,42 @@
+{
+  "name": "dropdown",
+  "version": "1.0.0",
+  "category": "ui-patterns",
+  "description": "Dropdown menu component",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "maxHeight": "--pm-size-max-h-{index}",
+    "background": "--pm-{color}-base-{index}",
+    "hoverBackground": "--pm-{color}-shade-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "trigger": [
+      "click",
+      "hover"
+    ],
+    "close": [
+      "click-outside",
+      "escape"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "menu",
+    "aria": [
+      "aria-expanded",
+      "aria-haspopup"
+    ]
+  },
+  "relationships": [
+    "button",
+    "select",
+    "navbar"
+  ]
+}

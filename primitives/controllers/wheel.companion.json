@@ -1,0 +1,39 @@
+{
+  "name": "wheel",
+  "version": "1.0.0",
+  "category": "controllers",
+  "description": "Pitch bend, mod wheel, jog wheel",
+  "bindings": {
+    "position": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "trackColor": "--pm-{color}-shade-{index}",
+    "thumbColor": "--pm-{color}-base-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "pitch",
+      "mod",
+      "jog",
+      "shuttle"
+    ],
+    "spring": "center",
+    "sensitivity": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255",
+    "pitchRange": "-8192 to 8191"
+  },
+  "accessibility": {
+    "role": "slider",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "midi",
+    "keyboard",
+    "transport"
+  ]
+}

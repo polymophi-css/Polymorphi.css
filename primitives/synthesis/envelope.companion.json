@@ -1,0 +1,40 @@
+{
+  "name": "envelope",
+  "version": "1.0.0",
+  "category": "synthesis",
+  "description": "ADSR envelope generator",
+  "bindings": {
+    "attack": "--pm-aud-attack-{index}",
+    "decay": "--pm-aud-decay-{index}",
+    "sustain": "--pm-aud-sustain-{index}",
+    "release": "--pm-aud-release-{index}",
+    "curveColor": "--pm-{color}-vivid-{index}",
+    "nodeColor": "--pm-{color}-base-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "ADSR",
+      "AHDSR",
+      "multiStage"
+    ],
+    "curve": [
+      "linear",
+      "exponential"
+    ],
+    "retrigger": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "oscillator",
+    "filter",
+    "amplifier"
+  ]
+}

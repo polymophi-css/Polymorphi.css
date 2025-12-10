@@ -1,0 +1,28 @@
+{
+  "name": "empty-state",
+  "version": "1.0.0",
+  "category": "feedback",
+  "description": "Empty state placeholder",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "iconSize": "--pm-size-w-{index}",
+    "iconColor": "--pm-{color}-mute-{index}",
+    "titleSize": "--pm-type-size-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "descriptionColor": "--pm-{color}-mute-{index}"
+  },
+  "behaviors": {
+    "action": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "status"
+  },
+  "relationships": [
+    "table",
+    "list",
+    "card"
+  ]
+}

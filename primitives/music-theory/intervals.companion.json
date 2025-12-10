@@ -1,0 +1,47 @@
+{
+  "name": "intervals",
+  "version": "1.0.0",
+  "category": "music-theory",
+  "description": "Musical intervals from unison to compound",
+  "bindings": {
+    "semitones": "--pm-music-midi-{index}",
+    "color": "--pm-{color}-base-{index}"
+  },
+  "patterns": {
+    "unison": 0,
+    "minorSecond": 1,
+    "majorSecond": 2,
+    "minorThird": 3,
+    "majorThird": 4,
+    "perfectFourth": 5,
+    "tritone": 6,
+    "perfectFifth": 7,
+    "minorSixth": 8,
+    "majorSixth": 9,
+    "minorSeventh": 10,
+    "majorSeventh": 11,
+    "octave": 12,
+    "minorNinth": 13,
+    "majorNinth": 14,
+    "minorTenth": 15,
+    "majorTenth": 16,
+    "perfectEleventh": 17,
+    "augmentedEleventh": 18,
+    "perfectTwelfth": 19,
+    "minorThirteenth": 20,
+    "majorThirteenth": 21
+  },
+  "behaviors": {
+    "invert": "complement"
+  },
+  "constraints": {
+    "indexRange": "000-024"
+  },
+  "accessibility": {
+    "role": "listitem"
+  },
+  "relationships": [
+    "scales",
+    "chords"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "file-upload",
+  "version": "1.0.0",
+  "category": "forms",
+  "description": "File upload dropzone",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "hoverBackground": "--pm-{color}-base-{index}",
+    "borderWidth": "--pm-border-w-{index}",
+    "borderColor": "--pm-{color}-mute-{index}",
+    "activeBorderColor": "--pm-{color}-vivid-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "iconColor": "--pm-{color}-mute-{index}",
+    "textColor": "--pm-{color}-base-{index}"
+  },
+  "behaviors": {
+    "drop": "dragover",
+    "multiple": "optional",
+    "preview": "thumbnail"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "button",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "progress",
+    "form"
+  ]
+}

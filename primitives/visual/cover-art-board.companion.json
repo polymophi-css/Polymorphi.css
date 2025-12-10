@@ -1,0 +1,37 @@
+{
+  "name": "cover-art-board",
+  "version": "1.0.0",
+  "category": "visual",
+  "description": "Release artwork gallery and preview",
+  "bindings": {
+    "gridGap": "--pm-space-gap-{index}",
+    "thumbSize": "--pm-size-w-{index}",
+    "heroSize": "--pm-size-w-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "selectedBorder": "--pm-{color}-vivid-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}"
+  },
+  "behaviors": {
+    "preview": [
+      "square",
+      "16:9",
+      "9:16",
+      "4:3"
+    ],
+    "select": "hero",
+    "zoom": "click"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "grid",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "press-kit",
+    "card"
+  ]
+}

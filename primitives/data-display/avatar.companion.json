@@ -1,0 +1,33 @@
+{
+  "name": "avatar",
+  "version": "1.0.0",
+  "category": "data-display",
+  "description": "User avatar",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "fontSize": "--pm-type-size-{index}",
+    "borderWidth": "--pm-border-w-{index}",
+    "borderColor": "--pm-{color}-mute-{index}"
+  },
+  "behaviors": {
+    "fallback": "initials",
+    "status": "indicator"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "img",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "list",
+    "card",
+    "navbar"
+  ]
+}

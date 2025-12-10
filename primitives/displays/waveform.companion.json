@@ -1,0 +1,36 @@
+{
+  "name": "waveform",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "Time-domain audio visualization",
+  
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "waveColor": "--pm-{color}-base-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "playheadColor": "--pm-{color}-vivid-{index}",
+    "selectionColor": "--pm-{color}-alpha-{index}",
+    "gridColor": "--pm-{color}-mute-{index}",
+    "zoom": "--pm-tf-scale-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  
+  "behaviors": {
+    "scroll": "horizontal",
+    "zoom": ["horizontal", "vertical"],
+    "select": "range",
+    "scrub": "playhead"
+  },
+  
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  
+  "accessibility": {
+    "role": "img",
+    "aria": ["aria-label", "aria-describedby"]
+  },
+  
+  "relationships": ["arrangement", "clip", "transport"]
+}

@@ -1,0 +1,222 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI ANIMATION TIER 04: ALLEGRO
+   ═══════════════════════════════════════════════════════════════════════════
+   Complexity: 4 (Complex)
+   Tempo: 108-140 BPM equivalent
+   Character: Fast, lively, brisk
+   Use: Hover states, button feedback, micro-interactions, active states
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* DURATION SCALE */
+  --pm-allegro-dur-000: 75ms;
+  --pm-allegro-dur-016: 90ms;
+  --pm-allegro-dur-032: 100ms;
+  --pm-allegro-dur-048: 120ms;
+  --pm-allegro-dur-064: 140ms;
+  --pm-allegro-dur-080: 160ms;
+  --pm-allegro-dur-096: 180ms;
+  --pm-allegro-dur-112: 200ms;
+  --pm-allegro-dur-128: 225ms;     /* Center point                           */
+  --pm-allegro-dur-144: 250ms;
+  --pm-allegro-dur-160: 280ms;
+  --pm-allegro-dur-176: 320ms;
+  --pm-allegro-dur-192: 360ms;
+  --pm-allegro-dur-208: 400ms;
+  --pm-allegro-dur-224: 500ms;
+  --pm-allegro-dur-240: 600ms;
+  --pm-allegro-dur-255: 750ms;
+
+  /* EASING - STANDARD */
+  --pm-allegro-ease-linear: linear;
+  --pm-allegro-ease-default: ease;
+  --pm-allegro-ease-in: ease-in;
+  --pm-allegro-ease-out: ease-out;
+  --pm-allegro-ease-in-out: ease-in-out;
+
+  /* EASING - SINE/QUAD/CUBIC/QUART/QUINT */
+  --pm-allegro-ease-sine-in: cubic-bezier(0.12, 0, 0.39, 0);
+  --pm-allegro-ease-sine-out: cubic-bezier(0.61, 1, 0.88, 1);
+  --pm-allegro-ease-sine-in-out: cubic-bezier(0.37, 0, 0.63, 1);
+  --pm-allegro-ease-quad-in: cubic-bezier(0.11, 0, 0.5, 0);
+  --pm-allegro-ease-quad-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --pm-allegro-ease-quad-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --pm-allegro-ease-cubic-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --pm-allegro-ease-cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --pm-allegro-ease-cubic-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --pm-allegro-ease-quart-in: cubic-bezier(0.5, 0, 0.75, 0);
+  --pm-allegro-ease-quart-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --pm-allegro-ease-quart-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --pm-allegro-ease-quint-in: cubic-bezier(0.64, 0, 0.78, 0);
+  --pm-allegro-ease-quint-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --pm-allegro-ease-quint-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+
+  /* EASING - EXPO/CIRC */
+  --pm-allegro-ease-expo-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --pm-allegro-ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pm-allegro-ease-expo-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --pm-allegro-ease-circ-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --pm-allegro-ease-circ-out: cubic-bezier(0, 0.55, 0.45, 1);
+  --pm-allegro-ease-circ-in-out: cubic-bezier(0.85, 0, 0.15, 1);
+
+  /* EASING - BACK */
+  --pm-allegro-ease-back-in: cubic-bezier(0.36, 0, 0.66, -0.56);
+  --pm-allegro-ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --pm-allegro-ease-back-in-out: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --pm-allegro-ease-back-out-strong: cubic-bezier(0.2, 1.8, 0.5, 1);
+
+  /* EASING - ELASTIC */
+  --pm-allegro-ease-elastic-out: cubic-bezier(0.5, 2, 0.35, 1);
+  --pm-allegro-ease-elastic-in-out: cubic-bezier(0.5, -1, 0.5, 2);
+
+  /* EASING - SPRING */
+  --pm-allegro-ease-spring-soft: cubic-bezier(0.5, 1.5, 0.5, 1);
+  --pm-allegro-ease-spring-medium: cubic-bezier(0.45, 1.8, 0.4, 1);
+  --pm-allegro-ease-spring-hard: cubic-bezier(0.4, 2, 0.35, 1);
+  --pm-allegro-ease-spring-bounce: cubic-bezier(0.3, 2.2, 0.4, 1);
+
+  /* EASING - BOUNCE */
+  --pm-allegro-ease-bounce-out: cubic-bezier(0.34, 1.6, 0.64, 1);
+  --pm-allegro-ease-bounce-in-out: cubic-bezier(0.68, -0.8, 0.32, 1.8);
+
+  /* EASING - SNAPPY */
+  --pm-allegro-ease-snap: cubic-bezier(0, 0.9, 0.1, 1);
+  --pm-allegro-ease-snap-back: cubic-bezier(0, 1.4, 0.3, 1);
+
+  /* DELAY SCALE */
+  --pm-allegro-delay-000: 0ms;
+  --pm-allegro-delay-032: 25ms;
+  --pm-allegro-delay-064: 50ms;
+  --pm-allegro-delay-096: 75ms;
+  --pm-allegro-delay-128: 100ms;
+  --pm-allegro-delay-160: 150ms;
+  --pm-allegro-delay-192: 200ms;
+  --pm-allegro-delay-224: 300ms;
+  --pm-allegro-delay-255: 400ms;
+
+  /* STAGGER */
+  --pm-allegro-stagger-001: 15ms;
+  --pm-allegro-stagger-002: 30ms;
+  --pm-allegro-stagger-003: 45ms;
+  --pm-allegro-stagger-004: 60ms;
+  --pm-allegro-stagger-005: 80ms;
+  --pm-allegro-stagger-006: 100ms;
+  --pm-allegro-stagger-007: 125ms;
+  --pm-allegro-stagger-008: 150ms;
+
+  /* ITERATION / DIRECTION / FILL / STATE */
+  --pm-allegro-iter-001: 1;
+  --pm-allegro-iter-002: 2;
+  --pm-allegro-iter-003: 3;
+  --pm-allegro-iter-005: 5;
+  --pm-allegro-iter-010: 10;
+  --pm-allegro-iter-inf: infinite;
+  --pm-allegro-dir-normal: normal;
+  --pm-allegro-dir-reverse: reverse;
+  --pm-allegro-dir-alternate: alternate;
+  --pm-allegro-dir-alternate-rev: alternate-reverse;
+  --pm-allegro-fill-none: none;
+  --pm-allegro-fill-forwards: forwards;
+  --pm-allegro-fill-backwards: backwards;
+  --pm-allegro-fill-both: both;
+  --pm-allegro-state-running: running;
+  --pm-allegro-state-paused: paused;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ALLEGRO KEYFRAMES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* FADE */
+@keyframes pm-allegro-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pm-allegro-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes pm-allegro-fade-in-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pm-allegro-fade-in-down { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pm-allegro-fade-in-scale { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+
+/* SCALE - Quick */
+@keyframes pm-allegro-scale-in { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes pm-allegro-scale-out { from { transform: scale(1); } to { transform: scale(0); } }
+@keyframes pm-allegro-pop { from { transform: scale(0.8); } 50% { transform: scale(1.1); } to { transform: scale(1); } }
+@keyframes pm-allegro-snap { from { transform: scale(0); } 70% { transform: scale(1.15); } to { transform: scale(1); } }
+@keyframes pm-allegro-spring { from { transform: scale(0); } 50% { transform: scale(1.2); } 75% { transform: scale(0.95); } to { transform: scale(1); } }
+@keyframes pm-allegro-bounce-in { from { transform: scale(0); } 60% { transform: scale(1.18); } 80% { transform: scale(0.92); } to { transform: scale(1); } }
+
+/* HOVER STATES */
+@keyframes pm-allegro-hover-lift { to { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); } }
+@keyframes pm-allegro-hover-grow { to { transform: scale(1.02); } }
+@keyframes pm-allegro-hover-glow { to { box-shadow: 0 0 20px rgba(var(--accent-rgb, 59, 130, 246), 0.4); } }
+@keyframes pm-allegro-hover-brighten { to { filter: brightness(1.1); } }
+@keyframes pm-allegro-hover-pop { 50% { transform: scale(1.05); } to { transform: scale(1.02); } }
+
+/* BUTTON FEEDBACK */
+@keyframes pm-allegro-press { to { transform: scale(0.96); } }
+@keyframes pm-allegro-press-deep { to { transform: scale(0.92); } }
+@keyframes pm-allegro-click-ripple { from { transform: scale(0); opacity: 0.5; } to { transform: scale(2.5); opacity: 0; } }
+@keyframes pm-allegro-click-flash { 0% { background: transparent; } 50% { background: rgba(255,255,255,0.3); } 100% { background: transparent; } }
+
+/* TOGGLE / SWITCH */
+@keyframes pm-allegro-toggle-on { from { transform: translateX(0); } to { transform: translateX(100%); } }
+@keyframes pm-allegro-toggle-off { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes pm-allegro-toggle-bounce { from { transform: translateX(0); } 70% { transform: translateX(110%); } to { transform: translateX(100%); } }
+@keyframes pm-allegro-check-draw { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+@keyframes pm-allegro-check-bounce { from { transform: scale(0); } 60% { transform: scale(1.2); } to { transform: scale(1); } }
+
+/* RADIO / CHECKBOX */
+@keyframes pm-allegro-radio-select { from { transform: scale(0); } 60% { transform: scale(1.3); } to { transform: scale(1); } }
+@keyframes pm-allegro-checkbox-check { from { transform: scale(0) rotate(-45deg); } to { transform: scale(1) rotate(0deg); } }
+
+/* INPUT FOCUS */
+@keyframes pm-allegro-focus-ring { from { box-shadow: 0 0 0 0 rgba(var(--focus-rgb, 59, 130, 246), 0.5); } to { box-shadow: 0 0 0 4px rgba(var(--focus-rgb, 59, 130, 246), 0.25); } }
+@keyframes pm-allegro-focus-glow { from { box-shadow: 0 0 0 0 transparent; } to { box-shadow: 0 0 0 3px rgba(var(--focus-rgb, 59, 130, 246), 0.3); } }
+
+/* RIPPLE EFFECTS */
+@keyframes pm-allegro-ripple { from { transform: scale(0); opacity: 0.6; } to { transform: scale(4); opacity: 0; } }
+@keyframes pm-allegro-ripple-small { from { transform: scale(0); opacity: 0.8; } to { transform: scale(2); opacity: 0; } }
+
+/* SPINNER / LOADER */
+@keyframes pm-allegro-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pm-allegro-spin-bounce { 0% { transform: rotate(0deg); } 25% { transform: rotate(100deg); } 50% { transform: rotate(180deg); } 75% { transform: rotate(280deg); } 100% { transform: rotate(360deg); } }
+@keyframes pm-allegro-dots { 0%, 80%, 100% { transform: scale(0.4); } 40% { transform: scale(1); } }
+@keyframes pm-allegro-bars { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+
+/* NOTIFICATION */
+@keyframes pm-allegro-notify-pop { from { transform: scale(0) translateY(-10px); opacity: 0; } 60% { transform: scale(1.1) translateY(0); } to { transform: scale(1) translateY(0); opacity: 1; } }
+@keyframes pm-allegro-badge-bump { from { transform: scale(1); } 50% { transform: scale(1.3); } to { transform: scale(1); } }
+
+/* ATTENTION */
+@keyframes pm-allegro-shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-3px); } 40%, 80% { transform: translateX(3px); } }
+@keyframes pm-allegro-wobble { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-3deg); } 75% { transform: rotate(3deg); } }
+@keyframes pm-allegro-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: 0.9; } }
+@keyframes pm-allegro-heartbeat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.15); } 28% { transform: scale(1); } 42% { transform: scale(1.15); } 56% { transform: scale(1); } }
+@keyframes pm-allegro-flash { 0%, 50%, 100% { opacity: 1; } 25%, 75% { opacity: 0.5; } }
+
+/* AUDIO UI - Fast */
+@keyframes pm-allegro-meter-snap { to { transform: scaleY(var(--meter-level, 0.5)); } }
+@keyframes pm-allegro-peak-flash { 0% { background: var(--peak-color, #ef4444); } 100% { background: transparent; } }
+@keyframes pm-allegro-clip-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes pm-allegro-beat-pulse { 0%, 100% { transform: scale(1); } 10% { transform: scale(1.1); } }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ALLEGRO PRESETS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --pm-allegro-preset-fade-in: pm-allegro-fade-in var(--pm-allegro-dur-048) var(--pm-allegro-ease-sine-out) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-pop: pm-allegro-pop var(--pm-allegro-dur-096) var(--pm-allegro-ease-spring-medium) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-snap: pm-allegro-snap var(--pm-allegro-dur-080) var(--pm-allegro-ease-snap-back) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-spring: pm-allegro-spring var(--pm-allegro-dur-112) var(--pm-allegro-ease-default) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-bounce-in: pm-allegro-bounce-in var(--pm-allegro-dur-128) var(--pm-allegro-ease-default) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-hover-lift: pm-allegro-hover-lift var(--pm-allegro-dur-064) var(--pm-allegro-ease-quart-out) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-press: pm-allegro-press var(--pm-allegro-dur-032) var(--pm-allegro-ease-snap) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-ripple: pm-allegro-ripple var(--pm-allegro-dur-144) var(--pm-allegro-ease-expo-out) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-toggle: pm-allegro-toggle-bounce var(--pm-allegro-dur-096) var(--pm-allegro-ease-spring-hard) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-check: pm-allegro-check-bounce var(--pm-allegro-dur-080) var(--pm-allegro-ease-back-out) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-focus: pm-allegro-focus-ring var(--pm-allegro-dur-064) var(--pm-allegro-ease-quart-out) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-spin: pm-allegro-spin var(--pm-allegro-dur-160) var(--pm-allegro-ease-linear) infinite;
+  --pm-allegro-preset-notify: pm-allegro-notify-pop var(--pm-allegro-dur-112) var(--pm-allegro-ease-spring-hard) var(--pm-allegro-fill-both);
+  --pm-allegro-preset-shake: pm-allegro-shake var(--pm-allegro-dur-096) var(--pm-allegro-ease-default) 1;
+  --pm-allegro-preset-pulse: pm-allegro-pulse var(--pm-allegro-dur-128) var(--pm-allegro-ease-sine-in-out) infinite;
+  --pm-allegro-preset-heartbeat: pm-allegro-heartbeat var(--pm-allegro-dur-176) var(--pm-allegro-ease-sine-in-out) infinite;
+}

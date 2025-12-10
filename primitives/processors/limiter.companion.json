@@ -1,0 +1,32 @@
+{
+  "name": "limiter",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Brickwall limiter",
+  "bindings": {
+    "ceiling": "--pm-aud-db-{index}",
+    "release": "--pm-aud-release-{index}",
+    "inputMeter": "--pm-aud-vu-{index}",
+    "outputMeter": "--pm-aud-vu-{index}",
+    "gainReduction": "--pm-aud-peak-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "lookahead": "configurable",
+    "stereoLink": "toggle",
+    "bypass": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "master",
+    "bus",
+    "insert"
+  ]
+}

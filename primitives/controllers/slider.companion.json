@@ -1,0 +1,40 @@
+{
+  "name": "slider",
+  "version": "1.0.0",
+  "category": "controllers",
+  "description": "Crossfader and ribbon controller",
+  "bindings": {
+    "position": "--pm-aud-pan-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "trackColor": "--pm-{color}-shade-{index}",
+    "thumbColor": "--pm-{color}-base-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "crossfader",
+      "ribbon"
+    ],
+    "curve": [
+      "linear",
+      "cut",
+      "smooth"
+    ],
+    "touch": "momentary"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "slider",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "mixer",
+    "dj",
+    "performance"
+  ]
+}

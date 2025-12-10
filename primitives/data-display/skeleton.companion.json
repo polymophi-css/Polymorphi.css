@@ -1,0 +1,30 @@
+{
+  "name": "skeleton",
+  "version": "1.0.0",
+  "category": "data-display",
+  "description": "Loading skeleton placeholder",
+  "bindings": {
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "highlightColor": "--pm-{color}-mute-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "animationDuration": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "animation": "shimmer"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "status",
+    "aria": [
+      "aria-busy"
+    ]
+  },
+  "relationships": [
+    "card",
+    "list",
+    "table"
+  ]
+}

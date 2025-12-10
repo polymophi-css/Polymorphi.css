@@ -1,0 +1,39 @@
+{
+  "name": "video-player",
+  "version": "1.0.0",
+  "category": "visual",
+  "description": "Video playback with audio sync",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "controlsBackground": "--pm-{color}-alpha-{index}",
+    "progressColor": "--pm-{color}-vivid-{index}",
+    "trackColor": "--pm-{color}-shade-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "iconColor": "--pm-{color}-base-{index}"
+  },
+  "behaviors": {
+    "sync": "transport",
+    "controls": [
+      "play",
+      "seek",
+      "fullscreen",
+      "volume"
+    ],
+    "overlay": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "application",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "transport",
+    "arrangement",
+    "lyric-display"
+  ]
+}

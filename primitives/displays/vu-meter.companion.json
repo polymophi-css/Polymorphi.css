@@ -1,0 +1,35 @@
+{
+  "name": "vu-meter",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "Analog-style volume unit meter",
+  
+  "bindings": {
+    "level": "--pm-aud-vu-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "needleColor": "--pm-{color}-base-{index}",
+    "peakHold": "--pm-aud-peak-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "ballistics": "--pm-motion-dur-{index}"
+  },
+  
+  "behaviors": {
+    "response": "averaged",
+    "peakHold": "decay",
+    "clip": "indicate"
+  },
+  
+  "constraints": {
+    "indexRange": "000-255",
+    "dbRange": "--pm-aud-db-{index}"
+  },
+  
+  "accessibility": {
+    "role": "meter",
+    "aria": ["aria-valuenow", "aria-valuemin", "aria-valuemax", "aria-label"]
+  },
+  
+  "relationships": ["channel", "master", "bus"]
+}

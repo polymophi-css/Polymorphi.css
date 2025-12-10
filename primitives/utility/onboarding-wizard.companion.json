@@ -1,0 +1,40 @@
+{
+  "name": "onboarding-wizard",
+  "version": "1.0.0",
+  "category": "utility",
+  "description": "First-run setup and guided tour",
+  "bindings": {
+    "modalWidth": "--pm-size-w-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "stepIndicatorSize": "--pm-size-w-{index}",
+    "activeStepColor": "--pm-{color}-vivid-{index}",
+    "completeStepColor": "--pm-grn-vivid-{index}",
+    "headingSize": "--pm-type-size-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "steps": [
+    "audio-device",
+    "brand-theme",
+    "default-template"
+  ],
+  "behaviors": {
+    "navigate": "step",
+    "skip": "optional",
+    "complete": "persist"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "dialog",
+    "aria": [
+      "aria-modal",
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "modal",
+    "stepper",
+    "button"
+  ]
+}

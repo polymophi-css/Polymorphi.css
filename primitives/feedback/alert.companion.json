@@ -1,0 +1,37 @@
+{
+  "name": "alert",
+  "version": "1.0.0",
+  "category": "feedback",
+  "description": "Alert message",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "iconColor": "--pm-{color}-vivid-{index}",
+    "borderWidth": "--pm-border-w-{index}",
+    "borderColor": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "behaviors": {
+    "variant": [
+      "info",
+      "success",
+      "warning",
+      "error"
+    ],
+    "dismissible": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "alert",
+    "aria": [
+      "aria-live"
+    ]
+  },
+  "relationships": [
+    "toast",
+    "form"
+  ]
+}

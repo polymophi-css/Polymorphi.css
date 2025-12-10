@@ -1,0 +1,11 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI FOUNDATION - MASTER IMPORT
+   ═══════════════════════════════════════════════════════════════════════════
+   Layer 0: Foundation (loads before Tokens)
+   Reset → Normalize → Responsive → Utilities
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import "reset.foundation.css";
+@import "normalize.foundation.css";
+@import "responsive.foundation.css";
+@import "utilities.foundation.css";

@@ -1,0 +1,36 @@
+{
+  "name": "pad",
+  "version": "1.0.0",
+  "category": "controllers",
+  "description": "Velocity-sensitive trigger surface",
+  
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "velocityGlow": "--pm-fx-shadow-blur-{index}",
+    "velocityBrightness": "--pm-fx-brightness-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "pressDepth": "--pm-tf-scale-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  
+  "behaviors": {
+    "trigger": ["press", "release"],
+    "velocity": "pressure",
+    "aftertouch": "continuous",
+    "modeToggle": "latch"
+  },
+  
+  "constraints": {
+    "indexRange": "000-255",
+    "velocityRange": "000-127"
+  },
+  
+  "accessibility": {
+    "role": "button",
+    "aria": ["aria-pressed", "aria-label"]
+  },
+  
+  "relationships": ["grid", "drumrack", "sampler"]
+}

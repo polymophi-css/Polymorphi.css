@@ -1,0 +1,32 @@
+{
+  "name": "label",
+  "version": "1.0.0",
+  "category": "branding",
+  "description": "Control and interface labeling",
+  "bindings": {
+    "fontSize": "--pm-type-size-{index}",
+    "fontWeight": "--pm-type-weight-{index}",
+    "color": "--pm-{color}-base-{index}",
+    "spacing": "--pm-space-gap-{index}"
+  },
+  "behaviors": {
+    "position": [
+      "top",
+      "bottom",
+      "left",
+      "right"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "label"
+  },
+  "relationships": [
+    "input",
+    "knob",
+    "fader",
+    "button"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "led-indicator",
+  "version": "1.0.0",
+  "category": "hardware",
+  "description": "LED status indicator",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "onColor": "--pm-{color}-vivid-{index}",
+    "offColor": "--pm-{color}-shade-{index}",
+    "glowRadius": "--pm-fx-shadow-blur-{index}",
+    "brightness": "--pm-fx-brightness-{index}"
+  },
+  "behaviors": {
+    "mode": [
+      "on",
+      "off",
+      "blink",
+      "pulse"
+    ],
+    "blinkRate": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "status"
+  },
+  "relationships": [
+    "button",
+    "channel",
+    "transport"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "navbar",
+  "version": "1.0.0",
+  "category": "navigation",
+  "description": "Top navigation bar",
+  "bindings": {
+    "height": "--pm-size-h-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "background": "--pm-{color}-base-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}",
+    "zIndex": "--pm-layer-z-{index}"
+  },
+  "behaviors": {
+    "sticky": "top",
+    "collapse": "mobile"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "navigation"
+  },
+  "relationships": [
+    "logo",
+    "menu",
+    "avatar",
+    "dropdown"
+  ]
+}

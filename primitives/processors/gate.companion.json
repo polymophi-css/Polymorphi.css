@@ -1,0 +1,39 @@
+{
+  "name": "gate",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Noise gate / expander",
+  "bindings": {
+    "threshold": "--pm-aud-db-{index}",
+    "range": "--pm-aud-db-{index}",
+    "attack": "--pm-aud-attack-{index}",
+    "hold": "--pm-aud-decay-{index}",
+    "release": "--pm-aud-release-{index}",
+    "inputMeter": "--pm-aud-vu-{index}",
+    "gainReduction": "--pm-aud-peak-{index}",
+    "width": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "sidechain": [
+      "internal",
+      "external"
+    ],
+    "mode": [
+      "gate",
+      "expander"
+    ],
+    "bypass": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "channel",
+    "drums",
+    "sidechain"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "channel-strip",
+  "version": "1.0.0",
+  "category": "layout",
+  "description": "Complete channel strip layout",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "selectedBorder": "--pm-{color}-vivid-{index}",
+    "labelSize": "--pm-type-size-{index}",
+    "spacing": "--pm-space-gap-{index}"
+  },
+  "behaviors": {
+    "select": "highlight",
+    "resize": "horizontal"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "region"
+  },
+  "relationships": [
+    "fader",
+    "pan",
+    "meter",
+    "send",
+    "insert",
+    "mute",
+    "solo"
+  ]
+}

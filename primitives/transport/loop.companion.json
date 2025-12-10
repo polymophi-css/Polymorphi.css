@@ -1,0 +1,30 @@
+{
+  "name": "loop",
+  "version": "1.0.0",
+  "category": "transport",
+  "description": "Loop toggle and region",
+  "bindings": {
+    "color": "--pm-{color}-base-{index}",
+    "activeColor": "--pm-ylw-vivid-{index}",
+    "regionColor": "--pm-{color}-alpha-{index}",
+    "size": "--pm-size-w-{index}"
+  },
+  "behaviors": {
+    "toggle": "enable",
+    "region": "draggable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "button",
+    "aria": [
+      "aria-pressed"
+    ]
+  },
+  "relationships": [
+    "transport",
+    "arrangement",
+    "locate"
+  ]
+}

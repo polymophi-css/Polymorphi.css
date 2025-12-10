@@ -1,0 +1,29 @@
+{
+  "name": "card",
+  "version": "1.0.0",
+  "category": "data-display",
+  "description": "Card container",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "background": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}",
+    "borderWidth": "--pm-border-w-{index}",
+    "borderColor": "--pm-{color}-mute-{index}"
+  },
+  "behaviors": {
+    "hover": "elevate",
+    "click": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "article"
+  },
+  "relationships": [
+    "badge",
+    "avatar",
+    "button"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "share-mode-switcher",
+  "version": "1.0.0",
+  "category": "utility",
+  "description": "Privacy mode toggle for sharing",
+  "bindings": {
+    "toggleWidth": "--pm-size-w-{index}",
+    "toggleHeight": "--pm-size-h-{index}",
+    "privateColor": "--pm-{color}-shade-{index}",
+    "shareColor": "--pm-grn-vivid-{index}",
+    "labelSize": "--pm-type-size-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "modes": {
+    "private": "full access",
+    "shareSafe": "hides splits, notes, internal metadata"
+  },
+  "behaviors": {
+    "toggle": "switch",
+    "preview": "instant"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "switch",
+    "aria": [
+      "aria-checked"
+    ]
+  },
+  "relationships": [
+    "toggle",
+    "badge",
+    "alert"
+  ]
+}

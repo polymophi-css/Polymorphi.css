@@ -1,0 +1,32 @@
+{
+  "name": "data-badge",
+  "version": "1.0.0",
+  "category": "data-display",
+  "description": "Status badge for data",
+  "bindings": {
+    "paddingX": "--pm-space-padding-{index}",
+    "paddingY": "--pm-space-padding-{index}",
+    "fontSize": "--pm-type-size-{index}",
+    "background": "--pm-{color}-base-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "behaviors": {
+    "variant": [
+      "solid",
+      "outline",
+      "dot"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "status"
+  },
+  "relationships": [
+    "table",
+    "list",
+    "card"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Polymorphi Companion File",
+  "version": "1.0.0",
+  "type": "object",
+  "required": ["name", "version", "category", "bindings"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Primitive identifier"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "music-theory", "controllers", "displays", "processors",
+        "synthesis", "routing", "transport", "hardware", "layout",
+        "branding", "ui-patterns", "forms", "data-display",
+        "navigation", "feedback"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "bindings": {
+      "type": "object",
+      "description": "Token pattern references - ALL values come from tokens",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^--pm-"
+      }
+    },
+    "behaviors": {
+      "type": "object",
+      "description": "Interaction patterns and responses"
+    },
+    "constraints": {
+      "type": "object",
+      "description": "Rules and limits (reference token ranges, not values)"
+    },
+    "accessibility": {
+      "type": "object",
+      "properties": {
+        "role": { "type": "string" },
+        "aria": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "description": "Other primitives this can connect to",
+      "items": { "type": "string" }
+    }
+  }
+}

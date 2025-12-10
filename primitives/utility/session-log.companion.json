@@ -1,0 +1,40 @@
+{
+  "name": "session-log",
+  "version": "1.0.0",
+  "category": "utility",
+  "description": "Diagnostic and error log viewer",
+  "bindings": {
+    "lineHeight": "--pm-size-h-{index}",
+    "fontSize": "--pm-type-size-{index}",
+    "fontFamily": "--pm-font-mono-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "errorColor": "--pm-red-vivid-{index}",
+    "warningColor": "--pm-ylw-vivid-{index}",
+    "infoColor": "--pm-blu-vivid-{index}",
+    "padding": "--pm-space-padding-{index}"
+  },
+  "behaviors": {
+    "filter": [
+      "error",
+      "warning",
+      "info"
+    ],
+    "search": "text",
+    "export": "file"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "log",
+    "aria": [
+      "aria-live"
+    ]
+  },
+  "relationships": [
+    "list",
+    "input",
+    "badge"
+  ]
+}

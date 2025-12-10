@@ -1,0 +1,214 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI COMPONENT: BUTTONS
+   ═══════════════════════════════════════════════════════════════════════════
+   Primitives: button
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BASE BUTTON
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pm-space-gap-004);
+  padding: var(--pm-space-padding-008) var(--pm-space-padding-016);
+  border: var(--pm-border-w-001) solid transparent;
+  border-radius: var(--pm-border-radius-006);
+  font-size: var(--pm-type-size-014);
+  font-weight: var(--pm-type-weight-128);
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--pm-motion-dur-016);
+  text-decoration: none;
+}
+
+.pm-btn:focus-visible {
+  outline: var(--pm-border-w-002) solid var(--pm-blu-vivid-128);
+  outline-offset: var(--pm-border-w-002);
+}
+
+.pm-btn:disabled {
+  opacity: var(--pm-opacity-128);
+  cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   VARIANTS
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-btn--solid {
+  background: var(--pm-blu-vivid-128);
+  color: var(--pm-wht-base-255);
+}
+
+.pm-btn--solid:hover:not(:disabled) {
+  background: var(--pm-blu-vivid-160);
+}
+
+.pm-btn--solid:active:not(:disabled) {
+  background: var(--pm-blu-vivid-096);
+}
+
+.pm-btn--outline {
+  background: transparent;
+  border-color: var(--pm-blu-vivid-128);
+  color: var(--pm-blu-vivid-160);
+}
+
+.pm-btn--outline:hover:not(:disabled) {
+  background: var(--pm-blu-alpha-032);
+}
+
+.pm-btn--outline:active:not(:disabled) {
+  background: var(--pm-blu-alpha-064);
+}
+
+.pm-btn--ghost {
+  background: transparent;
+  color: var(--pm-blu-vivid-160);
+}
+
+.pm-btn--ghost:hover:not(:disabled) {
+  background: var(--pm-blu-alpha-032);
+}
+
+.pm-btn--ghost:active:not(:disabled) {
+  background: var(--pm-blu-alpha-064);
+}
+
+.pm-btn--link {
+  background: transparent;
+  color: var(--pm-blu-vivid-160);
+  padding: 0;
+}
+
+.pm-btn--link:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   COLORS
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-btn--primary { --btn-color: var(--pm-blu-vivid-128); --btn-hover: var(--pm-blu-vivid-160); }
+.pm-btn--success { --btn-color: var(--pm-grn-vivid-128); --btn-hover: var(--pm-grn-vivid-160); }
+.pm-btn--warning { --btn-color: var(--pm-ylw-vivid-160); --btn-hover: var(--pm-ylw-vivid-192); }
+.pm-btn--danger  { --btn-color: var(--pm-red-vivid-128); --btn-hover: var(--pm-red-vivid-160); }
+.pm-btn--neutral { --btn-color: var(--pm-gry-base-128); --btn-hover: var(--pm-gry-base-160); }
+
+.pm-btn--primary.pm-btn--solid { background: var(--btn-color); }
+.pm-btn--primary.pm-btn--solid:hover:not(:disabled) { background: var(--btn-hover); }
+
+.pm-btn--success.pm-btn--solid { background: var(--btn-color); }
+.pm-btn--success.pm-btn--solid:hover:not(:disabled) { background: var(--btn-hover); }
+
+.pm-btn--warning.pm-btn--solid { background: var(--btn-color); color: var(--pm-blk-base-016); }
+.pm-btn--warning.pm-btn--solid:hover:not(:disabled) { background: var(--btn-hover); }
+
+.pm-btn--danger.pm-btn--solid { background: var(--btn-color); }
+.pm-btn--danger.pm-btn--solid:hover:not(:disabled) { background: var(--btn-hover); }
+
+.pm-btn--neutral.pm-btn--solid { background: var(--btn-color); }
+.pm-btn--neutral.pm-btn--solid:hover:not(:disabled) { background: var(--btn-hover); }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SIZES
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-btn--xs {
+  padding: var(--pm-space-padding-004) var(--pm-space-padding-008);
+  font-size: var(--pm-type-size-010);
+  border-radius: var(--pm-border-radius-004);
+}
+
+.pm-btn--sm {
+  padding: var(--pm-space-padding-006) var(--pm-space-padding-012);
+  font-size: var(--pm-type-size-012);
+}
+
+.pm-btn--lg {
+  padding: var(--pm-space-padding-012) var(--pm-space-padding-024);
+  font-size: var(--pm-type-size-016);
+}
+
+.pm-btn--xl {
+  padding: var(--pm-space-padding-016) var(--pm-space-padding-032);
+  font-size: var(--pm-type-size-018);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ICON BUTTON
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-btn--icon {
+  padding: var(--pm-space-padding-008);
+  aspect-ratio: 1;
+}
+
+.pm-btn--icon.pm-btn--xs { padding: var(--pm-space-padding-004); }
+.pm-btn--icon.pm-btn--sm { padding: var(--pm-space-padding-006); }
+.pm-btn--icon.pm-btn--lg { padding: var(--pm-space-padding-012); }
+.pm-btn--icon.pm-btn--xl { padding: var(--pm-space-padding-016); }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BUTTON GROUP
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-btn-group {
+  display: inline-flex;
+}
+
+.pm-btn-group .pm-btn {
+  border-radius: 0;
+}
+
+.pm-btn-group .pm-btn:first-child {
+  border-radius: var(--pm-border-radius-006) 0 0 var(--pm-border-radius-006);
+}
+
+.pm-btn-group .pm-btn:last-child {
+  border-radius: 0 var(--pm-border-radius-006) var(--pm-border-radius-006) 0;
+}
+
+.pm-btn-group .pm-btn:not(:last-child) {
+  border-right-width: 0;
+}
+
+.pm-btn-group--vertical {
+  flex-direction: column;
+}
+
+.pm-btn-group--vertical .pm-btn:first-child {
+  border-radius: var(--pm-border-radius-006) var(--pm-border-radius-006) 0 0;
+}
+
+.pm-btn-group--vertical .pm-btn:last-child {
+  border-radius: 0 0 var(--pm-border-radius-006) var(--pm-border-radius-006);
+}
+
+.pm-btn-group--vertical .pm-btn:not(:last-child) {
+  border-right-width: var(--pm-border-w-001);
+  border-bottom-width: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LOADING STATE
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pm-btn--loading {
+  position: relative;
+  color: transparent;
+}
+
+.pm-btn--loading::after {
+  content: '';
+  position: absolute;
+  width: var(--pm-size-w-016);
+  height: var(--pm-size-h-016);
+  border: var(--pm-border-w-002) solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--pm-border-radius-255);
+  animation: var(--pm-anim-preset-spin);
+}

@@ -1,0 +1,37 @@
+{
+  "name": "xy-pad",
+  "version": "1.0.0",
+  "category": "controllers",
+  "description": "Two-dimensional control surface",
+  "bindings": {
+    "positionX": "--pm-aud-pan-{index}",
+    "positionY": "--pm-aud-fader-{index}",
+    "size": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "cursorColor": "--pm-{color}-vivid-{index}",
+    "gridColor": "--pm-{color}-mute-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "touch": "continuous",
+    "release": [
+      "hold",
+      "spring"
+    ],
+    "grid": "snap"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "application",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "filter",
+    "effects",
+    "performance"
+  ]
+}

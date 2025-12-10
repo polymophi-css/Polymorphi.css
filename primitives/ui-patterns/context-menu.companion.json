@@ -1,0 +1,34 @@
+{
+  "name": "context-menu",
+  "version": "1.0.0",
+  "category": "ui-patterns",
+  "description": "Right-click context menu",
+  "bindings": {
+    "minWidth": "--pm-size-min-w-{index}",
+    "background": "--pm-{color}-base-{index}",
+    "hoverBackground": "--pm-{color}-shade-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "dividerColor": "--pm-{color}-mute-{index}"
+  },
+  "behaviors": {
+    "trigger": "contextmenu",
+    "submenu": "hover"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "menu",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "dropdown",
+    "arrangement",
+    "list"
+  ]
+}

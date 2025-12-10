@@ -1,0 +1,28 @@
+{
+  "name": "stop",
+  "version": "1.0.0",
+  "category": "transport",
+  "description": "Stop button",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "color": "--pm-{color}-base-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "action": [
+      "stop",
+      "returnToZero"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "button"
+  },
+  "relationships": [
+    "play",
+    "transport"
+  ]
+}

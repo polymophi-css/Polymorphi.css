@@ -1,0 +1,137 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI.CSS INTERACTION TOKENS
+   ═══════════════════════════════════════════════════════════════════════════
+   Categories: cursor, pointer-events, touch, scroll-snap, overscroll, resize, appearance, will-change, contain
+   Scale: 256 steps (000-255) per dimension
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* CURSOR */
+  --pm-int-cursor-auto: auto;
+  --pm-int-cursor-default: default;
+  --pm-int-cursor-none: none;
+  --pm-int-cursor-context-menu: context-menu;
+  --pm-int-cursor-help: help;
+  --pm-int-cursor-pointer: pointer;
+  --pm-int-cursor-progress: progress;
+  --pm-int-cursor-wait: wait;
+  --pm-int-cursor-cell: cell;
+  --pm-int-cursor-crosshair: crosshair;
+  --pm-int-cursor-text: text;
+  --pm-int-cursor-vertical-text: vertical-text;
+  --pm-int-cursor-alias: alias;
+  --pm-int-cursor-copy: copy;
+  --pm-int-cursor-move: move;
+  --pm-int-cursor-no-drop: no-drop;
+  --pm-int-cursor-not-allowed: not-allowed;
+  --pm-int-cursor-grab: grab;
+  --pm-int-cursor-grabbing: grabbing;
+  --pm-int-cursor-all-scroll: all-scroll;
+  --pm-int-cursor-col-resize: col-resize;
+  --pm-int-cursor-row-resize: row-resize;
+  --pm-int-cursor-n-resize: n-resize;
+  --pm-int-cursor-e-resize: e-resize;
+  --pm-int-cursor-s-resize: s-resize;
+  --pm-int-cursor-w-resize: w-resize;
+  --pm-int-cursor-ne-resize: ne-resize;
+  --pm-int-cursor-nw-resize: nw-resize;
+  --pm-int-cursor-se-resize: se-resize;
+  --pm-int-cursor-sw-resize: sw-resize;
+  --pm-int-cursor-ew-resize: ew-resize;
+  --pm-int-cursor-ns-resize: ns-resize;
+  --pm-int-cursor-nesw-resize: nesw-resize;
+  --pm-int-cursor-nwse-resize: nwse-resize;
+  --pm-int-cursor-zoom-in: zoom-in;
+  --pm-int-cursor-zoom-out: zoom-out;
+
+  /* POINTER-EVENTS */
+  --pm-int-pointer-auto: auto;
+  --pm-int-pointer-none: none;
+  --pm-int-pointer-visiblepainted: visiblePainted;
+  --pm-int-pointer-visiblefill: visibleFill;
+  --pm-int-pointer-visiblestroke: visibleStroke;
+  --pm-int-pointer-visible: visible;
+  --pm-int-pointer-painted: painted;
+  --pm-int-pointer-fill: fill;
+  --pm-int-pointer-stroke: stroke;
+  --pm-int-pointer-all: all;
+
+  /* TOUCH-ACTION */
+  --pm-int-touch-auto: auto;
+  --pm-int-touch-none: none;
+  --pm-int-touch-pan-x: pan-x;
+  --pm-int-touch-pan-left: pan-left;
+  --pm-int-touch-pan-right: pan-right;
+  --pm-int-touch-pan-y: pan-y;
+  --pm-int-touch-pan-up: pan-up;
+  --pm-int-touch-pan-down: pan-down;
+  --pm-int-touch-pinch-zoom: pinch-zoom;
+  --pm-int-touch-manipulation: manipulation;
+
+  /* SCROLL-BEHAVIOR */
+  --pm-int-scroll-auto: auto;
+  --pm-int-scroll-smooth: smooth;
+
+  /* SCROLL-SNAP-TYPE */
+  --pm-int-snap-type-none: none;
+  --pm-int-snap-type-x-mandatory: x mandatory;
+  --pm-int-snap-type-x-proximity: x proximity;
+  --pm-int-snap-type-y-mandatory: y mandatory;
+  --pm-int-snap-type-y-proximity: y proximity;
+  --pm-int-snap-type-both-mandatory: both mandatory;
+  --pm-int-snap-type-both-proximity: both proximity;
+
+  /* SCROLL-SNAP-ALIGN */
+  --pm-int-snap-align-none: none;
+  --pm-int-snap-align-start: start;
+  --pm-int-snap-align-end: end;
+  --pm-int-snap-align-center: center;
+
+  /* SCROLL-SNAP-STOP */
+  --pm-int-snap-stop-normal: normal;
+  --pm-int-snap-stop-always: always;
+
+  /* OVERSCROLL */
+  --pm-int-overscroll-auto: auto;
+  --pm-int-overscroll-contain: contain;
+  --pm-int-overscroll-none: none;
+
+  /* RESIZE */
+  --pm-int-resize-none: none;
+  --pm-int-resize-both: both;
+  --pm-int-resize-horizontal: horizontal;
+  --pm-int-resize-vertical: vertical;
+  --pm-int-resize-block: block;
+  --pm-int-resize-inline: inline;
+
+  /* APPEARANCE */
+  --pm-int-appear-none: none;
+  --pm-int-appear-auto: auto;
+  --pm-int-appear-button: button;
+  --pm-int-appear-textfield: textfield;
+  --pm-int-appear-menulist: menulist;
+
+  /* WILL-CHANGE */
+  --pm-int-will-auto: auto;
+  --pm-int-will-scroll-position: scroll-position;
+  --pm-int-will-contents: contents;
+  --pm-int-will-transform: transform;
+  --pm-int-will-opacity: opacity;
+
+  /* CONTAIN */
+  --pm-int-contain-none: none;
+  --pm-int-contain-strict: strict;
+  --pm-int-contain-content: content;
+  --pm-int-contain-size: size;
+  --pm-int-contain-layout: layout;
+  --pm-int-contain-style: style;
+  --pm-int-contain-paint: paint;
+
+  /* CONTENT-VISIBILITY */
+  --pm-int-content-vis-visible: visible;
+  --pm-int-content-vis-auto: auto;
+  --pm-int-content-vis-hidden: hidden;
+}
+
+/* TOTAL: 130 tokens */

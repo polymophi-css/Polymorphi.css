@@ -1,0 +1,244 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI ANIMATION TIER 02: ADAGIO
+   ═══════════════════════════════════════════════════════════════════════════
+   Complexity: 2 (Simple)
+   Tempo: 60-80 BPM equivalent
+   Character: Slow, expressive, emotional
+   Use: Modal opens, drawer slides, expand/collapse, form transitions
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.01 DURATION SCALE
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-dur-000: 300ms;     /* Base minimum                            */
+  --pm-adagio-dur-016: 350ms;
+  --pm-adagio-dur-032: 400ms;
+  --pm-adagio-dur-048: 450ms;
+  --pm-adagio-dur-064: 500ms;
+  --pm-adagio-dur-080: 550ms;
+  --pm-adagio-dur-096: 600ms;
+  --pm-adagio-dur-112: 700ms;
+  --pm-adagio-dur-128: 800ms;     /* Center point                            */
+  --pm-adagio-dur-144: 900ms;
+  --pm-adagio-dur-160: 1000ms;
+  --pm-adagio-dur-176: 1200ms;
+  --pm-adagio-dur-192: 1400ms;
+  --pm-adagio-dur-208: 1600ms;
+  --pm-adagio-dur-224: 1800ms;
+  --pm-adagio-dur-240: 2000ms;
+  --pm-adagio-dur-255: 2500ms;    /* Maximum                                 */
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.02 EASING - STANDARD
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-linear: linear;
+  --pm-adagio-ease-default: ease;
+  --pm-adagio-ease-in: ease-in;
+  --pm-adagio-ease-out: ease-out;
+  --pm-adagio-ease-in-out: ease-in-out;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.03 EASING - SINE
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-sine-in: cubic-bezier(0.12, 0, 0.39, 0);
+  --pm-adagio-ease-sine-out: cubic-bezier(0.61, 1, 0.88, 1);
+  --pm-adagio-ease-sine-in-out: cubic-bezier(0.37, 0, 0.63, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.04 EASING - QUAD
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-quad-in: cubic-bezier(0.11, 0, 0.5, 0);
+  --pm-adagio-ease-quad-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --pm-adagio-ease-quad-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.05 EASING - CUBIC
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-cubic-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --pm-adagio-ease-cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --pm-adagio-ease-cubic-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.06 EASING - QUART
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-quart-in: cubic-bezier(0.5, 0, 0.75, 0);
+  --pm-adagio-ease-quart-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --pm-adagio-ease-quart-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.07 EASING - QUINT
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-quint-in: cubic-bezier(0.64, 0, 0.78, 0);
+  --pm-adagio-ease-quint-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --pm-adagio-ease-quint-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.08 EASING - EXPO
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-expo-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --pm-adagio-ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pm-adagio-ease-expo-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.09 EASING - CIRC
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-circ-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --pm-adagio-ease-circ-out: cubic-bezier(0, 0.55, 0.45, 1);
+  --pm-adagio-ease-circ-in-out: cubic-bezier(0.85, 0, 0.15, 1);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.10 EASING - BACK
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-back-in: cubic-bezier(0.36, 0, 0.66, -0.56);
+  --pm-adagio-ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --pm-adagio-ease-back-in-out: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.11 EASING - ELASTIC (Adagio gets gentle elastic)
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-ease-elastic-out: cubic-bezier(0.5, 1.5, 0.5, 1);
+  --pm-adagio-ease-elastic-in-out: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.12 DELAY SCALE
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-delay-000: 0ms;
+  --pm-adagio-delay-032: 75ms;
+  --pm-adagio-delay-064: 150ms;
+  --pm-adagio-delay-096: 250ms;
+  --pm-adagio-delay-128: 400ms;
+  --pm-adagio-delay-160: 550ms;
+  --pm-adagio-delay-192: 700ms;
+  --pm-adagio-delay-224: 900ms;
+  --pm-adagio-delay-255: 1200ms;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.13 STAGGER INCREMENTS
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-stagger-001: 40ms;
+  --pm-adagio-stagger-002: 80ms;
+  --pm-adagio-stagger-003: 120ms;
+  --pm-adagio-stagger-004: 160ms;
+  --pm-adagio-stagger-005: 200ms;
+  --pm-adagio-stagger-006: 280ms;
+  --pm-adagio-stagger-007: 360ms;
+  --pm-adagio-stagger-008: 500ms;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     02.14 ITERATION / DIRECTION / FILL / STATE
+     ───────────────────────────────────────────────────────────────────────── */
+  --pm-adagio-iter-001: 1;
+  --pm-adagio-iter-002: 2;
+  --pm-adagio-iter-003: 3;
+  --pm-adagio-iter-inf: infinite;
+  --pm-adagio-dir-normal: normal;
+  --pm-adagio-dir-reverse: reverse;
+  --pm-adagio-dir-alternate: alternate;
+  --pm-adagio-dir-alternate-rev: alternate-reverse;
+  --pm-adagio-fill-none: none;
+  --pm-adagio-fill-forwards: forwards;
+  --pm-adagio-fill-backwards: backwards;
+  --pm-adagio-fill-both: both;
+  --pm-adagio-state-running: running;
+  --pm-adagio-state-paused: paused;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ADAGIO KEYFRAMES - Tier 2 Animations
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* FADE */
+@keyframes pm-adagio-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pm-adagio-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes pm-adagio-fade-in-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pm-adagio-fade-in-down { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pm-adagio-fade-in-left { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pm-adagio-fade-in-right { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pm-adagio-fade-in-scale { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+@keyframes pm-adagio-fade-in-scale-up { from { opacity: 0; transform: scale(0.85) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+/* SLIDE */
+@keyframes pm-adagio-slide-in-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes pm-adagio-slide-in-down { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+@keyframes pm-adagio-slide-in-left { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes pm-adagio-slide-in-right { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes pm-adagio-slide-out-up { from { transform: translateY(0); } to { transform: translateY(-100%); } }
+@keyframes pm-adagio-slide-out-down { from { transform: translateY(0); } to { transform: translateY(100%); } }
+@keyframes pm-adagio-slide-out-left { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+@keyframes pm-adagio-slide-out-right { from { transform: translateX(0); } to { transform: translateX(100%); } }
+
+/* SCALE */
+@keyframes pm-adagio-scale-in { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes pm-adagio-scale-out { from { transform: scale(1); } to { transform: scale(0); } }
+@keyframes pm-adagio-scale-in-bounce { from { transform: scale(0); } 60% { transform: scale(1.1); } to { transform: scale(1); } }
+@keyframes pm-adagio-zoom-in { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes pm-adagio-zoom-out { from { transform: scale(1); opacity: 1; } to { transform: scale(0.5); opacity: 0; } }
+@keyframes pm-adagio-grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes pm-adagio-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* ROTATE */
+@keyframes pm-adagio-rotate-in { from { transform: rotate(-180deg); opacity: 0; } to { transform: rotate(0deg); opacity: 1; } }
+@keyframes pm-adagio-rotate-out { from { transform: rotate(0deg); opacity: 1; } to { transform: rotate(180deg); opacity: 0; } }
+@keyframes pm-adagio-rotate-cw { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pm-adagio-rotate-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+@keyframes pm-adagio-flip-x { from { transform: perspective(400px) rotateX(-90deg); } to { transform: perspective(400px) rotateX(0deg); } }
+@keyframes pm-adagio-flip-y { from { transform: perspective(400px) rotateY(-90deg); } to { transform: perspective(400px) rotateY(0deg); } }
+
+/* REVEAL (Clip-path) */
+@keyframes pm-adagio-reveal-up { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes pm-adagio-reveal-down { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes pm-adagio-reveal-left { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes pm-adagio-reveal-right { from { clip-path: inset(0 0 0 100%); } to { clip-path: inset(0 0 0 0); } }
+@keyframes pm-adagio-reveal-center-h { from { clip-path: inset(0 50% 0 50%); } to { clip-path: inset(0 0 0 0); } }
+@keyframes pm-adagio-reveal-center-v { from { clip-path: inset(50% 0 50% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes pm-adagio-reveal-circle { from { clip-path: circle(0% at 50% 50%); } to { clip-path: circle(100% at 50% 50%); } }
+
+/* BLUR */
+@keyframes pm-adagio-blur-in { from { filter: blur(15px); opacity: 0; } to { filter: blur(0); opacity: 1; } }
+@keyframes pm-adagio-blur-out { from { filter: blur(0); opacity: 1; } to { filter: blur(15px); opacity: 0; } }
+
+/* EXPAND / COLLAPSE */
+@keyframes pm-adagio-expand-v { from { height: 0; opacity: 0; } to { height: auto; opacity: 1; } }
+@keyframes pm-adagio-collapse-v { from { height: auto; opacity: 1; } to { height: 0; opacity: 0; } }
+@keyframes pm-adagio-expand-h { from { width: 0; opacity: 0; } to { width: auto; opacity: 1; } }
+
+/* DRAWER */
+@keyframes pm-adagio-drawer-left { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes pm-adagio-drawer-right { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes pm-adagio-drawer-top { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+@keyframes pm-adagio-drawer-bottom { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+/* MODAL */
+@keyframes pm-adagio-modal-in { from { opacity: 0; transform: scale(0.95) translateY(-10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes pm-adagio-modal-out { from { opacity: 1; transform: scale(1) translateY(0); } to { opacity: 0; transform: scale(0.95) translateY(-10px); } }
+@keyframes pm-adagio-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pm-adagio-backdrop-out { from { opacity: 1; } to { opacity: 0; } }
+
+/* FLOAT / PULSE / BREATHE */
+@keyframes pm-adagio-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes pm-adagio-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+@keyframes pm-adagio-breathe { 0%, 100% { opacity: 0.9; transform: scale(1); } 50% { opacity: 1; transform: scale(1.02); } }
+@keyframes pm-adagio-glow { 0%, 100% { box-shadow: 0 0 15px rgba(255,255,255,0.15); } 50% { box-shadow: 0 0 30px rgba(255,255,255,0.35); } }
+
+/* ATTENTION */
+@keyframes pm-adagio-shake-gentle { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+@keyframes pm-adagio-nod { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ADAGIO PRESETS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --pm-adagio-preset-fade-in: pm-adagio-fade-in var(--pm-adagio-dur-096) var(--pm-adagio-ease-sine-out) var(--pm-adagio-fill-both);
+  --pm-adagio-preset-fade-in-up: pm-adagio-fade-in-up var(--pm-adagio-dur-112) var(--pm-adagio-ease-cubic-out) var(--pm-adagio-fill-both);
+  --pm-adagio-preset-slide-in-left: pm-adagio-slide-in-left var(--pm-adagio-dur-128) var(--pm-adagio-ease-quart-out) var(--pm-adagio-fill-both);
+  --pm-adagio-preset-scale-in: pm-adagio-scale-in-bounce var(--pm-adagio-dur-144) var(--pm-adagio-ease-back-out) var(--pm-adagio-fill-both);
+  --pm-adagio-preset-modal-in: pm-adagio-modal-in var(--pm-adagio-dur-112) var(--pm-adagio-ease-quint-out) var(--pm-adagio-fill-both);
+  --pm-adagio-preset-modal-out: pm-adagio-modal-out var(--pm-adagio-dur-080) var(--pm-adagio-ease-quint-in) var(--pm-adagio-fill-both);
+  --pm-adagio-preset-drawer-left: pm-adagio-drawer-left var(--pm-adagio-dur-144) var(--pm-adagio-ease-expo-out) var(--pm-adagio-fill-both);
+  --pm-adagio-preset-backdrop-in: pm-adagio-backdrop-in var(--pm-adagio-dur-096) var(--pm-adagio-ease-sine-out) var(--pm-adagio-fill-both);
+  --pm-adagio-preset-float: pm-adagio-float var(--pm-adagio-dur-192) var(--pm-adagio-ease-sine-in-out) infinite;
+  --pm-adagio-preset-pulse: pm-adagio-pulse var(--pm-adagio-dur-160) var(--pm-adagio-ease-sine-in-out) infinite;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "range",
+  "version": "1.0.0",
+  "category": "forms",
+  "description": "Range slider input",
+  "bindings": {
+    "height": "--pm-size-h-{index}",
+    "trackColor": "--pm-{color}-shade-{index}",
+    "fillColor": "--pm-{color}-vivid-{index}",
+    "thumbSize": "--pm-size-w-{index}",
+    "thumbColor": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "step": "configurable",
+    "tooltip": "optional"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "slider",
+    "aria": [
+      "aria-valuenow",
+      "aria-valuemin",
+      "aria-valuemax"
+    ]
+  },
+  "relationships": [
+    "label",
+    "form",
+    "fader"
+  ]
+}

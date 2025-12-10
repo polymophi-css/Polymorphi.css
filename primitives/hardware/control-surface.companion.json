@@ -1,0 +1,30 @@
+{
+  "name": "control-surface",
+  "version": "1.0.0",
+  "category": "hardware",
+  "description": "Hardware control surface layout",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "buttonSpacing": "--pm-space-gap-{index}",
+    "faderSpacing": "--pm-space-gap-{index}"
+  },
+  "behaviors": {
+    "banks": "pageable",
+    "mapping": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "application"
+  },
+  "relationships": [
+    "fader",
+    "knob",
+    "button",
+    "encoder",
+    "lcd-display"
+  ]
+}

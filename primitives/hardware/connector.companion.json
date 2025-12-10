@@ -1,0 +1,60 @@
+{
+  "name": "connector",
+  "version": "1.0.0",
+  "category": "hardware",
+  "description": "Audio/MIDI connector types",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "ringColor": "--pm-{color}-base-{index}",
+    "holeColor": "--pm-{color}-shade-{index}",
+    "labelColor": "--pm-{color}-mute-{index}"
+  },
+  "types": {
+    "xlr": {
+      "pins": 3
+    },
+    "trs": {
+      "size": "6.35mm"
+    },
+    "ts": {
+      "size": "6.35mm"
+    },
+    "rca": {
+      "type": "phono"
+    },
+    "midi": {
+      "pins": 5
+    },
+    "usb": {
+      "type": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "speakon": {
+      "poles": [
+        2,
+        4,
+        8
+      ]
+    }
+  },
+  "behaviors": {
+    "connect": "plug",
+    "direction": [
+      "input",
+      "output"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "img"
+  },
+  "relationships": [
+    "patch-point",
+    "channel"
+  ]
+}

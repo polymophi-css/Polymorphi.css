@@ -1,0 +1,68 @@
+{
+  "name": "time-signatures",
+  "version": "1.0.0",
+  "category": "music-theory",
+  "description": "Time signature definitions",
+  "bindings": {
+    "numerator": "--pm-music-midi-{index}",
+    "denominator": "--pm-music-midi-{index}",
+    "color": "--pm-{color}-base-{index}"
+  },
+  "patterns": {
+    "4/4": {
+      "beats": 4,
+      "value": 4
+    },
+    "3/4": {
+      "beats": 3,
+      "value": 4
+    },
+    "2/4": {
+      "beats": 2,
+      "value": 4
+    },
+    "6/8": {
+      "beats": 6,
+      "value": 8
+    },
+    "9/8": {
+      "beats": 9,
+      "value": 8
+    },
+    "12/8": {
+      "beats": 12,
+      "value": 8
+    },
+    "5/4": {
+      "beats": 5,
+      "value": 4
+    },
+    "7/4": {
+      "beats": 7,
+      "value": 4
+    },
+    "2/2": {
+      "beats": 2,
+      "value": 2
+    },
+    "3/8": {
+      "beats": 3,
+      "value": 8
+    }
+  },
+  "behaviors": {
+    "compound": "detect",
+    "swing": "apply"
+  },
+  "constraints": {
+    "indexRange": "001-032"
+  },
+  "accessibility": {
+    "role": "status"
+  },
+  "relationships": [
+    "transport",
+    "arrangement",
+    "tempo"
+  ]
+}

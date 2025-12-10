@@ -1,0 +1,32 @@
+{
+  "name": "bus",
+  "version": "1.0.0",
+  "category": "routing",
+  "description": "Audio bus / group",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "color": "--pm-{color}-base-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "group",
+      "aux",
+      "master"
+    ],
+    "fold": "collapse"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "channel",
+    "send",
+    "insert",
+    "fader"
+  ]
+}

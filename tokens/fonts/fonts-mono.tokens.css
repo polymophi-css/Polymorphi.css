@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI.CSS FONTS - MONO
+   ═══════════════════════════════════════════════════════════════════════════
+   Category: Mono
+   Count:    60
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilex:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Victor+Mono:wght@100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hack:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iosevka:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Commit+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Liberation+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Droid+Sans+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fantasque+Sans+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hermit:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Input+Mono:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Menlo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monaco&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monofur:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=mononoki:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Operator+Mono:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PragmataPro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap");
+
+:root {
+
+  /* MONO STACKS */
+  --pm-font-mono-000: "JetBrains Mono", monospace;
+  --pm-font-mono-001: "Fira Code", monospace;
+  --pm-font-mono-002: "Source Code Pro", monospace;
+  --pm-font-mono-003: "IBM Plex Mono", monospace;
+  --pm-font-mono-004: "Roboto Mono", monospace;
+  --pm-font-mono-005: "Ubuntu Mono", monospace;
+  --pm-font-mono-006: "Inconsolata", monospace;
+  --pm-font-mono-007: "Space Mono", monospace;
+  --pm-font-mono-008: "DM Mono", monospace;
+  --pm-font-mono-009: "Red Hat Mono", monospace;
+  --pm-font-mono-010: "Overpass Mono", monospace;
+  --pm-font-mono-011: "Anonymous Pro", monospace;
+  --pm-font-mono-012: "Cousine", monospace;
+  --pm-font-mono-013: "PT Mono", monospace;
+  --pm-font-mono-014: "Noto Sans Mono", monospace;
+  --pm-font-mono-015: "Martian Mono", monospace;
+  --pm-font-mono-016: "Azeret Mono", monospace;
+  --pm-font-mono-017: "Chivo Mono", monospace;
+  --pm-font-mono-018: "Fragment Mono", monospace;
+  --pm-font-mono-019: "Sometype Mono", monospace;
+  --pm-font-mono-020: "B612 Mono", monospace;
+  --pm-font-mono-021: "Cutive Mono", monospace;
+  --pm-font-mono-022: "Share Tech Mono", monospace;
+  --pm-font-mono-023: "Syne Mono", monospace;
+  --pm-font-mono-024: "Xanh Mono", monospace;
+  --pm-font-mono-025: "Nova Mono", monospace;
+  --pm-font-mono-026: "Fira Mono", monospace;
+  --pm-font-mono-027: "Oxygen Mono", monospace;
+  --pm-font-mono-028: "Ubuntu Sans Mono", monospace;
+  --pm-font-mono-029: "Courier Prime", monospace;
+  --pm-font-mono-030: "Recursive", monospace;
+  --pm-font-mono-031: "Geist Mono", monospace;
+  --pm-font-mono-032: "Intel One Mono", monospace;
+  --pm-font-mono-033: "Lilex", monospace;
+  --pm-font-mono-034: "Victor Mono", monospace;
+  --pm-font-mono-035: "Hack", monospace;
+  --pm-font-mono-036: "Iosevka", monospace;
+  --pm-font-mono-037: "Cascadia Code", monospace;
+  --pm-font-mono-038: "Commit Mono", monospace;
+  --pm-font-mono-039: "Liberation Mono", monospace;
+  --pm-font-mono-040: "Droid Sans Mono", monospace;
+  --pm-font-mono-041: "Fantasque Sans Mono", monospace;
+  --pm-font-mono-042: "Hermit", monospace;
+  --pm-font-mono-043: "Input Mono", monospace;
+  --pm-font-mono-044: "Menlo", monospace;
+  --pm-font-mono-045: "Monaco", monospace;
+  --pm-font-mono-046: "Monofur", monospace;
+  --pm-font-mono-047: "mononoki", monospace;
+  --pm-font-mono-048: "Operator Mono", monospace;
+  --pm-font-mono-049: "PragmataPro", monospace;
+  --pm-font-mono-050: "Major Mono Display", monospace;
+  --pm-font-mono-051: "VT323", monospace;
+  --pm-font-mono-052: "Press Start 2P", monospace;
+  --pm-font-mono-053: "Silkscreen", monospace;
+  --pm-font-mono-054: "DotGothic16", monospace;
+  --pm-font-mono-055: "Share Tech", monospace;
+  --pm-font-mono-056: "Nova Square", monospace;
+  --pm-font-mono-057: "Nova Flat", monospace;
+  --pm-font-mono-058: "Nova Round", monospace;
+  --pm-font-mono-059: "Nova Slim", monospace;
+
+}
+/* TOTAL: 60 fonts */

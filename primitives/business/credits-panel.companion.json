@@ -1,0 +1,44 @@
+{
+  "name": "credits-panel",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Song credits and rights management",
+  "bindings": {
+    "padding": "--pm-space-padding-{index}",
+    "labelSize": "--pm-type-size-{index}",
+    "valueSize": "--pm-type-size-{index}",
+    "dividerColor": "--pm-{color}-mute-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "splitBarColor": "--pm-{color}-vivid-{index}"
+  },
+  "fields": [
+    "writers",
+    "producers",
+    "mixer",
+    "master",
+    "featured",
+    "isrc",
+    "iswc",
+    "upc",
+    "pro",
+    "splits"
+  ],
+  "behaviors": {
+    "edit": "inline",
+    "validate": "format"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "form",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "card",
+    "input",
+    "badge"
+  ]
+}

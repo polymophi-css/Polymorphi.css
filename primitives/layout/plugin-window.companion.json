@@ -1,0 +1,30 @@
+{
+  "name": "plugin-window",
+  "version": "1.0.0",
+  "category": "layout",
+  "description": "Plugin GUI window container",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "headerColor": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "shadow": "--pm-fx-shadow-blur-{index}"
+  },
+  "behaviors": {
+    "resize": "proportional",
+    "float": "draggable",
+    "preset": "browser"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "dialog"
+  },
+  "relationships": [
+    "processor",
+    "rack-unit",
+    "insert"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "send",
+  "version": "1.0.0",
+  "category": "routing",
+  "description": "Auxiliary send control",
+  "bindings": {
+    "level": "--pm-aud-fader-{index}",
+    "knobSize": "--pm-size-w-{index}",
+    "color": "--pm-{color}-base-{index}",
+    "activeColor": "--pm-{color}-vivid-{index}"
+  },
+  "behaviors": {
+    "position": [
+      "preFader",
+      "postFader"
+    ],
+    "mute": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "slider"
+  },
+  "relationships": [
+    "channel",
+    "bus",
+    "reverb",
+    "delay"
+  ]
+}

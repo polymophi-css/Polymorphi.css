@@ -1,0 +1,40 @@
+{
+  "name": "compressor",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Dynamic range compression",
+  
+  "bindings": {
+    "threshold": "--pm-aud-db-{index}",
+    "ratio": "--pm-aud-q-{index}",
+    "attack": "--pm-aud-attack-{index}",
+    "release": "--pm-aud-release-{index}",
+    "knee": "--pm-aud-db-{index}",
+    "makeup": "--pm-aud-db-{index}",
+    "inputMeter": "--pm-aud-vu-{index}",
+    "outputMeter": "--pm-aud-vu-{index}",
+    "gainReduction": "--pm-aud-peak-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "knobSize": "--pm-size-w-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  
+  "behaviors": {
+    "sidechain": ["internal", "external"],
+    "stereoLink": ["linked", "independent"],
+    "autoMakeup": "toggle",
+    "bypass": "toggle"
+  },
+  
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  
+  "accessibility": {
+    "role": "group",
+    "aria": ["aria-label"]
+  },
+  
+  "relationships": ["channel", "bus", "insert", "sidechain"]
+}

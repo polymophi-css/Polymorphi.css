@@ -1,0 +1,34 @@
+{
+  "name": "spinner",
+  "version": "1.0.0",
+  "category": "feedback",
+  "description": "Loading spinner",
+  "bindings": {
+    "size": "--pm-size-w-{index}",
+    "borderWidth": "--pm-border-w-{index}",
+    "color": "--pm-{color}-vivid-{index}",
+    "trackColor": "--pm-{color}-mute-{index}",
+    "animationDuration": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "variant": [
+      "border",
+      "dots",
+      "bars"
+    ]
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "status",
+    "aria": [
+      "aria-busy",
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "button",
+    "progress"
+  ]
+}

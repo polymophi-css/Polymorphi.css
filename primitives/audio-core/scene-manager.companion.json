@@ -1,0 +1,38 @@
+{
+  "name": "scene-manager",
+  "version": "1.0.0",
+  "category": "audio-core",
+  "description": "Scene/snapshot recall for live performance",
+  "bindings": {
+    "slotWidth": "--pm-size-w-{index}",
+    "slotHeight": "--pm-size-h-{index}",
+    "activeColor": "--pm-grn-vivid-{index}",
+    "queuedColor": "--pm-ylw-vivid-{index}",
+    "emptyColor": "--pm-{color}-shade-{index}",
+    "labelSize": "--pm-type-size-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "behaviors": {
+    "trigger": [
+      "immediate",
+      "quantized"
+    ],
+    "follow": "sequential",
+    "store": "snapshot",
+    "recall": "one-click"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "listbox",
+    "aria": [
+      "aria-selected"
+    ]
+  },
+  "relationships": [
+    "transport",
+    "mixer-section",
+    "fx-rack"
+  ]
+}

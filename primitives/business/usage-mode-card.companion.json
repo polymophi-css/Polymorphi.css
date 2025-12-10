@@ -1,0 +1,40 @@
+{
+  "name": "usage-mode-card",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "License usage type selector",
+  "bindings": {
+    "cardWidth": "--pm-size-w-{index}",
+    "padding": "--pm-space-padding-{index}",
+    "iconSize": "--pm-size-w-{index}",
+    "backgroundColor": "--pm-{color}-shade-{index}",
+    "selectedBackground": "--pm-{color}-base-{index}",
+    "borderColor": "--pm-{color}-mute-{index}",
+    "borderRadius": "--pm-border-radius-{index}"
+  },
+  "modes": [
+    "background",
+    "sync",
+    "commercial",
+    "streaming",
+    "live"
+  ],
+  "behaviors": {
+    "select": "toggle",
+    "info": "expand"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "radiogroup",
+    "aria": [
+      "aria-checked"
+    ]
+  },
+  "relationships": [
+    "card",
+    "credits-panel",
+    "badge"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "sampler-grid",
+  "version": "1.0.0",
+  "category": "audio-core",
+  "description": "MPC-style pad grid for sample triggering",
+  "bindings": {
+    "padSize": "--pm-size-w-{index}",
+    "gap": "--pm-space-gap-{index}",
+    "padBackground": "--pm-{color}-shade-{index}",
+    "padActiveColor": "--pm-{color}-vivid-{index}",
+    "velocityGlow": "--pm-fx-shadow-blur-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "labelSize": "--pm-type-size-{index}"
+  },
+  "behaviors": {
+    "layout": [
+      "4x4",
+      "8x8",
+      "4x8"
+    ],
+    "trigger": [
+      "oneShot",
+      "gate",
+      "toggle",
+      "loop"
+    ],
+    "velocity": "pressure",
+    "quantize": "configurable"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "grid",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "pad",
+    "dynamics",
+    "midi"
+  ]
+}

@@ -1,0 +1,210 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   POLYMORPHI ANIMATION TIER 05: VIVACE
+   ═══════════════════════════════════════════════════════════════════════════
+   Complexity: 5 (Very Complex)
+   Tempo: 140-176 BPM equivalent
+   Character: Very fast, lively, energetic
+   Use: Instant feedback, real-time UI, gaming, data visualization, meters
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* DURATION SCALE - Very fast */
+  --pm-vivace-dur-000: 16ms;      /* 1 frame @ 60fps                         */
+  --pm-vivace-dur-016: 25ms;
+  --pm-vivace-dur-032: 33ms;      /* 2 frames                                */
+  --pm-vivace-dur-048: 42ms;
+  --pm-vivace-dur-064: 50ms;      /* 3 frames                                */
+  --pm-vivace-dur-080: 60ms;
+  --pm-vivace-dur-096: 75ms;
+  --pm-vivace-dur-112: 90ms;
+  --pm-vivace-dur-128: 100ms;     /* Center point                            */
+  --pm-vivace-dur-144: 120ms;
+  --pm-vivace-dur-160: 140ms;
+  --pm-vivace-dur-176: 160ms;
+  --pm-vivace-dur-192: 180ms;
+  --pm-vivace-dur-208: 200ms;
+  --pm-vivace-dur-224: 250ms;
+  --pm-vivace-dur-240: 300ms;
+  --pm-vivace-dur-255: 400ms;
+
+  /* EASING - STANDARD */
+  --pm-vivace-ease-linear: linear;
+  --pm-vivace-ease-default: ease;
+  --pm-vivace-ease-in: ease-in;
+  --pm-vivace-ease-out: ease-out;
+  --pm-vivace-ease-in-out: ease-in-out;
+
+  /* EASING - POWER CURVES */
+  --pm-vivace-ease-sine-out: cubic-bezier(0.61, 1, 0.88, 1);
+  --pm-vivace-ease-quad-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --pm-vivace-ease-cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --pm-vivace-ease-quart-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --pm-vivace-ease-quint-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --pm-vivace-ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pm-vivace-ease-circ-out: cubic-bezier(0, 0.55, 0.45, 1);
+
+  /* EASING - BACK/ELASTIC/BOUNCE */
+  --pm-vivace-ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --pm-vivace-ease-back-out-strong: cubic-bezier(0.2, 2, 0.4, 1);
+  --pm-vivace-ease-elastic-out: cubic-bezier(0.5, 2.5, 0.3, 1);
+  --pm-vivace-ease-elastic-out-strong: cubic-bezier(0.4, 3, 0.2, 1);
+  --pm-vivace-ease-bounce-out: cubic-bezier(0.34, 1.8, 0.64, 1);
+
+  /* EASING - SPRING */
+  --pm-vivace-ease-spring-soft: cubic-bezier(0.5, 1.6, 0.5, 1);
+  --pm-vivace-ease-spring-medium: cubic-bezier(0.4, 2, 0.4, 1);
+  --pm-vivace-ease-spring-hard: cubic-bezier(0.3, 2.5, 0.3, 1);
+  --pm-vivace-ease-spring-crazy: cubic-bezier(0.2, 3, 0.2, 1);
+
+  /* EASING - SNAP */
+  --pm-vivace-ease-snap: cubic-bezier(0, 0.95, 0.05, 1);
+  --pm-vivace-ease-snap-hard: cubic-bezier(0, 1, 0, 1);
+  --pm-vivace-ease-snap-back: cubic-bezier(0, 1.8, 0.2, 1);
+
+  /* EASING - STEPS */
+  --pm-vivace-ease-step-2: steps(2, end);
+  --pm-vivace-ease-step-4: steps(4, end);
+  --pm-vivace-ease-step-8: steps(8, end);
+  --pm-vivace-ease-step-16: steps(16, end);
+  --pm-vivace-ease-step-32: steps(32, end);
+
+  /* DELAY SCALE */
+  --pm-vivace-delay-000: 0ms;
+  --pm-vivace-delay-032: 10ms;
+  --pm-vivace-delay-064: 20ms;
+  --pm-vivace-delay-096: 35ms;
+  --pm-vivace-delay-128: 50ms;
+  --pm-vivace-delay-160: 75ms;
+  --pm-vivace-delay-192: 100ms;
+  --pm-vivace-delay-224: 150ms;
+  --pm-vivace-delay-255: 200ms;
+
+  /* STAGGER - Fast cascade */
+  --pm-vivace-stagger-001: 8ms;
+  --pm-vivace-stagger-002: 16ms;
+  --pm-vivace-stagger-003: 24ms;
+  --pm-vivace-stagger-004: 32ms;
+  --pm-vivace-stagger-005: 40ms;
+  --pm-vivace-stagger-006: 50ms;
+  --pm-vivace-stagger-007: 65ms;
+  --pm-vivace-stagger-008: 80ms;
+
+  /* ITERATION / DIRECTION / FILL / STATE */
+  --pm-vivace-iter-001: 1;
+  --pm-vivace-iter-002: 2;
+  --pm-vivace-iter-003: 3;
+  --pm-vivace-iter-005: 5;
+  --pm-vivace-iter-010: 10;
+  --pm-vivace-iter-020: 20;
+  --pm-vivace-iter-inf: infinite;
+  --pm-vivace-dir-normal: normal;
+  --pm-vivace-dir-reverse: reverse;
+  --pm-vivace-dir-alternate: alternate;
+  --pm-vivace-dir-alternate-rev: alternate-reverse;
+  --pm-vivace-fill-none: none;
+  --pm-vivace-fill-forwards: forwards;
+  --pm-vivace-fill-backwards: backwards;
+  --pm-vivace-fill-both: both;
+  --pm-vivace-state-running: running;
+  --pm-vivace-state-paused: paused;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VIVACE KEYFRAMES - Fast & Snappy
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* INSTANT TRANSITIONS */
+@keyframes pm-vivace-instant-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pm-vivace-instant-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes pm-vivace-flash-in { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 1; } }
+@keyframes pm-vivace-flash-out { 0% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; } }
+
+/* SNAP SCALE */
+@keyframes pm-vivace-snap-in { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes pm-vivace-snap-out { from { transform: scale(1); } to { transform: scale(0); } }
+@keyframes pm-vivace-snap-up { from { transform: scale(0.9); } to { transform: scale(1); } }
+@keyframes pm-vivace-snap-down { from { transform: scale(1.1); } to { transform: scale(1); } }
+@keyframes pm-vivace-pop-micro { from { transform: scale(0.95); } 50% { transform: scale(1.03); } to { transform: scale(1); } }
+@keyframes pm-vivace-spring-micro { from { transform: scale(0.9); } 40% { transform: scale(1.08); } 70% { transform: scale(0.98); } to { transform: scale(1); } }
+@keyframes pm-vivace-bounce-micro { from { transform: scale(0.85); } 50% { transform: scale(1.12); } 75% { transform: scale(0.96); } to { transform: scale(1); } }
+
+/* REAL-TIME METERS */
+@keyframes pm-vivace-meter-instant { to { transform: scaleY(var(--level, 0)); } }
+@keyframes pm-vivace-meter-peak { 0% { background: var(--peak-on); } 100% { background: var(--peak-off); } }
+@keyframes pm-vivace-meter-clip { 0%, 100% { opacity: 1; background: var(--clip-color); } 50% { opacity: 0.5; } }
+@keyframes pm-vivace-meter-decay { from { transform: scaleY(1); } to { transform: scaleY(0.1); } }
+
+/* DATA VISUALIZATION */
+@keyframes pm-vivace-data-pop { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes pm-vivace-data-update { 0% { background: var(--highlight); } 100% { background: var(--normal); } }
+@keyframes pm-vivace-chart-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes pm-vivace-line-draw { from { stroke-dashoffset: var(--length); } to { stroke-dashoffset: 0; } }
+
+/* CURSOR / POINTER */
+@keyframes pm-vivace-cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes pm-vivace-cursor-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+@keyframes pm-vivace-playhead-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); } 50% { box-shadow: 0 0 8px 2px rgba(255,255,255,0.2); } }
+
+/* GAMING / FEEDBACK */
+@keyframes pm-vivace-hit { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+@keyframes pm-vivace-damage { 0%, 100% { filter: none; } 25%, 75% { filter: brightness(2) saturate(1.5); } }
+@keyframes pm-vivace-collect { from { transform: scale(1); opacity: 1; } to { transform: scale(0); opacity: 0; } }
+@keyframes pm-vivace-spawn { from { transform: scale(0) rotate(-180deg); } to { transform: scale(1) rotate(0deg); } }
+
+/* MICRO HOVER */
+@keyframes pm-vivace-hover-bump { to { transform: scale(1.02); } }
+@keyframes pm-vivace-hover-lift { to { transform: translateY(-1px); } }
+@keyframes pm-vivace-hover-glow { to { box-shadow: 0 0 10px var(--glow-color, rgba(255,255,255,0.3)); } }
+
+/* MICRO PRESS */
+@keyframes pm-vivace-press-micro { to { transform: scale(0.98); } }
+@keyframes pm-vivace-press-sink { to { transform: translateY(1px); } }
+
+/* TOGGLE MICRO */
+@keyframes pm-vivace-toggle-snap { from { transform: translateX(0); } to { transform: translateX(100%); } }
+@keyframes pm-vivace-toggle-spring { from { transform: translateX(0); } 60% { transform: translateX(105%); } to { transform: translateX(100%); } }
+
+/* RIPPLE FAST */
+@keyframes pm-vivace-ripple-fast { from { transform: scale(0); opacity: 0.7; } to { transform: scale(2); opacity: 0; } }
+@keyframes pm-vivace-ripple-burst { from { transform: scale(0); opacity: 1; } to { transform: scale(3); opacity: 0; } }
+
+/* SPINNER FAST */
+@keyframes pm-vivace-spin-fast { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pm-vivace-spin-pulse { 0% { transform: rotate(0deg); } 50% { transform: rotate(180deg) scale(1.1); } 100% { transform: rotate(360deg); } }
+
+/* ATTENTION FAST */
+@keyframes pm-vivace-shake-fast { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-2px); } 75% { transform: translateX(2px); } }
+@keyframes pm-vivace-jolt { 0% { transform: translateX(0); } 25% { transform: translateX(-4px); } 50% { transform: translateX(4px); } 75% { transform: translateX(-2px); } 100% { transform: translateX(0); } }
+@keyframes pm-vivace-twitch { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-2deg); } 75% { transform: rotate(2deg); } }
+@keyframes pm-vivace-ping { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+@keyframes pm-vivace-ping-double { 0%, 50% { transform: scale(1); opacity: 0.8; } 25% { transform: scale(1.3); opacity: 0; } 75% { transform: scale(1.3); opacity: 0; } 100% { transform: scale(1); opacity: 0.8; } }
+
+/* AUDIO REAL-TIME */
+@keyframes pm-vivace-waveform-realtime { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+@keyframes pm-vivace-spectrum-bar { to { transform: scaleY(var(--freq, 0.5)); } }
+@keyframes pm-vivace-phase-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pm-vivace-beat-flash { 0%, 100% { opacity: 0.3; } 10% { opacity: 1; } }
+@keyframes pm-vivace-transient-spike { 0% { transform: scaleY(0); } 10% { transform: scaleY(1); } 100% { transform: scaleY(0.2); } }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VIVACE PRESETS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --pm-vivace-preset-instant-in: pm-vivace-instant-in var(--pm-vivace-dur-032) var(--pm-vivace-ease-snap) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-flash-in: pm-vivace-flash-in var(--pm-vivace-dur-064) var(--pm-vivace-ease-expo-out) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-snap-in: pm-vivace-snap-in var(--pm-vivace-dur-048) var(--pm-vivace-ease-snap-back) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-pop-micro: pm-vivace-pop-micro var(--pm-vivace-dur-080) var(--pm-vivace-ease-spring-medium) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-bounce-micro: pm-vivace-bounce-micro var(--pm-vivace-dur-096) var(--pm-vivace-ease-default) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-hover: pm-vivace-hover-bump var(--pm-vivace-dur-032) var(--pm-vivace-ease-snap) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-press: pm-vivace-press-micro var(--pm-vivace-dur-016) var(--pm-vivace-ease-snap) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-toggle: pm-vivace-toggle-spring var(--pm-vivace-dur-080) var(--pm-vivace-ease-spring-hard) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-ripple: pm-vivace-ripple-fast var(--pm-vivace-dur-128) var(--pm-vivace-ease-expo-out) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-spin: pm-vivace-spin-fast var(--pm-vivace-dur-128) var(--pm-vivace-ease-linear) infinite;
+  --pm-vivace-preset-shake: pm-vivace-shake-fast var(--pm-vivace-dur-064) var(--pm-vivace-ease-default) 1;
+  --pm-vivace-preset-ping: pm-vivace-ping var(--pm-vivace-dur-112) var(--pm-vivace-ease-expo-out) infinite;
+  --pm-vivace-preset-meter: pm-vivace-meter-instant var(--pm-vivace-dur-016) var(--pm-vivace-ease-step-8) var(--pm-vivace-fill-both);
+  --pm-vivace-preset-cursor: pm-vivace-cursor-blink var(--pm-vivace-dur-160) var(--pm-vivace-ease-step-2) infinite;
+  --pm-vivace-preset-beat: pm-vivace-beat-flash var(--pm-vivace-dur-080) var(--pm-vivace-ease-expo-out) 1;
+}

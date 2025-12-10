@@ -1,0 +1,36 @@
+{
+  "name": "lcd-display",
+  "version": "1.0.0",
+  "category": "hardware",
+  "description": "LCD/OLED display panel",
+  "bindings": {
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "textColor": "--pm-{color}-vivid-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "fontSize": "--pm-type-size-{index}",
+    "padding": "--pm-space-padding-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "segment",
+      "dot-matrix",
+      "oled"
+    ],
+    "scroll": "overflow"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "status",
+    "aria": [
+      "aria-live"
+    ]
+  },
+  "relationships": [
+    "control-surface",
+    "channel",
+    "encoder"
+  ]
+}

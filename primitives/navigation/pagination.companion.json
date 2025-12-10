@@ -1,0 +1,31 @@
+{
+  "name": "pagination",
+  "version": "1.0.0",
+  "category": "navigation",
+  "description": "Page navigation",
+  "bindings": {
+    "buttonSize": "--pm-size-w-{index}",
+    "gap": "--pm-space-gap-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "activeBackground": "--pm-{color}-vivid-{index}",
+    "textColor": "--pm-{color}-base-{index}",
+    "borderRadius": "--pm-border-radius-{index}",
+    "transition": "--pm-motion-dur-{index}"
+  },
+  "behaviors": {
+    "truncate": "ellipsis"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "navigation",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "table",
+    "list"
+  ]
+}

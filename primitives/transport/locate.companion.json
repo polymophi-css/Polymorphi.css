@@ -1,0 +1,27 @@
+{
+  "name": "locate",
+  "version": "1.0.0",
+  "category": "transport",
+  "description": "Marker and cue point navigation",
+  "bindings": {
+    "markerColor": "--pm-{color}-vivid-{index}",
+    "cueColor": "--pm-ylw-vivid-{index}",
+    "size": "--pm-size-w-{index}"
+  },
+  "behaviors": {
+    "jump": "click",
+    "create": "double-click",
+    "delete": "alt-click"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "navigation"
+  },
+  "relationships": [
+    "transport",
+    "arrangement",
+    "loop"
+  ]
+}

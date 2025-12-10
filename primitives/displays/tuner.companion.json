@@ -1,0 +1,39 @@
+{
+  "name": "tuner",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "Chromatic tuner display",
+  "bindings": {
+    "cents": "--pm-aud-pan-{index}",
+    "noteColor": "--pm-{color}-base-{index}",
+    "inTuneColor": "--pm-grn-vivid-{index}",
+    "flatColor": "--pm-red-base-{index}",
+    "sharpColor": "--pm-red-base-{index}",
+    "background": "--pm-{color}-shade-{index}",
+    "size": "--pm-size-w-{index}"
+  },
+  "behaviors": {
+    "reference": "configurable",
+    "mode": [
+      "chromatic",
+      "guitar",
+      "bass"
+    ],
+    "flatSharp": "indicate"
+  },
+  "constraints": {
+    "indexRange": "000-255",
+    "centsRange": "-50 to +50"
+  },
+  "accessibility": {
+    "role": "status",
+    "aria": [
+      "aria-live"
+    ]
+  },
+  "relationships": [
+    "input",
+    "instrument",
+    "pitch"
+  ]
+}

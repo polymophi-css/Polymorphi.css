@@ -1,0 +1,40 @@
+{
+  "name": "lufs-meter",
+  "version": "1.0.0",
+  "category": "displays",
+  "description": "Loudness metering (EBU R128)",
+  "bindings": {
+    "momentary": "--pm-aud-lufs-{index}",
+    "shortTerm": "--pm-aud-lufs-{index}",
+    "integrated": "--pm-aud-lufs-{index}",
+    "range": "--pm-aud-db-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "barColor": "--pm-{color}-base-{index}",
+    "targetColor": "--pm-grn-vivid-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "mode": [
+      "momentary",
+      "shortTerm",
+      "integrated"
+    ],
+    "target": "configurable",
+    "reset": "manual"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "meter",
+    "aria": [
+      "aria-valuenow"
+    ]
+  },
+  "relationships": [
+    "master",
+    "broadcast",
+    "streaming"
+  ]
+}

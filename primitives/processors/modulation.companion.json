@@ -1,0 +1,38 @@
+{
+  "name": "modulation",
+  "version": "1.0.0",
+  "category": "processors",
+  "description": "Modulation effects processor",
+  "bindings": {
+    "rate": "--pm-aud-freq-{index}",
+    "depth": "--pm-aud-fader-{index}",
+    "feedback": "--pm-aud-fader-{index}",
+    "mix": "--pm-aud-fader-{index}",
+    "width": "--pm-size-w-{index}",
+    "height": "--pm-size-h-{index}",
+    "background": "--pm-{color}-shade-{index}"
+  },
+  "behaviors": {
+    "type": [
+      "chorus",
+      "flanger",
+      "phaser",
+      "tremolo",
+      "vibrato",
+      "rotary"
+    ],
+    "sync": "tempo",
+    "bypass": "toggle"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "group"
+  },
+  "relationships": [
+    "insert",
+    "send",
+    "creative"
+  ]
+}

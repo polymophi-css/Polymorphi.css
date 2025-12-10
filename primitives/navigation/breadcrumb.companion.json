@@ -1,0 +1,28 @@
+{
+  "name": "breadcrumb",
+  "version": "1.0.0",
+  "category": "navigation",
+  "description": "Breadcrumb navigation",
+  "bindings": {
+    "fontSize": "--pm-type-size-{index}",
+    "textColor": "--pm-{color}-mute-{index}",
+    "activeColor": "--pm-{color}-base-{index}",
+    "separatorColor": "--pm-{color}-mute-{index}",
+    "gap": "--pm-space-gap-{index}"
+  },
+  "behaviors": {
+    "truncate": "overflow"
+  },
+  "constraints": {
+    "indexRange": "000-255"
+  },
+  "accessibility": {
+    "role": "navigation",
+    "aria": [
+      "aria-label"
+    ]
+  },
+  "relationships": [
+    "navbar"
+  ]
+}
